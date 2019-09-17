@@ -4,7 +4,7 @@
 	<head> 
 		<title>Sleep Deprivation</title>
 		<meta charset = "UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=.7">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
 		<!--<link rel="stylesheet" href="w3-colors-flat.css"> -->
@@ -13,16 +13,18 @@
 		
 		<script>
 			var docMod = document.lastModified; // loads last modified time stamp into docMod variable
-			alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
-			console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
+				alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
+				console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
 			
-			function drawc() {
-				var circle = document.getElementById("canvas");
-				var ctx = circle.getContext("2d");
+			function draw() {
+				var canvas = document.getElementById('canvas');
+				if (canvas.getContext) {
+					var ctx = circle.getContext("2d");
 					ctx.beginPath();
 					ctx.arc(100, 75, 50, 0, 2 * Math.PI);
 					ctx.stroke();
 					ctx.fill();
+				}
 		</script>
 	</head>
 	
@@ -48,18 +50,15 @@
 	<!-- above sets the web-page's dimensions and look-->	
 	
 	<body>
+		<div id="page">
 		<div id="header" class="w3-container w3-flat-carrot">
 			<h1>Sleep Deprivation</h1>
 		</div>
 		<!--header above-->
 		<div id = "content" class= "w3-container">
 			<!--starting page-->
-		<!--Possibly not needed from  **<div data-role="page">
-			<div data-role="header">
-				<h1>This is the header</h1></div><!-- /header --
-			<div class="w3-container"><!-- place main content here and it will show up between header and footer.** To here-->
 			<p>Are you sleep deprived?</p>
-				<canvas id = "canvas" width="300" height="225" style= "border:1px solid #000000;"></canvas>
+				<canvas id = "canvas" width="500" height="300" style= "border:1px solid #000000;"></canvas>
 			<p>Instructions: Hold your phone sideways and stare at the red dot. A black square will flash on either side of the dot. 
 				When you see this sqaure, tap it. In between star flashes, stare at the red dot.</p>
 			<p>Press this button to start</p>
@@ -80,7 +79,7 @@
 			<div data-role="content">
 		-->
 			<div data-role="footer" data-position="fixed">
-				<p>This is the footer</p>
+				<p>DIY Diagnostics</p>
 			</div><!-- /footer -->
 	<!--<header class="w3-container w3-flat-carrot">
 		<h1>Sleep Deprivation App</h1>
