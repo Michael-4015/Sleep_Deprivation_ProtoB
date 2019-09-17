@@ -13,10 +13,11 @@
 		
 		<script>
 			var docMod = document.lastModified; // loads last modified time stamp into docMod variable
-				alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
-				console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
+			alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
+			console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
+			
 			function drawc() {
-				var circle = document.getElementById("canvas")
+				var circle = document.getElementById("canvas");
 				var ctx = circle.getContext("2d");
 					ctx.beginPath();
 					ctx.arc(100, 75, 50, 0, 2 * Math.PI);
