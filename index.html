@@ -1,32 +1,36 @@
 <!DOCTYPE html> 
-<html lang = "en"> 
-	<!-- language set to english, may not need -->
+<html> 
 	<head> 
 		<title>Sleep Deprivation</title>
 		<meta charset = "UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=.7">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
-		<!--<link rel="stylesheet" href="w3-colors-flat.css"> -->
+		<link rel="stylesheet" href="w3-colors-flat.css">
 		<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
-		
-		<script>
-			var docMod = document.lastModified; // loads last modified time stamp into docMod variable
-				alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
-				console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
-			
-			function draw() {
-				var canvas = document.getElementById('canvas');
-				if (canvas.getContext) {
-					var ctx = circle.getContext("2d");
-					ctx.beginPath();
-					ctx.arc(100, 75, 50, 0, 2 * Math.PI);
-					ctx.stroke();
-					ctx.fill();
-				}
-		</script>
 	</head>
+		
+	<script>
+		var docMod = document.lastModified; // loads last modified time stamp into docMod variable
+			alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
+			console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
+			
+		function draw() {
+			var mycanvas = document.getElementById("circle");
+			if (mycanvas.getContext) {
+				var ctx = mycanvas.getContext('2d');
+				var X = canvas.width / 2;
+				var Y = canvas.height / 2;
+				var R = 45;
+				ctx.beginPath();
+				ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+				ctx.lineWidth = 3;
+				ctx.strokeStyle = '#FF0000';
+				ctx.stroke();
+			}
+		}
+	</script>
 	
 	<style>
 		.body {
@@ -60,7 +64,7 @@
 			<p>Instructions: Hold your phone sideways and stare at the red dot. A black square will flash on either side of the dot. 
 			When you see this sqaure, tap it. In between the flashes, stare at the red dot.</p>
 			<p>Press this button to go to the game</p>
-				<a href="#one" class="w3-btn w3-light-blue w3-round">GO TO GAME</a>
+				<a href="#one" class="w3-btn w3-grey w3-round"> GO TO GAME </a>
 		<div class="page" id="one">
 			<div id="header" class="w3-panel w3-flat-alizarin">
 				<h1>Diagnosing Sleep Deprivation</h1>
@@ -68,7 +72,7 @@
 			<div id="content" class="w3-panel">
 			<p>PAGE 2</p>
 				<canvas id = "canvas" width="300" height="200" style= "border:1px solid #000000;"></canvas>
-				<a href="#one" onclick= "draw();" class="w3-btn w3-light-blue w3-round"> Start </a>
+				<a href="#one" onclick= "draw();" class="w3-btn w3-grey w3-round"> Start </a>
 			</div>
 		</div>
 		<div id = "footer" class="w3-bottom w3-panel w3-flat-alizarin" data-position= "fixed">
