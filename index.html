@@ -43,8 +43,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			var mycanvas = document.getElementById("circle"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
 			mycontext.beginPath();
-			mycontext.arc(100, 75, 50, 0, 2 * Math.PI);
+			mycontext.arc(325, 175, 10, 0, 2 * Math.PI);
 			mycontext.stroke();
+			mycontext.fill();
 		}
 			/*if (mycanvas.getContext){
 				var ctx = mycanvas.getContext("2d");
@@ -98,8 +99,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				<h1>Sleep Deprivation Diagnostic</h1>
 			</div>
 			<div id="content" class="w3-container">
-				<p>PAGE 2</p>
-				<a href="#one" onclick= "draw();" class="w3-btn w3-grey w3-round"> Start </a>
+				<a href="#one" onclick= "draw();" class="w3-btn w3-grey w3-round"> Start
+				</a>
 				<canvas id= "circle" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 			</div>
 		</div>
