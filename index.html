@@ -42,17 +42,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		function draw(){
 			var mycanvas = document.getElementById("circle"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
-			var centerX = canvas.width / 2;
-			var centerY = canvas.height / 2;
-			var radius = 70;
-			
-			context.beginPath();
-			context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-			context.fillStyle = 'red';
-			context.fill();
-			context.lineWidth = 5;
-			context.strokeStyle = '#003300';
-			context.stroke();
+			mycontext.beginPath();
+			mycontext.arc(100, 75, 50, 0, 2 * Math.PI);
+			mycontext.stroke();
+		}
 			/*if (mycanvas.getContext){
 				var ctx = mycanvas.getContext("2d");
 				var X = canvas.width / 2;
@@ -65,7 +58,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				ctx.stroke();
 			}
 			*/
-		}
 	</script>
 	
 	<style>
