@@ -39,10 +39,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 			console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
 			
-		function draw() {
+		function draw(){
 			var mycanvas = document.getElementById("circle");
-			if (mycanvas.getContext) {
-				var ctx = mycanvas.getContext('2d');
+			if (mycanvas.getContext){
+				var ctx = mycanvas.getContext("2d");
 				var X = canvas.width / 2;
 				var Y = canvas.height / 2;
 				var R = 45;
@@ -89,13 +89,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			<a href="#one" class="w3-btn w3-light-blue w3-round"> Get Started </a>
 			
 		<div class = "page" id= "one">
-			<div id="header" class="w3-container w3-flat-alizarin">
+			<div id="header" class="w3-btn w3-light-blue w3-round">
 				<h1>Sleep Deprivation Diagnostic</h1>
 			</div>
-			<div id="content" class="w3-panel">
+			<div id="content" class="w3-container">
 				<p>PAGE 2</p>
-				<canvas id = "canvas" width="300" height="200" style= "border:1px solid #000000;"></canvas>
 				<a href="#one" onclick= "draw();" class="w3-btn w3-grey w3-round"> Start </a>
+				<canvas id = "circle" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 			</div>
 		</div>
 			
