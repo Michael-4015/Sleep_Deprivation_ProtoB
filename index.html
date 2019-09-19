@@ -40,8 +40,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
 			
 		function draw(){
-			var mycanvas = document.getElementById("circle");
-			if (mycanvas.getContext){
+			//var mycanvas = document.getElementById("circle");
+			var mycanvas = document.getElementById("circle"); //finds the canvas with the Id 'a'
+			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
+			mycontext.fillRect(50, 25, 150, 100);
+			/*if (mycanvas.getContext){
 				var ctx = mycanvas.getContext("2d");
 				var X = canvas.width / 2;
 				var Y = canvas.height / 2;
@@ -52,6 +55,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				ctx.strokeStyle = '#FF0000';
 				ctx.stroke();
 			}
+			!/
 		}
 	</script>
 	
@@ -95,7 +99,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			<div id="content" class="w3-container">
 				<p>PAGE 2</p>
 				<a href="#one" onclick= "draw();" class="w3-btn w3-grey w3-round"> Start </a>
-				<canvas id = "circle" width="650" height="350" style= "border:1px solid #000000;"></canvas>
+				<canvas id= "circle" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 			</div>
 		</div>
 			
