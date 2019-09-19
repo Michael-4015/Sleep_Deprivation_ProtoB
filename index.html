@@ -77,27 +77,28 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<!-- above sets the web-page's dimensions and look-->	
 	
 	<body>
-		<div id="header" class="w3-panel w3-flat-alizarin">
-			<h1>Sleep Deprivation10</h1></div>
-		</div>
-		<!--header above-->
-		<div id= "content" class= "w3-panel">
-			<!--starting page-->
-			<p>Are you sleep deprived?</p>
-			<p>Instructions: Hold your phone sideways and stare at the red dot. A black square will flash on either side of the dot. 
-			When you see this sqaure, tap it. In between the flashes, stare at the red dot.</p>
-			<p>Press this button to go to the game</p>
-				<a href="#one" class="w3-btn w3-grey w3-round"> GO TO GAME </a>
-		<div class="page" id="one">
-			<div id="header" class="w3-panel w3-flat-alizarin">
-				<h1>Diagnosing Sleep Deprivation</h1>
-				<p> page 2 test </p>
+		<body> <!-- body tags contain the content to be displayed -->
+		<div id="header" class="w3-btn w3-light-blue w3-round">
+				<h1>Sleep Deprivation Diagnostic</h1></div><!-- /header -->
+		</div> <!-- /content -->
+			
+		<div id="content" class= "w3-container"> <!--first page of app-->
+			<p>Instructions: </p>
+			<p>Hold your phone sideways and stare at the red dot. A black square will flash on either side of the dot. 
+				When you see this sqaure, tap it. In between star flashes, stare at the red dot.</p>
+			<p>Press this button to start</p>
+			<a href="#one" class="w3-btn w3-light-blue w3-round"> Get Started </a>
+			
+		<div class = "page" id= "one">
+			<div id="header" class="w3-container w3-flat-carrot">
+				
+			<p> testing</p>
 			</div>
-			<div id="content" class="w3-panel">
+			<!--<div id="content" class="w3-panel">
 			<p>PAGE 2</p>
 				<canvas id = "canvas" width="300" height="200" style= "border:1px solid #000000;"></canvas>
 				<a href="#one" onclick= "draw();" class="w3-btn w3-grey w3-round"> Start </a>
-			</div>
+			</div>-->
 		</div>
 		<div id = "footer" class="w3-bottom w3-panel w3-flat-alizarin" data-position= "fixed">
 			<p>DIY Diagnostics</p>
