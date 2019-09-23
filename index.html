@@ -39,8 +39,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 			console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
 			
+		function randomString() {
+			var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+			var string_length = 8;
+			var randomstring = '';
+			for (var i=0; i<string_length; i++) {
+				var rnum = Math.floor(Math.random() * chars.length);
+				randomstring += chars.substring(rnum,rnum+1);
+			}
+			document.randform.randomfield.value = randomstring;
+		}
 		function draw(){
-			var mycanvas = document.getElementById("circle"); //finds the canvas with the Id 'a'
+			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
 			mycontext.beginPath();
 			mycontext.arc(325, 175, 10, 0, 2 * Math.PI);
@@ -48,6 +58,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycontext.fillStyle = "red";
 			mycontext.fill();
 		}
+		function letter(){
+			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
+			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
+			a_context.font = "bold 24px sans-serif"; //determines the font of the text
+			a_context.fillText(randomString();, 650, 175); //declares and prints the text and gives placement
+		}
+			
+			
 			/*if (mycanvas.getContext){
 				var ctx = mycanvas.getContext("2d");
 				var X = canvas.width / 2;
@@ -102,7 +120,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			<div id="content" class="w3-container">
 				<a href="#one" onclick= "draw();" class="w3-btn w3-grey w3-round"> Start
 				</a>
-				<canvas id= "circle" width="650" height="350" style= "border:0px solid #000000;"></canvas>
+				<canvas id= "canvas" width="650" height="350" style= "border:0px solid #000000;"></canvas>
+				<a href="#one" onclick= "letter();" class="w3-btn w3-grey w3-round"> Letter
+				</a>
 			</div>
 		</div>
 			
