@@ -39,16 +39,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 			console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
 			
-		function randomString() {
-			var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
-			var string_length = 8;
-			var randomstring = '';
-			for (var i=0; i<string_length; i++) {
-				var rnum = Math.floor(Math.random() * chars.length);
-				randomstring += chars.substring(rnum,rnum+1);
-			}
-			document.randform.randomfield.value = randomstring;
-		}
 		function draw(){
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
@@ -59,10 +49,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycontext.fill();
 		}
 		function letter(){
+			alert("letter string is being called");
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
 			a_context.font = "bold 24px sans-serif"; //determines the font of the text
 			a_context.fillText("randomString();", 650, 175); //declares and prints the text and gives placement
+		}
+		function randomString() {
+			var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+			var string_length = 1;
+			var randomstring = '';
+			for (var i=0; i<string_length; i++) {
+				var rnum = Math.floor(Math.random() * chars.length);
+				randomstring += chars.substring(rnum,rnum+1);
+			}
+			document.randform.randomfield.value = randomstring;
 		}
 			
 			
