@@ -45,59 +45,19 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycontext.beginPath();
 			mycontext.arc(325, 175, 10, 0, 2 * Math.PI);
 			mycontext.stroke();
-			mycontext.fillStyle = "red";
+			mycontext.fillStyle = "black";
 			mycontext.fill();
 		}
 		function letter(){
 			alert("letter string is being called");
 			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1);
+			var res = randomletter.toUpperCase();
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 			mycontext.fillText(randomletter,1,175); //declares and prints the text and gives placement
 		}
-			
-		/*function randomString(){
-			alert("random string is being called");
-			var chars = "ABCDEFGHIJKLMNOPQRSTUVWXTZ";
-			var string_length = 1;
-			var randomstring = '';
-			for (var i=0; i<string_length; i++) {
-				var rnum = Math.floor(Math.random() * chars.length);
-				randomstring += chars.substring(rnum,rnum+1);
-			}
-			document.randform.randomfield.value = randomstring;
-		}
-		*/
-		
-		/*function randomString(){
-			alert("random string is being called");
-			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
-			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
-			var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
-			var string_length = 1;
-			var randomstring = '';
-			for (var i=0; i<string_length; i++) {
-				var rnum = Math.floor(Math.random() * chars.length);
-				randomstring += chars.substring(rnum,rnum+1);
-			}
-			document.randform.randomfield.value = randomstring;
-			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
-			mycontext.fillText("randomString();", 650, 175); //declares and prints the text and gives placement
-		}
-		*/
-			/*if (mycanvas.getContext){
-				var ctx = mycanvas.getContext("2d");
-				var X = canvas.width / 2;
-				var Y = canvas.height / 2;
-				var R = 45;
-				ctx.beginPath();
-				ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
-				ctx.lineWidth = 3;
-				ctx.strokeStyle = '#FF0000';
-				ctx.stroke();
-			}
-			*/
+	
 	</script>
 	
 	<style>
