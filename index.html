@@ -57,7 +57,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		}
 		function randomString(){
 			alert("random string is being called");
-			var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+			var chars = "ABCDEFGHIJKLMNOPQRSTUVWXTZ";
 			var string_length = 1;
 			var randomstring = '';
 			for (var i=0; i<string_length; i++) {
@@ -138,10 +138,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				<a href="#one" onclick= "draw();" class="w3-btn w3-grey w3-round"> Start
 				</a>
 				<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
-				<form name="randform">
+				<button type="button" onclick="letter();">Click Me!</button>
+				<!--<form name="randform">
 					<input type="button" value="Create Random String" onClick="letter();">&nbsp;
 					<input type="text" name="randomfield" value="">
-				</form>
+				</form>-->
 			</div>
 		</div>
 			
