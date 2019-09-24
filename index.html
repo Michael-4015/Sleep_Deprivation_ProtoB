@@ -65,6 +65,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				randomstring += chars.substring(rnum,rnum+1);
 			}
 			document.randform.randomfield.value = randomstring;
+			letter();
 		}
 		
 		/*function randomString(){
@@ -138,14 +139,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				<a href="#one" onclick= "draw();" class="w3-btn w3-grey w3-round"> Start
 				</a>
 				<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
-				<a href="#one" onclick= "randomString();" class="w3-btn w3-grey w3-round"> Letter
-				</a>
+				<form name="randform">
+					<input type="button" value="Create Random String" onClick="randomString();">&nbsp;
+					<input type="text" name="randomfield" value="">
+				</form>
 			</div>
 		</div>
 			
-		<!--<footer class="w3-bottom w3-container w3-flat-carrot">
+		<footer class="w3-bottom w3-container w3-flat-carrot">
 			<p>DIY Diagnostics</p>
-		</footer>-->
+		</footer>
 		<!--<div id = "footer" class="w3-bottom w3-panel w3-flat-alizarin" data-position= "fixed">
 			<p>DIY Diagnostics</p>
 		</div>-->
