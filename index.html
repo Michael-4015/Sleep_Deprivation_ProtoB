@@ -19,7 +19,7 @@ Brief Description of Goal of Code:
 The goal is to create a web-based app that helps users who are likely to be college students determine if they are sleep deprived.
  
 Known Issues:
-No known issues at the time.
+LOTS RIGHT NOW
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -53,9 +53,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
-			mycontext.fillText("A",1,175); //declares and prints the text and gives placement
+			mycontext.fillText(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1);,1,175); //declares and prints the text and gives placement
 		}
-		function randomString(){
+		/*function randomString(){
 			alert("random string is being called");
 			var chars = "ABCDEFGHIJKLMNOPQRSTUVWXTZ";
 			var string_length = 1;
@@ -66,6 +66,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			}
 			document.randform.randomfield.value = randomstring;
 		}
+		*/
 		
 		/*function randomString(){
 			alert("random string is being called");
