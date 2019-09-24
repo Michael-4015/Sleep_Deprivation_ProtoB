@@ -53,7 +53,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
-			mycontext.fillText("A", 325, 175); //declares and prints the text and gives placement
+			mycontext.fillText("A", 325, 300); //declares and prints the text and gives placement
 		}
 		function randomString(){
 			alert("random string is being called");
@@ -135,10 +135,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				<h1>Sleep Deprivation Diagnostic</h1>
 			</div>
 			<div id="content" class="w3-container">
-				<a href="#one" onclick= "draw();" class="w3-btn w3-grey w3-round"> Start
+				<a href="#one" onclick= "draw();letter();" class="w3-btn w3-grey w3-round"> Start
 				</a>
 				<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
-				<button type="button" onclick="letter();">Click Me!</button>
 				<!--<form name="randform">
 					<input type="button" value="Create Random String" onClick="letter();">&nbsp;
 					<input type="text" name="randomfield" value="">
