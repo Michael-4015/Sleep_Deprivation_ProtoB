@@ -52,10 +52,19 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			alert("letter string is being called");
 			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
-			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
+			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2dv
+			var placement = 2;
+			function isEven(placement) {
+				if (placement % 2 === 0) {
+					var width = 1;
+				} else {
+					var width = 650;
+				}
+				placement++;
+			}	
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 			mycontext.fillStyle = "black";
-			mycontext.fillText(randomletter,1,175); //declares and prints the text and gives placement
+			mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
 		}
 	
 	</script>
