@@ -54,11 +54,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2dv
 			var placement = 2;
+			var width = 0;
 			function isEven(placement) {
-				if (placement % 2 === 0) {
-					var width = 1;
+				if (placement % 2 == 0) {
+					width = 1;
 				} else {
-					var width = 650;
+					width = 650;
 				}
 				placement++;
 			}	
