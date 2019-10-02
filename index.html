@@ -66,8 +66,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			}	
 			*/
 			var placement = 0;
-			var width = 0;
-			var remainder = new Boolean(true);
+			//var width = 0;
+			var remainder = new Boolean();
 			function remainder(){
 				if (placement % 2 == 0){
 					return true;
@@ -77,10 +77,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				}
 			}
 			if remainder === true{
-				width = 1;
+				var width = 1;
 			}
 			else{
-				width = 650;
+				var width = 650;
 			}
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 			mycontext.fillStyle = "black";
