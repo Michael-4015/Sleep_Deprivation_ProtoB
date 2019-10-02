@@ -69,23 +69,24 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycontext.fillStyle = "black";
 			mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
 			
-				function reset(){
+				/*function reset(){
 					alert("reset function is being called");
 					var mycanvas = document.getElementById("a");//finds the canvas with the Id 'a'
 					var mycontext = a_canvas.getContext("2d");//sets up the context of the function with 2
 					mycanvas.width = "650";//re-states canvas width
 					mycanvas.height = "350";//re-states canvas height
 				}
+				*/
 			}
 			
 		}
-		/*$(document).ready(function(){
+		$(document).ready(function(){
   			$("#show").click(function(){
      			$("#ans").show();
      			$("#userdate")[0].value = new Date()
-   					 });
-				});
-		*/
+   			});
+		});
+		
 	</script>
 	
 	<style>
@@ -130,14 +131,57 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				</a>
 				<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 			</div>
-		</div>
+			<div>
+				<p> Click the button once you see the target </p>
+			</div>
+				<p><button type="button" id="show">First Target</button></p>
+
+			<div id="ans" style="display:none">
+				<input id="userdate" name="timestamp" value="dateOfUser">
+			</div>  
 			
-		<!--<footer class="w3-bottom w3-container w3-flat-carrot">
-			<p>DIY Diagnostics</p>
-		</footer>-->
-		<div id = "footer" class="w3-bottom w3-panel w3-flat-alizarin" data-position= "fixed">
-			<h5>Emma10 DIY Diagnostics</h5>
+			</div>
+				<p><button type="button" id="show">Second Target</button></p>
+			<div id="ans" style="display:none">
+				<input id="userdate" name="timestamp" value="dateOfUser">
+			</div>
 		</div>
-		<!--Neither footer is working, deal with later-->
+		
+		
+		<!--
+
+
+
+
+
+
+
+
+
+
+
+space to move footer lower
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		-->
+		<div id = "footer" class="w3-bottom w3-panel w3-flat-alizarin" data-position= "fixed">
+			<h5>Emma11 DIY Diagnostics</h5>
+		</div>
    </body>
 </html>
