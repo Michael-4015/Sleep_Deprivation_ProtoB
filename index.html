@@ -48,12 +48,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycontext.fillStyle = "red";
 			mycontext.fill();
 		}
-		function letter(){
-			alert("letter string is being called");
-			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
-			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
-			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2dv
-			/*var placement = 0;
+		/*function remainder(){
+			if (placement % 2 == 0){
+				booleanValue == true;
+			}
+			else{
+				return false;
+			}
+			if booleanValue === true{
+				var width = 1;
+			}
+			else{
+				var width = 650;
+			}
+		*/
+		/*var placement = 0;
 			var width = 0;
 			function location(){
 				if isOdd(placement){
@@ -65,22 +74,23 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				placement++;
 			}	
 			*/
-			var placement = 0;
-			//var width = 0;
-			var remainder = new Boolean();
-			function remainder(){
-				if (placement % 2 == 0){
-					return true;
+		
+		function letter(){
+			var i = 1;
+			alert("letter string is being called");
+			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
+			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
+			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2dv
+			function placement(){
+				while (i<21){
+					if (i % 2==0){
+						var width = 1;
+					}
+					else{
+						var width = 650;
+					}
+					i++
 				}
-				else{
-					return false;
-				}
-			}
-			if remainder === true{
-				var width = 1;
-			}
-			else{
-				var width = 650;
 			}
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 			mycontext.fillStyle = "black";
