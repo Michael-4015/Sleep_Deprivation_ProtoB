@@ -68,6 +68,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 			mycontext.fillStyle = "black";
 			mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
+			function reset(){
+				alert("reset function is being called");
+				var mycanvas = document.getElementById("a");//finds the canvas with the Id 'a'
+				var mycontext = a_canvas.getContext("2d");//sets up the context of the function with 2
+				mycanvas.width = "650";//re-states canvas width
+				mycanvas.height = "350";//re-states canvas height
 			}
 		}
 	
