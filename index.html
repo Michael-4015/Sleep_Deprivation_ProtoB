@@ -65,10 +65,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				}
 				i++
 				
-			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
-			mycontext.fillStyle = "black";
-			mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
-			
+				mycontext.font = "bold 24px sans-serif"; //determines the font of the text
+				mycontext.fillStyle = "black";
+				mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
+				
+				var time = 
+				    setInterval(myTimer,1000);
+				function myTimer(){
+					var array_d = new Date(20);
+					document.getElementById("Tsave").innerHTML = array_d.toLocaleTimeString();
+				}
 				/*function reset(){
 					alert("reset function is being called");
 					var mycanvas = document.getElementById("a");//finds the canvas with the Id 'a'
@@ -80,13 +86,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			}
 			
 		}
-		$(document).ready(function(){
+		/*$(document).ready(function(){
   			$("#show").click(function(){
      			$("#ans").show();
      			$("#userdate")[0].value = new Date()
    			});
 		});
-		
+		*/
 	</script>
 	
 	<style>
@@ -131,7 +137,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				</a>
 				<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 			</div>
-			<div>
+			
+			<button onclick="clearInterval(myVar)">Stop time</button>
+			<p id="Tsave"></p>
+		
+			<!--<div>
 				<p>Click the button once you see the target </p>
 				<a href = "#one" id = "show"; class="w3-btn w3-grey w3-round"> 
 					First Target </a>
@@ -147,10 +157,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			<div id="ans" style="display:none">
 				<input id="userdate" name="timestamp" value="dateOfUser">
 			</div>
+			-->
 		</div>
 		
 		<div id = "footer" class="w3-bottom w3-panel w3-flat-alizarin" data-position= "fixed">
-			<h5>Emma12 DIY Diagnostics</h5>
+			<h5>Emma13 DIY Diagnostics</h5>
 		</div>
 		<!--footer not displaying in the right spot-->
    </body>
