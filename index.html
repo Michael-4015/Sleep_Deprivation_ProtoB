@@ -132,12 +132,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				<h1>Sleep Deprivation Diagnostic</h1>
 			</div>
 			<div id="content" class="w3-container">
-				<a href="#one" onclick= "draw();letter();" class="w3-btn w3-grey w3-round"> Start
-				</a>
+				<!--<a href="#one" onclick= "draw();letter();" class="w3-btn w3-grey w3-round"> Start
+				</a>-->
+				<button onclick="draw();letter();">Start</button>
 				<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 			
+				<p id="Tsave"></p>
 				<button onclick="clearInterval(time)">Stop time</button>
-				<canvas id="Tsave"></p>
+				
 			</div>
 		
 			<!--<div>
