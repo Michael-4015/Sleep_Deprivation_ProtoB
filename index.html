@@ -49,13 +49,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycontext.fill();
 		}
 		
-		/*
 		
-		
-		}*/
 		function letter(){
 			var width = 0;
-			var speed= new Array(20); //array with 20 undefined elements
 			
 				for(i=0; i<20;i++){
 					var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
@@ -67,30 +63,63 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					else{
 						width = 628;
 					}
-					var time = setInterval(myTimer,1000);//creates timer (calls function, time-interval between each execution
-					function myTimer(){ //starts function
-						var d = new Date(); //date variable storing milliseconds
-						document.getElementById("Tsave").innerHTML = d.toLocaleTimeString();//defines data as local time
-					}
-					speed.push(d);
 					
-				
 				mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 				mycontext.fillStyle = "black";
 				mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
 				
-				/*function reset(){
-					alert("reset function is being called");
-					var mycanvas = document.getElementById("a");//finds the canvas with the Id 'a'
-					var mycontext = a_canvas.getContext("2d");//sets up the context of the function with 2
-					mycanvas.width = "650";//re-states canvas width
-					mycanvas.height = "350";//re-states canvas height
-				}
-				*/
 				}
 			
 		}
-		document.getElementById("results").innerHTML = d;
+		//document.getElementById("results").innerHTML = d;
+		
+		function Timers(){
+			var speed = new Array[];
+			
+			var time1 = setInterval(myTimer1,1000);//creates timer (calls function, time-interval between each execution			function myTimer1(){ //starts function
+			function myTimer1(){
+				var d1 = new Date1(); //date variable storing milliseconds
+				document.getElementById("Tsave").innerHTML = d.toLocaleTimeString();//defines data as local time
+				speed.push(d1);
+				function reset(){
+					mycanvas.width = "650";//re-states canvas width
+					mycanvas.height = "350";//re-states canvas height
+				}
+			}
+			
+			var time2 = setInterval(myTimer2,1000);//creates timer (calls function, time-interval between each execution
+			function myTimer2(){ //starts function
+				var d2 = new Date2(); //date variable storing milliseconds
+				document.getElementById("Tsave2").innerHTML = d.toLocaleTimeString();//defines data as local time
+				speed.push(d2);
+				function reset(){
+					mycanvas.width = "650";//re-states canvas width
+					mycanvas.height = "350";//re-states canvas height
+				}
+			}
+
+			var time3 = setInterval(myTimer3,1000);//creates timer (calls function, time-interval between each execution
+			function myTimer3(){ //starts function
+				var d3 = new Date3(); //date variable storing milliseconds
+				document.getElementById("Tsave3").innerHTML = d.toLocaleTimeString();//defines data as local time
+				speed.push(d3);
+				function reset(){
+					mycanvas.width = "650";//re-states canvas width
+					mycanvas.height = "350";//re-states canvas height
+				}
+			}
+
+			var time4 = setInterval(myTimer4,1000);//creates timer (calls function, time-interval between each execution
+			function myTimer4(){ //starts function
+				var d4 = new Date4(); //date variable storing milliseconds
+				document.getElementById("Tsave4").innerHTML = d.toLocaleTimeString();//defines data as local time
+				speed.push(d4);
+				function reset(){
+					mycanvas.width = "650";//re-states canvas width
+					mycanvas.height = "350";//re-states canvas height
+				}
+			}
+		}
 		
 	</script>
 	
@@ -134,12 +163,22 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				<div id="content" class="w3-container">
 					<!--<a href="#one" onclick= "draw();letter();" class="w3-btn w3-grey w3-round"> Start
 					</a>-->
-					<button onclick="draw();letter();">Start</button>
+					<button onclick="draw();letter();Timers();">Start</button>
 					<!--myTimer();-->
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 
-					<p id="Tsave"></p>
-					<button onclick="clearInterval(time)">Stop time</button>
+					<p id="Tsave1"></p>
+					<button onclick="clearInterval(time1)">Stop time</button>
+					
+					<p id="Tsave2"></p>
+					<button onclick="clearInterval(time2)">Stop time</button>
+					
+					<p id="Tsave3"></p>
+					<button onclick="clearInterval(time3)">Stop time</button>
+					
+					<p id="Tsave4"></p>
+					<button onclick="clearInterval(time4)">Stop time</button>
+					
 					<a href="#two" class="w3-btn w3-light-blue w3-round"> Results </a>
 				</div>
 			</div>
