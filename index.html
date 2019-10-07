@@ -54,8 +54,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		function myTimer(){ //starts function
 			var d = new Date(); //date variable storing milliseconds
 			document.getElementById("Tsave").innerHTML = d.toLocaleTimeString();//defines data as local time
-			
-			function letter(){
+		}
+		function letter(){
 			//var i = 0;
 			var width = 0;
 			var speed= new Array(20); //array with 20 undefined elements
@@ -86,7 +86,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				*/
 				}
 			
-			}
 		}
 		document.getElementById("results").innerHTML = d;
 		
@@ -132,8 +131,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				<div id="content" class="w3-container">
 					<!--<a href="#one" onclick= "draw();letter();" class="w3-btn w3-grey w3-round"> Start
 					</a>-->
-					<button onclick="draw();">Start</button>
-					<!--letter();myTimer();-->
+					<button onclick="draw();letter();myTimer();">Start</button>
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 
 					<p id="Tsave"></p>
