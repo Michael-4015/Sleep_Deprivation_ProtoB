@@ -73,12 +73,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
 					
 					if (i = 0){
-						alert("timer0 is being called");
-						var time0 = setInterval(myTimer0 ,1000);//creates timer (calls function, time-interval between each execution
-						function myTimer0(){ //starts function
-							var d0 = new Date(); //date variable storing milliseconds
-							document.getElementById("Tsave0").innerHTML = d0.toLocaleTimeString();//defines data as local time
-								//speed.push(d0);
+						alert("timer is being called");
+						var time = setInterval(myTimer ,1000);//creates timer (calls function, time-interval between each execution
+						function myTimer(){ //starts function
+							var d = new Date(); //date variable storing milliseconds
+							document.getElementById("Tsave").innerHTML = d.toLocaleTimeString();//defines data as local time
+								//speed.push(d);
 								/*function reset(){
 									mycanvas.width = "650";//re-states canvas width
 									mycanvas.height = "350";//re-states canvas height
@@ -180,7 +180,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 
-					<p id="Tsave0"></p>
+					<p id="Tsave"></p>
 					<button onclick="clearInterval(time0)">Stop time</button>
 					
 					<p id="Tsave1"></p>
