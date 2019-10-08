@@ -74,13 +74,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		//document.getElementById("results").innerHTML = d;
 		
 		function Timers(){
-			//var speed = new Array[];
+			var speed = new Array[];
 			
 			var time1 = setInterval(myTimer1,1000);//creates timer (calls function, time-interval between each execution			function myTimer1(){ //starts function
 			function myTimer1(){
 				var d1 = new Date1(); //date variable storing milliseconds
-				document.getElementById("Tsave").innerHTML = d.toLocaleTimeString();//defines data as local time
-				//speed.push(d1);
+				document.getElementById("Tsave").innerHTML = d1.toLocaleTimeString();//defines data as local time
+				speed.push(d1);
 				/*function reset(){
 					mycanvas.width = "650";//re-states canvas width
 					mycanvas.height = "350";//re-states canvas height
@@ -90,8 +90,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			var time2 = setInterval(myTimer2,1000);//creates timer (calls function, time-interval between each execution
 			function myTimer2(){ //starts function
 				var d2 = new Date2(); //date variable storing milliseconds
-				document.getElementById("Tsave2").innerHTML = d.toLocaleTimeString();//defines data as local time
-				//speed.push(d2);
+				document.getElementById("Tsave2").innerHTML = d2.toLocaleTimeString();//defines data as local time
+				speed.push(d2);
 				/*function reset(){
 					mycanvas.width = "650";//re-states canvas width
 					mycanvas.height = "350";//re-states canvas height
@@ -101,8 +101,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			var time3 = setInterval(myTimer3,1000);//creates timer (calls function, time-interval between each execution
 			function myTimer3(){ //starts function
 				var d3 = new Date3(); //date variable storing milliseconds
-				document.getElementById("Tsave3").innerHTML = d.toLocaleTimeString();//defines data as local time
-				//speed.push(d3);
+				document.getElementById("Tsave3").innerHTML = d3.toLocaleTimeString();//defines data as local time
+				speed.push(d3);
 				/*function reset(){
 					mycanvas.width = "650";//re-states canvas width
 					mycanvas.height = "350";//re-states canvas height
@@ -112,8 +112,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			var time4 = setInterval(myTimer4,1000);//creates timer (calls function, time-interval between each execution
 			function myTimer4(){ //starts function
 				var d4 = new Date4(); //date variable storing milliseconds
-				document.getElementById("Tsave4").innerHTML = d.toLocaleTimeString();//defines data as local time
-				//speed.push(d4);
+				document.getElementById("Tsave4").innerHTML = d4.toLocaleTimeString();//defines data as local time
+				speed.push(d4);
 				/*function reset(){
 					mycanvas.width = "650";//re-states canvas width
 					mycanvas.height = "350";//re-states canvas height
