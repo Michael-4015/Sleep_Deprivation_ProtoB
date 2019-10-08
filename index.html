@@ -30,8 +30,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<link rel="stylesheet" href="w3.css">
 		<link rel="stylesheet" href="w3-colors-flat.css">
-		<!--<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-		<script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>-->
+		<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 	</head>
 		
 	<script>
@@ -63,6 +63,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					if (i % 2 == 0){
 						width = 1;
 					}
+					
 					else{
 						width = 628;
 					}
@@ -72,57 +73,57 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
 					
 					if (i = 0){
-						alert ("timer0 is being called");
-						var time0 = setInterval(myTimer0,1000);//creates timer (calls function, time-interval between each execution
+						alert("timer0 is being called");
+						var time0 = setInterval(myTimer0 ,1000);//creates timer (calls function, time-interval between each execution
 						function myTimer0(){ //starts function
-						var d0 = new Date0(); //date variable storing milliseconds
-						document.getElementById("Tsave0").innerHTML = d0.toLocaleTimeString();//defines data as local time
-						//speed.push(d0);
-						/*function reset(){
-							mycanvas.width = "650";//re-states canvas width
-							mycanvas.height = "350";//re-states canvas height
-						}*/
+							var d0 = new Date(); //date variable storing milliseconds
+							document.getElementById("Tsave0").innerHTML = d0.toLocaleTimeString();//defines data as local time
+								//speed.push(d0);
+								/*function reset(){
+									mycanvas.width = "650";//re-states canvas width
+									mycanvas.height = "350";//re-states canvas height
+								}*/
 						}
 					}
 			
 					if (i = 1){
-						alert ("timer1 is being called");
-						var time1 = setInterval(myTimer1,1000);//creates timer (calls function, time-interval between each execution
+						alert("timer1 is being called");
+						var time1 = setInterval(myTimer1 ,1000);//creates timer (calls function, time-interval between each execution
 						function myTimer1(){ //starts function
-						var d1 = new Date1(); //date variable storing milliseconds
-						document.getElementById("Tsave1").innerHTML = d1.toLocaleTimeString();//defines data as local time
-						//speed.push(d1);
-						/*function reset(){
-							mycanvas.width = "650";//re-states canvas width
-							mycanvas.height = "350";//re-states canvas height
-						}*/
+							var d1 = new Date(); //date variable storing milliseconds
+							document.getElementById("Tsave1").innerHTML = d1.toLocaleTimeString();//defines data as local time
+								//speed.push(d1);
+								/*function reset(){
+									mycanvas.width = "650";//re-states canvas width
+									mycanvas.height = "350";//re-states canvas height
+								}*/
 						}
 					}
 
 					if (i = 2){
-						alert ("timer2 is being called");
-						var time2 = setInterval(myTimer2,1000);//creates timer (calls function, time-interval between each execution
+						alert("timer2 is being called");
+						var time2 = setInterval(myTimer2 ,1000);//creates timer (calls function, time-interval between each execution
 						function myTimer2(){ //starts function
-							var d2 = new Date2(); //date variable storing milliseconds
+							var d2 = new Date(); //date variable storing milliseconds
 							document.getElementById("Tsave2").innerHTML = d2.toLocaleTimeString();//defines data as local time
-							//speed.push(d2);
-							/*function reset(){
-								mycanvas.width = "650";//re-states canvas width
-								mycanvas.height = "350";//re-states canvas height
-							}*/
+								//speed.push(d2);
+								/*function reset(){
+									mycanvas.width = "650";//re-states canvas width
+									mycanvas.height = "350";//re-states canvas height
+								}*/
 						}
 					}
 					if (i = 3){
-						alert ("timer3 is being called");
-						var time3 = setInterval(myTimer3,1000);//creates timer (calls function, time-interval between each execution
+						alert("timer3 is being called");
+						var time3 = setInterval(myTimer3 ,1000);//creates timer (calls function, time-interval between each execution
 						function myTimer3(){ //starts function
-							var d3 = new Date3(); //date variable storing milliseconds
+							var d3 = new Date(); //date variable storing milliseconds
 							document.getElementById("Tsave3").innerHTML = d3.toLocaleTimeString();//defines data as local time
-							//speed.push(d3);
-							/*function reset(){
-								mycanvas.width = "650";//re-states canvas width
-								mycanvas.height = "350";//re-states canvas height
-							}*/
+								//speed.push(d3);
+								/*function reset(){
+									mycanvas.width = "650";//re-states canvas width
+									mycanvas.height = "350";//re-states canvas height
+								}*/
 						}
 					}
 					
@@ -159,7 +160,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<body>
 		<div id="header" class="w3-container w3-light-blue">
-				<h1>Sleep Deprivation Diagnostic</h1><!-- /header -->
+			<h1>Sleep Deprivation Diagnostic</h1><!-- /header -->
 		</div> <!-- /content -->
 			
 		<div id="content" class= "w3-container"> <!--first page of app-->
