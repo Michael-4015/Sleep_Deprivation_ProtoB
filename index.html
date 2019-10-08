@@ -73,7 +73,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
 					
 					if (i==0){
-						alert("timer is being called");
+						//alert("timer is being called");
 						var time = setInterval(myTimer ,1000);//creates timer (calls function, time-interval between each execution
 						function myTimer(){ //starts function
 							var d = new Date(); //date variable storing milliseconds
@@ -87,7 +87,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					}
 			
 					if (i==1){
-						alert("timer1 is being called");
+						//alert("timer1 is being called");
 						var time1 = setInterval(myTimer1 ,1000);//creates timer (calls function, time-interval between each execution
 						function myTimer1(){ //starts function
 							var d1 = new Date(); //date variable storing milliseconds
@@ -101,7 +101,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					}
 
 					if (i==2){
-						alert("timer2 is being called");
+						//alert("timer2 is being called");
 						var time2 = setInterval(myTimer2 ,1000);//creates timer (calls function, time-interval between each execution
 						function myTimer2(){ //starts function
 							var d2 = new Date(); //date variable storing milliseconds
@@ -114,7 +114,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 						}
 					}
 					if (i==3){
-						alert("timer3 is being called");
+						//alert("timer3 is being called");
 						var time3 = setInterval(myTimer3 ,1000);//creates timer (calls function, time-interval between each execution
 						function myTimer3(){ //starts function
 							var d3 = new Date(); //date variable storing milliseconds
@@ -131,9 +131,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				}
 			
 		}
+		function stop(){
+			clearInterval(time)
+		}
+		function stop1(){
+			clearInterval(time1)
+		}
+		function stop2(){
+			clearInterval(time2)
+		}
+		function stop3(){
+			clearInterval(time3)
+		}
 		//document.getElementById("results").innerHTML = speed;
 		
-		//function Timers(){}
+		
 		
 	</script>
 	
@@ -181,16 +193,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 
 					<p id="Tsave"></p>
-					<button onclick="clearInterval(time)">Stop time</button>
+					<button onclick="stop();">Stop time</button>
 					
 					<p id="Tsave1"></p>
-					<button onclick="clearInterval(time1)">Stop time</button>
+					<button onclick="stop1();">Stop time</button>
 					
 					<p id="Tsave2"></p>
-					<button onclick="clearInterval(time2)">Stop time</button>
+					<button onclick="stop2();">Stop time</button>
 					
 					<p id="Tsave3"></p>
-					<button onclick="clearInterval(time3)">Stop time</button>
+					<button onclick="stop3();">Stop time</button>
 					
 					<a href="#two" class="w3-btn w3-light-blue w3-round"> Results </a>
 				</div>
