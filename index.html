@@ -78,7 +78,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 						function myTimer(){ //starts function
 							var d = new Date(); //date variable storing milliseconds
 							document.getElementById("Tsave").innerHTML = d.toLocaleTimeString();//defines data as local time
-								//speed.push(d);
+							function stop(){
+								clearInterval(time);
+							}	
+							//speed.push(d);
 							
 								/*function reset(){
 									mycanvas.width = "650";//re-states canvas width
@@ -93,6 +96,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 						function myTimer1(){ //starts function
 							var d1 = new Date(); //date variable storing milliseconds
 							document.getElementById("Tsave1").innerHTML = d1.toLocaleTimeString();//defines data as local time
+							function stop1(){
+								clearInterval(time1);
+							}
 								//speed.push(d1);
 								/*function reset(){
 									mycanvas.width = "650";//re-states canvas width
@@ -107,7 +113,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 						function myTimer2(){ //starts function
 							var d2 = new Date(); //date variable storing milliseconds
 							document.getElementById("Tsave2").innerHTML = d2.toLocaleTimeString();//defines data as local time
-								speed.push(d2);
+							function stop2(){
+								clearInterval(time2);
+							}
+								//speed.push(d2);
 								/*function reset(){
 									mycanvas.width = "650";//re-states canvas width
 									mycanvas.height = "350";//re-states canvas height
@@ -120,6 +129,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 						function myTimer3(){ //starts function
 							var d3 = new Date(); //date variable storing milliseconds
 							document.getElementById("Tsave3").innerHTML = d3.toLocaleTimeString();//defines data as local time
+							function stop3(){
+								clearInterval(time3);
+							}
 								//speed.push(d3);
 								/*function reset(){
 									mycanvas.width = "650";//re-states canvas width
@@ -132,22 +144,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				}
 			
 		}
-		function stop(){
-			clearInterval(time);
-		}
-		function stop1(){
-			clearInterval(time1);
-		}
-		function stop2(){
-			clearInterval(time2);
-		}
-		function stop3(){
-			clearInterval(time3);
-		}
+		
 		//document.getElementById("results").innerHTML = speed;
-		
-		
-		
 	</script>
 	
 	<style>
