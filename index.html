@@ -39,6 +39,22 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 			console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
 		
+		var startTime, endTime; 
+		
+		function start() {
+			startTime = new Date();
+		}
+		
+		function end() {
+			endTime = new Date();
+			var timeDiff = endTime - startTime; //in ms
+				// strip the ms
+			timeDiff /= 1000;
+				// get seconds 
+				
+			var seconds = Math.round(timeDiff);
+  			console.log(seconds + " seconds");
+		}
 		
 		function draw(){
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
@@ -50,29 +66,29 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycontext.fill();
 		}
 		
+		var i = 0;
+		var width = 0;
 		
 		function letter(){
-			var width = 0;
-			var i = 0;
 			//var speed = new Array[];
-				while(i<4){
+				//while(i<4){
 					var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
 					var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
 					var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2dv
-					
+
 					if (i % 2 == 0){
 						width = 1;
 					}
-					
+
 					else{
 						width = 628;
 					}
-					
+
 					mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 					mycontext.fillStyle = "black";
 					mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
-					
-					if (i==0){
+					i++;
+					/*if (i==0){
 						//alert("timer is being called");
 						var time = setInterval(myTimer ,1000);//creates timer (calls function, time-interval between each execution
 						function myTimer(){ //starts function
@@ -82,67 +98,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 								clearInterval(time);
 							}	
 							//speed.push(d);
-							
-								/*function reset(){
-									mycanvas.width = "650";//re-states canvas width
-									mycanvas.height = "350";//re-states canvas height
-								}*/
 						}
-					}
-			
-					if (i==1){
-						//alert("timer1 is being called");
-						var time1 = setInterval(myTimer1 ,1000);//creates timer (calls function, time-interval between each execution
-						function myTimer1(){ //starts function
-							var d1 = new Date(); //date variable storing milliseconds
-							document.getElementById("Tsave1").innerHTML = d1.toLocaleTimeString();//defines data as local time
-							function stop1(){
-								clearInterval(time1);
-							}
-								//speed.push(d1);
-								/*function reset(){
-									mycanvas.width = "650";//re-states canvas width
-									mycanvas.height = "350";//re-states canvas height
-								}*/
-						}
-					}
+					}*/
 
-					if (i==2){
-						//alert("timer2 is being called");
-						var time2 = setInterval(myTimer2 ,1000);//creates timer (calls function, time-interval between each execution
-						function myTimer2(){ //starts function
-							var d2 = new Date(); //date variable storing milliseconds
-							document.getElementById("Tsave2").innerHTML = d2.toLocaleTimeString();//defines data as local time
-							function stop2(){
-								clearInterval(time2);
-							}
-								//speed.push(d2);
-								/*function reset(){
-									mycanvas.width = "650";//re-states canvas width
-									mycanvas.height = "350";//re-states canvas height
-								}*/
-						}
-					}
-					if (i==3){
-						//alert("timer3 is being called");
-						var time3 = setInterval(myTimer3 ,1000);//creates timer (calls function, time-interval between each execution
-						function myTimer3(){ //starts function
-							var d3 = new Date(); //date variable storing milliseconds
-							document.getElementById("Tsave3").innerHTML = d3.toLocaleTimeString();//defines data as local time
-							function stop3(){
-								clearInterval(time3);
-							}
-								//speed.push(d3);
-								/*function reset(){
-									mycanvas.width = "650";//re-states canvas width
-									mycanvas.height = "350";//re-states canvas height
-								}*/
-						}
-					}
-					
-					i++;
-				}
-			
+				//}
+
+			//}
+		}
+		
+		function reset(){
+			mycanvas.width = "650";//re-states canvas width
+			mycanvas.height = "350";//re-states canvas height
 		}
 		
 		//document.getElementById("results").innerHTML = speed;
@@ -175,7 +141,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		</div> <!-- /content -->
 			
 		<div id="content" class= "w3-container"> <!--first page of app-->
-			<h2>Instructions: </h2>
+			<h2>Instructions: </h2><!--need to update instructions-->
 			<p>Hold your phone sideways and stare at the red dot. A black square will flash on either side of the dot. 
 				When you see this sqaure, tap it. In between star flashes, stare at the red dot.</p>
 			<p>Press this button to start</p>
@@ -187,11 +153,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				</div>
 				<div id="content" class="w3-container">
 				
-					<button onclick="draw();letter();">Start</button>
+					<button onclick="start();draw();letter();">Start</button>
+					<button onclick="end();reset();">End</button>
 				
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 
-					<p id="Tsave"></p>
+					<!--<p id="Tsave"></p>
 					<button onclick="stop();">Stop time</button>
 					
 					<p id="Tsave1"></p>
@@ -202,7 +169,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					
 					<p id="Tsave3"></p>
 					<button onclick="stop3();">Stop time</button>
-					
+					-->
 					<a href="#two" class="w3-btn w3-light-blue w3-round"> Results </a>
 				</div>
 			</div>
