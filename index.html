@@ -96,10 +96,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			document.getElementById("time_list").innerHTML = timeDiff;
 		}
 		
-		/*function reset(){
-			mycontext.clear(0, 150, 50, 50);
-			mycontext.clear(600, 150, 50, 50);
-		}*/
+		function reset(){
+			mycontext.clear(0, 10, 650, 350);
+		}
 		
 	</script>
 	
@@ -144,7 +143,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				
 					<button onclick="start();draw();letter();">Start</button>
 					<button onclick="end();">End</button>
-					<!--<button onclick="reset();">Reset</button>-->
+					<button onclick="reset();">Reset</button>
 				
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 					<p id="time_list"></p>
@@ -162,23 +161,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				</div>
 			</div>
 		
-			<!--<div>
-				<p>Click the button once you see the target </p>
-				<a href = "#one" id = "show"; class="w3-btn w3-grey w3-round"> 
-					First Target </a>
-			</div>
-			
-			<div id="ans" style="display:none">
-				<input id="userdate" name="timestamp" value="dateOfUser">
-			</div>  
-			
-			</div>
-				<a href = "#one" id = "show"; class="w3-btn w3-grey w3-round"> 
-					Second Target </a>
-			<div id="ans" style="display:none">
-				<input id="userdate" name="timestamp" value="dateOfUser">
-			</div>
-			-->
 		</div>
 		
 		<div id = "footer" class="w3-bottom w3-panel w3-flat-alizarin" data-position= "fixed">
