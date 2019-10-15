@@ -79,6 +79,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 			mycontext.fillStyle = "black";
 			mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
+			if (i % 2 == 0){
+				mycontext.clear(0, 150, 50, 50);
+			}
+			else{
+				mycontext.clear(600, 150, 50, 50);
+				
+			}
 			i++;
 		}
 		
@@ -92,13 +99,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				
 			var seconds = Math.round(timeDiff);
   			//console.log(seconds + " seconds");
-			if (i % 2 == 0){
-				mycontext.clear(0, 150, 50, 50);
-			}
-			else{
-				mycontext.clear(600, 150, 50, 50);
-				
-			}
+			
 			document.getElementById("time_list").innerHTML = seconds;
 		}
 	</script>
