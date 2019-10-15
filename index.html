@@ -79,13 +79,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 			mycontext.fillStyle = "black";
 			mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
-			if (i % 2 == 0){
-				mycontext.clear(0, 150, 50, 50);
-			}
-			else{
-				mycontext.clear(600, 150, 50, 50);
-				
-			}
 			i++;
 		}
 		
@@ -102,6 +95,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			
 			document.getElementById("time_list").innerHTML = seconds;
 		}
+		
+		function reset(){
+			mycontext.clear(0, 150, 50, 50);
+			mycontext.clear(600, 150, 50, 50);
+		}
+		
 	</script>
 	
 	<style>
@@ -145,6 +144,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				
 					<button onclick="start();draw();letter();">Start</button>
 					<button onclick="end();">End</button>
+					<button onclick="reset();">Reset</button>
 				
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 					<p id="time_list"></p>
