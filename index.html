@@ -92,6 +92,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				
 			var seconds = Math.round(timeDiff);
   			//console.log(seconds + " seconds");
+			if (i % 2 == 0){
+				mycontext.clear(0, 150, 50, 50);
+			}
+			else{
+				mycontext.clear(600, 150, 50, 50);
+				
+			}
 			document.getElementById("time_list").innerHTML = seconds;
 		}
 	</script>
@@ -141,18 +148,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 					<p id="time_list"></p>
 
-					<!--<p id="Tsave"></p>
-					<button onclick="stop();">Stop time</button>
-					
-					<p id="Tsave1"></p>
-					<button onclick="stop1();">Stop time</button>
-					
-					<p id="Tsave2"></p>
-					<button onclick="stop2();">Stop time</button>
-					
-					<p id="Tsave3"></p>
-					<button onclick="stop3();">Stop time</button>
-					-->
 					<a href="#two" class="w3-btn w3-light-blue w3-round"> Results </a>
 				</div>
 			</div>
