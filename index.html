@@ -60,7 +60,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		}
 		
 		function draw(){
-			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
+			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'canvas'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
 			mycontext.beginPath();
 			mycontext.arc(325, 175, 10, 0, 2 * Math.PI);
@@ -109,9 +109,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			//}
 		}
 		
-		function reset(){
-			mycontext.clearCanv(0, 0, 650, 350);
-		}
+		/*function reset(){
+			mycontext.clear(0, 0, 650, 350);
+		}*/
 		
 		//document.getElementById("results").innerHTML = speed;
 	</script>
@@ -156,7 +156,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				<div id="content" class="w3-container">
 				
 					<button onclick="start();draw();letter();">Start</button>
-					<button onclick="end();reset();">End</button>
+					<button onclick="end();">End</button>
 				
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 					<p id="time_list"></p>
