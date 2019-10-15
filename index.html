@@ -46,20 +46,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			startTime = new Date();
 		}
 		
-		function end() {
-			alert("End function is being called");
-			endTime = new Date();
-			var timeDiff = endTime - startTime; //in ms
-				// strip the ms
-			timeDiff /= 1000;
-				// get seconds 
-				
-			var seconds = Math.round(timeDiff);
-  			//console.log(seconds + " seconds");
-			document.getElementById("time_list").innerHTML = seconds;
-			mycontext.clear(0, 0, 650, 350);
-		}
-		
 		function draw(){
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'canvas'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
@@ -74,40 +60,35 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		var width = 0;
 		
 		function letter(){
-			//var speed = new Array[];
-				//while(i<4){
-					var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
-					var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
-					var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2dv
+			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
+			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
+			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2dv
 
-					if (i % 2 == 0){
-						width = 1;
-					}
+			if (i % 2 == 0){
+				width = 1;
+			}
 
-					else{
-						width = 628;
-					}
-
-					mycontext.font = "bold 24px sans-serif"; //determines the font of the text
-					mycontext.fillStyle = "black";
-					mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
-					i++;
-					/*if (i==0){
-						//alert("timer is being called");
-						var time = setInterval(myTimer ,1000);//creates timer (calls function, time-interval between each execution
-						function myTimer(){ //starts function
-							var d = new Date(); //date variable storing milliseconds
-							document.getElementById("Tsave").innerHTML = d.toLocaleTimeString();//defines data as local time
-							function stop(){
-								clearInterval(time);
-							}	
-							//speed.push(d);
-						}
-					}*/
-
-				//}
-
-			//}
+			else{
+				width = 628;
+			}
+			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
+			mycontext.fillStyle = "black";
+			mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
+			i++;
+		}
+		
+		function end() {
+			alert("End function is being called");
+			endTime = new Date();
+			var timeDiff = endTime - startTime; //in ms
+				// strip the ms
+			timeDiff /= 1000;
+				// get seconds 
+				
+			var seconds = Math.round(timeDiff);
+  			//console.log(seconds + " seconds");
+			document.getElementById("time_list").innerHTML = seconds;
+			mycontext.clear(0, 0, 650, 350);
 		}
 	</script>
 	
