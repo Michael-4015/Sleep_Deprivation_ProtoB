@@ -52,7 +52,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		function draw(){
 			mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'canvas'
 			mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
-			mycontext.fillStyle = "gray";
 			mycontext.beginPath();
 			mycontext.arc(325, 175, 10, 0, 2 * Math.PI);
 			mycontext.stroke();
@@ -91,16 +90,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			timeDiff /= 1000;
 				// get seconds 
 				
-			var seconds = Math.round(timeDiff);
+			//var seconds = Math.round(timeDiff);
   			//console.log(seconds + " seconds");
 			
 			document.getElementById("time_list").innerHTML = seconds;
 		}
 		
-		function reset(){
+		/*function reset(){
 			mycontext.clear(0, 150, 50, 50);
 			mycontext.clear(600, 150, 50, 50);
-		}
+		}*/
 		
 	</script>
 	
@@ -145,7 +144,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				
 					<button onclick="start();draw();letter();">Start</button>
 					<button onclick="end();">End</button>
-					<button onclick="reset();">Reset</button>
+					<!--<button onclick="reset();">Reset</button>-->
 				
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 					<p id="time_list"></p>
