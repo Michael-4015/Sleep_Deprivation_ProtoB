@@ -55,7 +55,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				// get seconds 
 				
 			var seconds = Math.round(timeDiff);
-  			console.log(seconds + " seconds");
+  			//console.log(seconds + " seconds");
+			document.getElementById("time_list").innerHTML = seconds;
 		}
 		
 		function draw(){
@@ -159,6 +160,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					<button onclick="end();reset();">End</button>
 				
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
+					<p id="time_list"></p>
 
 					<!--<p id="Tsave"></p>
 					<button onclick="stop();">Stop time</button>
