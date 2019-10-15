@@ -46,9 +46,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			startTime = new Date();
 		}
 		
+		var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'canvas'
+		var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
+		
 		function draw(){
-			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'canvas'
-			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
 			mycontext.beginPath();
 			mycontext.arc(325, 175, 10, 0, 2 * Math.PI);
 			mycontext.stroke();
