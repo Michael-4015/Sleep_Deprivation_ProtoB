@@ -90,12 +90,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			timeDiff /= 1000;
 				// get seconds 
 			document.getElementById("time_list").innerHTML = timeDiff;
-			
-		}
-		function save(){
 			user_saccade.push(timeDiff);
 			document.getElementById("results").innerHTML = user_saccade;
+			
 		}
+		//function save(){
+			
+			
+		//}
 		
 		function reset(){
 			//alert("reset function is being called");
@@ -149,7 +151,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					<button onclick="start();draw();letter();">Start</button>
 					<button onclick="end();">End</button>
 					<button onclick="reset();">Reset</button>
-					<button onclick="save();">Save Time</button>
+					<!--<button onclick="save();">Save Time</button>-->
 				
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 					<p id="time_list"></p>
