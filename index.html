@@ -40,6 +40,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
 		
 		var startTime, endTime; 
+		var user_saccade=[];
 		
 		function start() {
 			alert("Start function is being called");
@@ -89,7 +90,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			timeDiff /= 1000;
 				// get seconds 
 			document.getElementById("time_list").innerHTML = timeDiff;
+			user_saccade.push(timeDiff);
 		}
+		
 		
 		function reset(){
 			alert("reset function is being called");
@@ -97,6 +100,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
 			mycanvas.width=650;
 			mycanvas.height=350;
+		}
+		
+		function getResults() { //will be triggered when Results button is pushed
+			document.getElementById("results").innerHTML = user_saccade[];
 		}
 		
 	</script>
