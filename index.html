@@ -19,7 +19,7 @@ Brief Description of Goal of Code:
 The goal is to create a web-based app that helps users who are likely to be college students determine if they are sleep deprived.
  
 Known Issues:
-LOTS RIGHT NOW
+ADD
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -142,9 +142,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			
 		<div id="content" class= "w3-container"> <!--first page of app-->
 			<h2>Instructions: </h2><!--need to update instructions-->
-			<p>Hold your phone sideways and stare at the red dot. A black square will flash on either side of the dot. 
-				When you see this sqaure, tap it. In between star flashes, stare at the red dot.</p>
-			<p>Press this button to start</p>
+			<p>Hold your phone sideways ___ inches from your face. When ready, press start and stare at the red dot. A black letter will flash on either side of the dot. 
+				When you see this letter, press the stop button. This will record an individual saccade. Press reset to start again. Repeat this at least 20 times 
+				before going to view your results for the most accurate diagnosis.</p>
+			<p>Click here to go to the test</p>
 			<a href="#one" class="w3-btn w3-light-blue w3-round"> Get Started </a>
 			
 			<div class = "page" id= "one">
@@ -156,13 +157,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					<button onclick="start();draw();setTimeout(letter, 1000);">Start</button>
 					<button onclick="end();">End</button>
 					<button onclick="reset();">Reset</button>
-					<!--<button onclick="save();">Save Time</button>-->
 				
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 					<p id="time_list"></p>
 					<p id="check"></p>
 
-					<a href="#two" class="w3-btn w3-light-blue w3-round"> Results </a>
+					<a href="#two" class="w3-btn w3-light-blue w3-round"> Go see results </a>
 				</div>
 			</div>
 			
@@ -171,7 +171,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					<h1>Sleep Deprivation Diagnostic</h1>
 				</div>
 				<div id="content" class="w3-container">
-					<p>Here is a list of all your saccade times</p>
+					<p>Here is a list of all your individual saccade times</p>
 					<p id="results"></p>
 					<button onclick="average();">Get Average</button>
 					<p id="avg"></p>
