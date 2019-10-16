@@ -86,8 +86,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		
 		function end() {
 			//alert("End function is being called");
+			var g = 1000; //delay time in ms for letter
 			endTime = new Date();
-			timeDiff = endTime - startTime; //in ms
+			timeDiff = endTime - startTime - g; //in ms
 				// strip the ms
 			timeDiff /= 1000;
 				// get seconds 
@@ -152,7 +153,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				</div>
 				<div id="content" class="w3-container">
 				
-					<button onclick="start();draw();setTimeout(letter, 3000);">Start</button>
+					<button onclick="start();draw();setTimeout(letter, 1000);">Start</button>
 					<button onclick="end();">End</button>
 					<button onclick="reset();">Reset</button>
 					<!--<button onclick="save();">Save Time</button>-->
