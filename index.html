@@ -94,6 +94,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		}
 		function save(){
 			user_saccade.push(timeDiff);
+			document.getElementById("results").innerHTML = user_saccade;
 		}
 		
 		function reset(){
@@ -103,9 +104,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycanvas.width=650;
 			mycanvas.height=350;
 		}
-		
-		document.getElementById("results").innerHTML = user_saccade;
-		document.getElementById("check").innerHTML = user_saccade.length;
 		
 	</script>
 	
