@@ -81,7 +81,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
 			i++;
 		}
+		
 		var timeDiff;
+		
 		function end() {
 			//alert("End function is being called");
 			endTime = new Date();
@@ -94,10 +96,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			document.getElementById("results").innerHTML = user_saccade;
 			
 		}
-		//function save(){
-			
-			
-		//}
 		
 		function reset(){
 			//alert("reset function is being called");
@@ -107,6 +105,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycanvas.height=350;
 		}
 		
+		function average(){
+			var sum = user_saccade.reduce((previous, current) => current += previous);
+			var avg = sum/user_saccade.length;
+			document.getElementById("avg").innerHTML = avg;
+		}
+			
 	</script>
 	
 	<style>
@@ -166,7 +170,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					<h1>Sleep Deprivation Diagnostic</h1>
 				</div>
 				<div id="content" class="w3-container">
+					<p>Here is a list of all your saccade times</p>
 					<p id="results"></p>
+					<button onclick="average();">Get Average</button>
+					<p id="avg"></p>
 				</div>
 			</div>
 		
