@@ -24,11 +24,12 @@ https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	<head>
-		<title>Sleep Deprivation</title>
+		<title>Sleep Deprivation</title> <!--overall title seen on tab-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<link rel="stylesheet" href="w3.css">
 		<link rel="stylesheet" href="w3-colors-flat.css">
+		<!--set up of the style of the web page-->
 	</head>
 		
 	<script>
@@ -36,62 +37,61 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 			console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
 		
-		var startTime, endTime; 
-		var user_saccade=[];
+		var startTime, endTime; //variable to record time start and end
+		var user_saccade=[]; //array variable to record list of times
 		
 		function start() {
 			//alert("Start function is being called");
-			startTime = new Date();
+			startTime = new Date(); //calls start time
 		}
 		
 		function draw(){
-			var mycanvas;
-			var mycontext;
+			var mycanvas;//variable set up to create a drawing canvas
+			var mycontext;//variable to provide context to the above canvas
 			mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'canvas'
 			mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
-			mycontext.beginPath();
-			mycontext.arc(325, 175, 10, 0, 2 * Math.PI);
-			mycontext.stroke();
-			mycontext.fillStyle = "red";
-			mycontext.fill();
+			mycontext.beginPath();//start drawing circle
+			mycontext.arc(325, 175, 10, 0, 2 * Math.PI);//dimensions of circle
+			mycontext.stroke();//printing actual line
+			mycontext.fillStyle = "red"; //defines fills with red 
+			mycontext.fill(); //fills in circle
 		}
 		
-		var i = 0;
-		var width = 0;
+		var i = 0; //counting variable to keep track of user's # of times recorded
+		var width = 0; //initialized width
 		
 		function letter(){
 			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
+			//random letter
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2dv
 
 			if (i % 2 == 0){
-			//	mycontext.clear(0, 150, 50, 50);
-				width = 1;
+				width = 1;//will print letter on left of canvas
 			}
 
 			else{
-			//	mycontext.clear(600, 150, 50, 50);
-				width = 628;
+				width = 628;//will print letter on right of canvas
 			}
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
-			mycontext.fillStyle = "black";
+			mycontext.fillStyle = "black"; //color for letter
 			mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
-			i++;
+			i++;//adds to counting variable, adds one
 		}
 		
-		var timeDiff;
+		var timeDiff;//variable to record difference in start and end time
 		
 		function end() {
 			//alert("End function is being called");
 			var g = 1000; //delay time in ms for letter
-			endTime = new Date();
-			timeDiff = endTime - startTime - g; //in ms
+			endTime = new Date();//records new time
+			timeDiff = endTime - startTime - g; //change in start and end time in ms
 				// strip the ms
 			timeDiff /= 1000;
 				// get seconds 
-			document.getElementById("time_list").innerHTML = timeDiff;
-			user_saccade.push(timeDiff);
-			document.getElementById("results").innerHTML = user_saccade;
+			document.getElementById("time_list").innerHTML = timeDiff; //prints the timeDiff
+			user_saccade.push(timeDiff);//adds timeDiff to the array
+			document.getElementById("results").innerHTML = user_saccade; //prints list of time
 			
 		}
 		
@@ -99,14 +99,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			//alert("reset function is being called");
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
-			mycanvas.width=650;
-			mycanvas.height=350;
+			mycanvas.width=650; //resets canvas width to 650
+			mycanvas.height=350; //resets canvas height to 350
 		}
 		
 		function average(){
-			var sum = user_saccade.reduce((previous, current) => current += previous);
-			var avg = sum/user_saccade.length;
-			document.getElementById("avg").innerHTML = avg;
+			var sum = user_saccade.reduce((previous, current) => current += previous);//sums list of times
+			var avg = sum/user_saccade.length;//divides sum by the # of times in array to get average
+			document.getElementById("avg").innerHTML = avg; //prints average
 		}
 			
 	</script>
@@ -134,32 +134,37 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<body>
 		<div id="header" class="w3-container w3-light-blue">
-			<h1>Sleep Deprivation Diagnostic</h1><!-- /header -->
-		</div> <!-- /content -->
+			<h1>Sleep Deprivation Diagnostic</h1>
+		</div> 
+		<!--header displayed on top of web page-->
 			
 		<div id="content" class= "w3-container"> <!--first page of app-->
-			<h2>Instructions: </h2><!--need to update instructions-->
+			<h2>Instructions: </h2><!--header 2 title -->
 			<p>Hold your phone sideways ___ inches from your face. When ready, press start and stare at the red dot. A black letter will flash on either side of the dot. 
 				When you see this letter, press the stop button. This will record an individual saccade. Press reset to start again. Repeat this at least 20 times 
 				before going to view your results for the most accurate diagnosis.</p>
-			<p>Click here to go to the test</p>
+			<!--prints instructions to use app-->
+			<p>Click here to go to the test</p><!--text of button-->
 			<a href="#one" class="w3-btn w3-light-blue w3-round"> Get Started </a>
+			<!--button to take user to second page-->
 			
-			<div class = "page" id= "one">
+			<div class = "page" id= "one"> <!--new page-->
 				<div id="header" class="w3-container w3-light-blue">
 					<h1>Sleep Deprivation Diagnostic</h1>
 				</div>
+				<!--header at top of page "one"-->
 				<div id="content" class="w3-container">
-				
-					<button onclick="start();draw();setTimeout(letter, 1000);">Start</button>
+					<!--below buttons call the functions listed within them when pressed-->
+					<button onclick="start();draw();setTimeout(letter, 1000);">Start</button><!--setTimeout calls letter but delays by 1 sec-->
 					<button onclick="end();">End</button>
 					<button onclick="reset();">Reset</button>
 				
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
-					<p id="time_list"></p>
-					<p id="check"></p>
+					<!--creates canas-->
+					<p id="time_list"></p><!--prints time difference-->
 
 					<a href="#two" class="w3-btn w3-light-blue w3-round"> Go see results </a>
+					<!--button to take user to next page-->
 				</div>
 			</div>
 			
@@ -167,11 +172,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				<div id="header" class="w3-container w3-light-blue">
 					<h1>Sleep Deprivation Diagnostic</h1>
 				</div>
+				<!-- header for page "two"-->
 				<div id="content" class="w3-container">
 					<p>Here is a list of all your individual saccade times</p>
 					<p id="results"></p>
+					<!--prints description and of list of individual time differences-->
 					<button onclick="average();">Get Average</button>
+					<!--calls function to calculate average-->
 					<p id="avg"></p>
+					<!--prints average-->
 				</div>
 			</div>
 		
@@ -179,6 +188,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		
 		<div data-role="footer" data-position="fixed">
       			<p>DIY Diagnostics</p>
-    		</div><!-- /footer -->
+    		</div>
+		<!-- footer -->
   	 </body>
 </html>
