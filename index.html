@@ -25,8 +25,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 -->
 	<head>
 		<title>Sleep Deprivation</title> <!--overall title seen on tab-->
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--<meta name="apple-mobile-web-app-capable" content="yes">-->
 		<!--<link rel="stylesheet" href="w3.css">-->
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<!--<link rel="stylesheet" href="w3-colors-flat.css">-->
@@ -78,6 +80,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			mycontext.fillStyle = "black"; //color for letter
 			mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
 			i++;//adds to counting variable, adds one
+			document.getElementById("trialcount").innerHTML = i;
 		}
 		
 		var timeDiff;//variable to record difference in start and end time
@@ -137,26 +140,42 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<!--<div id="header" class="w3-container w3-light-blue">
 			<h1>Sleep Deprivation Diagnostic</h1>
 		</div>-->
+		<!-- Navbar (sit on top) -->
+		<div class="w3-top">
+			<div class="w3-bar w3-white w3-wide w3-padding w3-card">
+				<a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
+		<!-- Float links to the right. Hide them on small screens -->
+    			<div class="w3-right w3-hide-small">
+				<a href="#home" class="w3-bar-item w3-button">Home</a>
+				<a href="#test" class="w3-bar-item w3-button">Test</a>
+				<a href="#results" class="w3-bar-item w3-button">Results</a>
+			</div>
+			</div>
+		</div>
 		<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+			<h1 class="w3-xxlarge w3-text-white">Sleep Deprivation Diagnostic</h1>
 		<!--header displayed on top of web page-->
 			
 		<!--<div id="content" class= "w3-container"> <!--first page of app-->
-		<div id="content" class="w3-display-middle w3-margin-top w3-center">
-			<h2>Instructions: </h2><!--header 2 title -->
+		<!-- Page content -->
+		<div class="w3-content w3-padding" style="max-width:1564px">
+		
+			<div class="w3-container w3-padding-32" id="home">
+				<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
+			</div>
 			<p>Hold your phone sideways at an arms length distance from your face. When ready, press start and stare at the red dot. A black letter will flash on either side of the dot. 
 				When you see this letter, press the stop button. This will record an individual saccade. Press reset to start again. Repeat this at least 20 times 
-				before going to view your results for the most accurate diagnosis.</p>
+				before going to view your results for the most accurate diagnosis. Find the test under the "Test" tab above.</p>
 			<!--prints instructions to use app-->
-			<p>Click here to go to the test</p><!--text of button-->
-			<a href="#one" class="w3-btn w3-light-blue w3-round"> Get Started </a>
+			<!--<p>Click here to go to the test</p><!--text of button-->
+			<!--<a href="#one" class="w3-btn w3-light-blue w3-round"> Get Started </a>
 			<!--button to take user to second page-->
 			
 			<!--<div class = "page" id= "one"> <!--new page-->
-			<div class = "w3-content w3-padding" id= "one">
+			<div class="w3-container w3-padding-32" id="test">
+				<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Test</h3>
 				<!--<div id="header" class="w3-container w3-light-blue">-->
-				<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Sleep Deprivation Diagnostic</h3>
 					<!--<h1>Sleep Deprivation Diagnostic</h1>-->
-				</div>
 				<!--header at top of page "one"-->
 				<!--<div id="content" class="w3-container">-->
 					<!--below buttons call the functions listed within them when pressed-->
@@ -166,19 +185,20 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 				
 					<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 					<!--creates canas-->
-					<p id="time_list"></p><!--prints time difference-->
+					<p id="time_list"> seconds</p><!--prints time difference-->
+					<p id="trialcount"> trials recorded</p><!--prints the number of saccades recorded-->
 
-					<a href="#two" class="w3-btn w3-light-blue w3-round"> Go see results </a>
+					<!--<a href="#two" class="w3-btn w3-light-blue w3-round"> Go see results </a>-->
 					<!--button to take user to next page-->
-				</div>
+				<!--</div>-->
 			</div>
 			
 			<!--<div class = "page" id= "two">-->
-			<div class = "w3-content w3-padding" id= "two">
+			<div class="w3-container w3-padding-32" id="results">
+				<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Results</h3>
 				<!--<div id="header" class="w3-container w3-light-blue">
 					<h1>Sleep Deprivation Diagnostic</h1>
 				</div>-->
-				<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Sleep Deprivation Diagnostic</h3>
 				<!-- header for page "two"-->
 				<!--<div id="content" class="w3-container">-->
 					<p>Here is a list of all your individual saccade times</p>
@@ -188,7 +208,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 					<!--calls function to calculate average-->
 					<p id="avg"></p>
 					<!--prints average-->
-				</div>
+				<!--</div>-->
 			</div>
 		
 		</div>
