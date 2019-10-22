@@ -76,7 +76,7 @@ No current function to output diagnostic.
 			mycontext.fillStyle = "black"; //color for letter
 			mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
 			i++;//adds to counting variable, adds one
-			document.getElementById("trialcount").innerHTML = i; //prints the number of trials recorded by user
+			document.getElementById("trialcount").innerHTML = i " trials"; //prints the number of trials recorded by user
 		}
 		
 		var timeDiff;//variable to record difference in start and end time
@@ -89,7 +89,7 @@ No current function to output diagnostic.
 				// strip the ms
 			timeDiff /= 1000;
 				// get seconds 
-			document.getElementById("time_list").innerHTML = timeDiff; //prints the timeDiff
+			document.getElementById("time_list").innerHTML = timeDiff " seconds"; //prints the timeDiff
 			user_saccade.push(timeDiff);//adds timeDiff to the array
 			document.getElementById("results").innerHTML = user_saccade; //prints list of time
 			
@@ -155,9 +155,9 @@ No current function to output diagnostic.
 				<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
 				<!--creates canas-->
 				<p><strong>Saccade Time</strong></p>
-				<p id="time_list">Click the button.</p><!--prints time difference-->
+				<p id="time_list"></p><!--prints time difference-->
 				<p><strong>You have completed</strong> 
-				<p id="trialcount">trials</p><!--prints the number of saccades recorded-->
+				<p id="trialcount"></p><!--prints the number of saccades recorded-->
 
 			<div class="w3-container w3-padding-32" id="results">
 				<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Results</h3>
