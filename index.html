@@ -93,7 +93,7 @@ varibale and cannot get the list of saccade times to print below the text explai
 				// get seconds 
 			document.getElementById("time_list").innerHTML = timeDiff; //prints the timeDiff
 			user_saccade.push(timeDiff);//adds timeDiff to the array
-			document.getElementById("results").innerHTML = user_saccade; //prints list of time
+			document.getElementById("fullresults").innerHTML = user_saccade; //prints list of time
 			
 		}
 		
@@ -168,7 +168,7 @@ varibale and cannot get the list of saccade times to print below the text explai
 			</div>
 			<!--results page with header-->
 				<p><strong>Above is a list of all your individual saccade times in seconds</strong></p>
-				<p id="results"></p>
+				<p id="fullresults"></p>
 				<!--prints description and of list of individual time differences-->
 				<button onclick="average();">Get Average</button>
 				<!--calls function to calculate average-->
