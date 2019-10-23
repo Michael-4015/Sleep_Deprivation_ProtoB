@@ -79,10 +79,10 @@ No current function to output diagnostic.
 			document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
 		}
 		
-		var timeDiff;//variable to record difference in start and end time
+		var timeDiff;//variable to record difference in start and stop time
 		
-		function end() {
-			//alert("End function is being called");
+		function stop() {
+			//alert("stop function is being called");
 			var g = 1000; //delay time in ms for letter
 			endTime = new Date();//records new time
 			timeDiff = endTime - startTime - g; //change in start and end time in ms
@@ -108,6 +108,16 @@ No current function to output diagnostic.
 			var avg = sum/user_saccade.length;//divides sum by the # of times in array to get average
 			document.getElementById("avg").innerHTML = avg; //prints average
 		}
+		
+		function restart(){
+			alert("restart function is being called");
+			user_saccade=[];
+			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
+			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
+			mycanvas.width=650; //resets canvas width to 650
+			mycanvas.height=350; //resets canvas height to 350
+		}
+			
 			
 	</script>
 	
@@ -136,7 +146,7 @@ No current function to output diagnostic.
 			</div>
 			<!--home page with header-->
 			<p>This app will diagnose if you are sleep deprived by measuring you horizontal saccadic velocity.
-				Hold your device longwise at an arms length distance from your face. When ready, press start 
+				Hold your device horizontally (longways) at an arms length distance from your face. When ready, press start 
 				and stare at the red dot. A black letter will flash on either side of the dot. 
 				When you see this letter, press the stop button. This will record an individual saccade in seconds. 
 				Press reset to start again. Repeat this at least 20 times before going to view your results for the 
@@ -149,11 +159,13 @@ No current function to output diagnostic.
 			<!--test page with header-->
 				<!--below buttons call the functions listed within them when pressed-->
 				<button onclick="start();draw();setTimeout(letter, 1000);">Start</button><!--setTimeout calls letter but delays by 1 sec-->
-				<button onclick="end();">End</button>
+				<button onclick="stop();">Stop</button>
 				<button onclick="reset();">Reset</button>
 				
 				<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
-				<!--creates canas-->
+				<!--creates canvas-->
+				<p>Make a mistake? No worries. Press this button to start over.</p>
+					<button onclick="restart();">Start over</button>
 				<p><strong>Saccade Time (seconds)</strong></p>
 				<p id="dif"></p><!--prints time difference-->
 				<p><strong>Trials completed</strong> 
