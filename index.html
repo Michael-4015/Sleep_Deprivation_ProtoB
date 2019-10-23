@@ -79,6 +79,15 @@ No current function to output diagnostic.
 			document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
 		}
 		
+		var x = 1;
+		
+		function getRandomIntInclusive(min, max){
+  			min = Math.ceil(min);
+  			max = Math.floor(max);
+  			x = Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+			x = x*1000;
+			return = x;
+		}
 		var timeDiff;//variable to record difference in start and stop time
 		
 		function stop() {
@@ -87,7 +96,7 @@ No current function to output diagnostic.
 			endTime = new Date();//records new time
 			timeDiff = endTime - startTime - g; //change in start and end time in ms
 				// strip the ms
-			timeDiff /= 1000;
+			timeDiff /= x;
 				// get seconds 
 			document.getElementById("dif").innerHTML = timeDiff; //prints the timeDiff
 			user_saccade.push(timeDiff);//adds timeDiff to the array
@@ -118,8 +127,7 @@ No current function to output diagnostic.
 			mycanvas.width=650; //resets canvas width to 650
 			mycanvas.height=350; //resets canvas height to 350
 		}
-			
-			
+					
 	</script>
 	
 	<body>
@@ -159,7 +167,7 @@ No current function to output diagnostic.
 			</div>
 			<!--test page with header-->
 				<!--below buttons call the functions listed within them when pressed-->
-				<button onclick="start();draw();setTimeout(letter, 1000);">Start</button><!--setTimeout calls letter but delays by 1 sec-->
+				<button onclick="start();draw();setTimeout(letter, getRandomIntInclusive(1, 7));">Start</button><!--setTimeout calls letter but delays by 1 sec-->
 				<button onclick="stop();">Stop</button>
 				<button onclick="reset();">Reset</button>
 				
