@@ -82,6 +82,7 @@ No current function to output diagnostic.
 		var x = 1;
 		
 		function getRandomIntInclusive(min, max){
+			alert("random int is being called");
   			min = Math.ceil(min);
   			max = Math.floor(max);
   			x = Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
@@ -91,7 +92,6 @@ No current function to output diagnostic.
 		var timeDiff;//variable to record difference in start and stop time
 		
 		function stop() {
-			//alert("stop function is being called");
 			var g = 1000; //delay time in ms for letter
 			endTime = new Date();//records new time
 			timeDiff = endTime - startTime - g; //change in start and end time in ms
@@ -105,7 +105,6 @@ No current function to output diagnostic.
 		}
 		
 		function reset(){
-			//alert("reset function is being called");
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
 			mycanvas.width=650; //resets canvas width to 650
@@ -119,7 +118,6 @@ No current function to output diagnostic.
 		}
 		
 		function restart(){
-			alert("restart function is being called");
 			user_saccade=[];
 			i = 0;
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
@@ -167,7 +165,7 @@ No current function to output diagnostic.
 			</div>
 			<!--test page with header-->
 				<!--below buttons call the functions listed within them when pressed-->
-				<button onclick="start();draw();setTimeout(letter, getRandomIntInclusive(1, 7));">Start</button><!--setTimeout calls letter but delays by 1 sec-->
+				<button onclick="start();draw();setTimeout(letter, getRandomIntInclusive(1,7));">Start</button><!--setTimeout calls letter but delays by 1 sec-->
 				<button onclick="stop();">Stop</button>
 				<button onclick="reset();">Reset</button>
 				
