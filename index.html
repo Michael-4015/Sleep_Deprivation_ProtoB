@@ -59,7 +59,7 @@ No current function to output diagnostic.
 		var i = 0; //counting variable to keep track of user's # of times recorded
 		var width = 0; //initialized width
 		
-		set.Timeout(function letter(){
+		function set.Timout(letter(){
 			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
 			//random letter
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
@@ -77,14 +77,7 @@ No current function to output diagnostic.
 			mycontext.fillText(randomletter,width,175); //declares and prints the text and gives placement
 			i++;//adds to counting variable, adds one
 			document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
-		},function getRandomIntInclusive(min, max){
-			alert("random int is being called");
-  			min = Math.ceil(min);
-  			max = Math.floor(max);
-  			x = Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
-			x = x*1000;
-			return = x;
-		});
+		},1000);
 		
 		var x = 1;
 		
@@ -104,7 +97,7 @@ No current function to output diagnostic.
 			endTime = new Date();//records new time
 			timeDiff = endTime - startTime - g; //change in start and end time in ms
 				// strip the ms
-			timeDiff /= x;
+			timeDiff /= 1000;
 				// get seconds 
 			document.getElementById("dif").innerHTML = timeDiff; //prints the timeDiff
 			user_saccade.push(timeDiff);//adds timeDiff to the array
