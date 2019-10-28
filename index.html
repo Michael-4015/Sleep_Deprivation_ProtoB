@@ -134,6 +134,25 @@ No current function to output diagnostic.
 					
 	</script>
 	
+	<style>
+		.button {
+			background-color: #99ccff; /* blue */
+			border: none;
+			color: black;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+
+		.button1 {width: 250px;}
+		.button2 {width: 50%;}
+		.button3 {width: 100%;}
+	</style>
+	
 	<body>
 		<!-- Navbar (sit on top) -->
 		<div class="w3-top">
@@ -184,7 +203,7 @@ No current function to output diagnostic.
 			</div>
 			<!--test page with header-->
 				<!--below buttons call the functions listed within them when pressed-->
-				<button style= "width: 20px; height: 20px; onclick="start();draw();setTimeout(letter,1000);">Start</button><!--setTimeout calls letter but delays by 1 sec-->
+				<button class="button button2" onclick="start();draw();setTimeout(letter,1000);">Start</button><!--setTimeout calls letter but delays by 1 sec-->
 				<button onclick="stop();">Stop</button>
 				<button onclick="reset();">Reset</button>
 				
