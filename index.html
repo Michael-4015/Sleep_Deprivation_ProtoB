@@ -65,7 +65,9 @@ No current function to output diagnostic.
 				var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
 				//random letter
 				var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
-				var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2dv
+				var mycontext = mycanvas.getContext("2d");
+				mycontext.canvas.width = window.innerWidth;
+				mycontext.canvas.height = window.innerHeight;//sets up the context of the function with 2dv
 
 				if (i % 2 == 0){
 					width = 1;//will print letter on left of canvas
@@ -113,8 +115,8 @@ No current function to output diagnostic.
 		function reset(){
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
-			mycanvas.width=650; //resets canvas width to 650
-			mycanvas.height=350; //resets canvas height to 350
+			mycanvas.width= window.innerWidth; //resets canvas width to 650
+			mycanvas.height= window.innerHeight; //resets canvas height to 350
 		}
 		
 		function average(){
@@ -207,7 +209,7 @@ No current function to output diagnostic.
 				<button class="button button3" onclick="stop();">Stop</button>
 				<button class="button button3" onclick="reset();">Reset</button>
 				
-				<canvas id= "canvas" width="650" height="350" style= "border:1px solid #000000;"></canvas>
+				<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
 				<!--creates canvas-->
 				<p>Make a mistake? No worries. Press this button to start over.</p>
 					<button onclick="restart();">Start over</button>
