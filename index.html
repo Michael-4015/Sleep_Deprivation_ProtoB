@@ -159,13 +159,23 @@ No current function to output diagnostic.
 		.button1 {width: 250px;}
 		.button2 {width: 50%;}
 		.button3 {width: 100%;}
+		
+		div.sticky {
+  			position: -webkit-sticky;
+ 			position: sticky;
+  			top: 0;
+  			padding: 5px;
+  			background-color: #cae8ca;
+  			border: 2px solid #4CAF50;
+		}
 	</style>
 	
 	<body>
 		<!-- Navbar (sit on top) -->
 		<div class="w3-top">
 			<div class="w3-bar w3-white w3-wide w3-padding w3-card">
-				<a href="#home" class="w3-bar-item w3-button"><b>Sleep Deprivation Diagnostic</b> - DIY</a>
+				<!--<a href="#home" class="w3-bar-item w3-button"><b>Sleep Deprivation Diagnostic</b> - DIY</a>-->
+				<h1>Sleep Deprivation Diagnostic</h1>
 		<!-- Float links to the right. Hide them on small screens -->
     			<div class="w3-right w3-hide-small">
 				<a href="#instructions" class="w3-bar-item w3-button">Instructions</a>
@@ -211,9 +221,11 @@ No current function to output diagnostic.
 			</div>
 			<!--test page with header-->
 				<!--below buttons call the functions listed within them when pressed-->
+				<div class="sticky">
 				<button class="button button3" onclick="start();draw();setTimeout(letter,1000);">Start</button><!--setTimeout calls letter but delays by 1 sec-->
 				<button class="button button3" onclick="stop();">Stop</button>
 				<button class="button button3" onclick="reset();">Reset</button>
+				</div>
 				
 				<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
 				<!--creates canvas-->
