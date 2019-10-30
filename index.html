@@ -160,12 +160,29 @@ No current function to output diagnostic.
 		.button2 {width: 50%;}
 		.button3 {width: 100%;}
 		
-		div.sticky {
+		/*div.sticky {
   			position: -webkit-sticky;
  			position: sticky;
   			top: 15px;
 			bottom: 5px;
   			padding: 5px;
+		}*/
+		
+		div.relative {
+			position: relative;
+			width: 400px;
+			height: 200px;
+			border: 3px solid #73AD21;
+		} 
+		
+		div.absolute {
+			padding: 15px 32px;
+			position: absolute;
+			top: 80px;
+			right: 0;
+			width: auto;
+			height: 25%;
+			border: 3px solid #73AD21;
 		}
 		
 	</style>
@@ -222,13 +239,15 @@ No current function to output diagnostic.
 			</div>
 			<!--test page with header-->
 				<!--below buttons call the functions listed within them when pressed-->
-				<div class="sticky">
-				<button class="button button2" onclick="start();draw();setTimeout(letter,1000);">Start</button><!--setTimeout calls letter but delays by 1 sec-->
-				<button class="button button2" onclick="stop();">Stop</button>
-				<!--<button class="button button3" onclick="reset();">Reset</button>-->
+				<div class="relative">
+					<button class="button button2" onclick="start();draw();setTimeout(letter,1000);">Start</button><!--setTimeout calls letter but delays by 1 sec-->
+					<button class="button button2" onclick="stop();">Stop</button>
+					<!--<button class="button button3" onclick="reset();">Reset</button>-->
 				</div>
 				
-				<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
+				<div class="absolute">
+					<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
+				</div>
 				<!--creates canvas-->
 				<p>Make a mistake? No worries. Press this button to start over.</p>
 					<button onclick="restart();">Start over</button>
