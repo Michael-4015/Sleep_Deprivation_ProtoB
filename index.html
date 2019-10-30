@@ -140,7 +140,7 @@ No current function to output diagnostic.
 			mycanvas.height=h; //resets canvas height to 350
 		}
 		
-		interact('.resize-drag')
+		/*interact('.resize-drag')
   			.draggable({
     				onmove: window.dragMoveListener,
     				modifiers: [
@@ -190,7 +190,7 @@ No current function to output diagnostic.
     		target.setAttribute('data-x', x)
     		target.setAttribute('data-y', y)
     		target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
-	    })
+	    })*/
 
 					
 	</script>
@@ -213,12 +213,26 @@ No current function to output diagnostic.
 		.button2 {width: 50%;}
 		.button3 {width: 100%;}
 		
+		.container {
+  			display: flex;
+  			justify-content: space-around;
+  			align-items: flex-start;
+
+  			border: 2px dashed rgba(114, 186, 94, 0.35);
+  			height: 400px;
+  			background: rgba(114, 186, 94, 0.05);
+		}
+		
 		div.sticky {
-  			position: -webkit-sticky;
+  			/*position: -webkit-sticky;
  			position: sticky;
   			top: 15px;
 			bottom: 5px;
-  			padding: 5px;
+  			padding: 5px;*/
+			position: -webkit-sticky;
+  			position: sticky;
+  			bottom: 1rem;
+  			align-self: flex-end;
 		}
 		
 		/*div.relative {
@@ -236,11 +250,11 @@ No current function to output diagnostic.
 			height: 25%;
 		}*/
 		
-		.resize-drag {
-			/*background-color: #29e;
+		/*.resize-drag {
+			background-color: #29e;
 			color: white;
 			font-size: 20px;
-			font-family: sans-serif;*/
+			font-family: sans-serif;
 			border-radius: 8px;
 			padding: 20px;
 			margin: 30px 20px;
@@ -248,7 +262,7 @@ No current function to output diagnostic.
 			
 			width: 120px;
 
-  			/* This makes things *much* easier */
+  			 This makes things *much* easier 
   			box-sizing: border-box;
 			}
 
@@ -256,8 +270,8 @@ No current function to output diagnostic.
   			display: inline-block;
   			width: 100%;
   			height: 240px;
-		}
-
+		}*/
+		
 		
 	</style>
 	
@@ -317,13 +331,14 @@ No current function to output diagnostic.
 					<button class="button button2" onclick="start();draw();setTimeout(letter,1000);">Start</button><!--setTimeout calls letter but delays by 1 sec-->
 					<button class="button button2" onclick="stop();">Stop</button>
 					<!--<button class="button button3" onclick="reset();">Reset</button>-->
+					<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
 				</div>
 				
-				<div class="resize-container">
+				<!--<div class="resize-container">
 					<div class="resize-drag">
 						<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
 					</div>
-				</div>
+				</div>-->
 				<!--creates canvas-->
 				<p>Make a mistake? No worries. Press this button to start over.</p>
 					<button onclick="restart();">Start over</button>
