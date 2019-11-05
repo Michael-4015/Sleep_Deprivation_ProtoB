@@ -65,30 +65,30 @@ No current function to output diagnostic.
 		var i = 0; //counting variable to keep track of user's # of times recorded
 		var width = 0; //initialized width
 		
-		
-			
-		function letter(){
-			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
-			//random letter
-			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
-			var mycontext = mycanvas.getContext("2d");
-			//mycontext.canvas.width = w;
-			//mycontext.canvas.height = h;//sets up the context of the function with 2dv
-
-			if (i % 2 == 0){
-				width = 1;//will print letter on left of canvas
+		//function delay(){
+			//setTimout(
+			function letter(){
+				var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
+				//random letter
+				var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
+				var mycontext = mycanvas.getContext("2d");
+				//mycontext.canvas.width = w;
+				//mycontext.canvas.height = h;//sets up the context of the function with 2dv
+				if (i % 2 == 0){
+					width = 1;//will print letter on left of canvas
+				}
+				else{
+					width = w-50;//will print letter on right of canvas
+				}
+				var medium_h = h/2;
+				mycontext.font = "bold 24px sans-serif"; //determines the font of the text
+				mycontext.fillStyle = "black"; //color for letter
+				mycontext.fillText(randomletter,width,medium_h); //declares and prints the text and gives placement
+				i++;//adds to counting variable, adds one
+				document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
 			}
-
-			else{
-				width = w-50;//will print letter on right of canvas
-			}
-			var medium_h = h/2;
-			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
-			mycontext.fillStyle = "black"; //color for letter
-			mycontext.fillText(randomletter,width,medium_h); //declares and prints the text and gives placement
-			i++;//adds to counting variable, adds one
-			document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
-		}
+		//,1000);
+		//}
 		
 		//var x = 1;
 		
@@ -137,6 +137,51 @@ No current function to output diagnostic.
 			mycanvas.width=w; //resets canvas width to 650
 			mycanvas.height=h; //resets canvas height to 350
 		}
+		
+		/*interact('.resize-drag')
+  			.draggable({
+    				onmove: window.dragMoveListener,
+    				modifiers: [
+      					interact.modifiers.restrictRect({
+        				restriction: 'parent'
+      					})
+    				]
+ 			 })
+  		.resizable({
+    		// resize from all edges and corners
+    		edges: { left: true, right: true, bottom: true, top: true },
+    		modifiers: [
+      		// keep the edges inside the parent
+      			interact.modifiers.restrictEdges({
+        			outer: 'parent',
+		   		endOnly: true
+      			}),
+     		// minimum size
+      			interact.modifiers.restrictSize({
+        			min: { width: 100, height: 50 }
+      			})
+   	 	],
+    		inertia: true
+  		})
+ 		
+		.on('resizemove', function (event) {
+    			var target = event.target
+    			var x = (parseFloat(target.getAttribute('data-x')) || 0)
+    			var y = (parseFloat(target.getAttribute('data-y')) || 0)
+    		// update the element's style
+    		
+		target.style.width = event.rect.width + 'px'
+    		target.style.height = event.rect.height + 'px'
+    		// translate when resizing from top or left edges
+    		
+		x += event.deltaRect.left
+    		y += event.deltaRect.top
+    		target.style.webkitTransform = target.style.transform =
+        	'translate(' + x + 'px,' + y + 'px)'
+    		target.setAttribute('data-x', x)
+    		target.setAttribute('data-y', y)
+    		target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
+	    })*/
 					
 	</script>
 	
@@ -153,7 +198,6 @@ No current function to output diagnostic.
 			margin: 4px 2px;
 			cursor: pointer;
 		}
-
 		.button1 {width: 250px;}
 		.button2 {width: 50%;}
 		.button3 {width: 100%;}
@@ -162,14 +206,13 @@ No current function to output diagnostic.
   			display: flex;
   			justify-content: space-around;
   			align-items: flex-start;
-
   			border: 2px dashed rgba(114, 186, 94, 0.35);
   			height: 400px;
   			background: rgba(114, 186, 94, 0.05);
 		}*/
 		
 		div.sticky {
-  			position: -webkit-sticky; /*safari*/
+  			position: -webkit-sticky;
  			position: sticky;
   			top: 15px;
 			bottom: 5px;
@@ -178,6 +221,42 @@ No current function to output diagnostic.
   			position: sticky;
   			top: 4rem;
 		}
+		
+		/*div.relative {
+			position: relative;
+			width: 400px;
+			height: 200px;
+		} 
+		
+		div.absolute {
+			padding: 15px 32px;
+			position: absolute;
+			top: 500px;
+			right: 0;
+			width: auto;
+			height: 25%;
+		}*/
+		
+		/*.resize-drag {
+			background-color: #29e;
+			color: white;
+			font-size: 20px;
+			font-family: sans-serif;
+			border-radius: 8px;
+			padding: 20px;
+			margin: 30px 20px;
+			touch-action: none;
+			
+			width: 120px;
+  			 This makes things *much* easier 
+  			box-sizing: border-box;
+			}
+		.resize-container {
+  			display: inline-block;
+  			width: 100%;
+  			height: 240px;
+		}*/
+		
 		
 	</style>
 	
@@ -234,13 +313,17 @@ No current function to output diagnostic.
 			<!--test page with header-->
 				<!--below buttons call the functions listed within them when pressed-->
 				<div class="sticky">
-					<button class="button button2" onclick="start();draw();delay();setTimeout(letter,1000);">Start</button><!--setTimeout calls letter but delays by 1 sec-->
+					<button class="button button2" onclick="start();draw();setTimeout(letter,1000);">Start</button><!--setTimeout calls letter but delays by 1 sec-->
 					<button class="button button2" onclick="stop();">Stop</button>
 					<!--<button class="button button3" onclick="reset();">Reset</button>-->
 				</div>
 				<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
+				<!--<div class="resize-container">
+					<div class="resize-drag">
+						<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
+					</div>
+				</div>-->
 				<!--creates canvas-->
-			
 				<p>Make a mistake? No worries. Press this button to start over.</p>
 					<button onclick="restart();">Start over</button>
 				<p><strong>Saccade Time (seconds)</strong></p>
