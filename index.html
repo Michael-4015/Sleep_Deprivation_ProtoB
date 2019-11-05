@@ -65,8 +65,8 @@ No current function to output diagnostic.
 		var i = 0; //counting variable to keep track of user's # of times recorded
 		var width = 0; //initialized width
 		
-		//function delay(){
-			//setTimout(
+		function delay(){
+			setTimout(
 			function letter(){
 				var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
 				//random letter
@@ -89,8 +89,8 @@ No current function to output diagnostic.
 				i++;//adds to counting variable, adds one
 				document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
 			}
-		//,1000);
-		//}
+		,1000);
+		}
 		
 		//var x = 1;
 		
@@ -327,9 +327,9 @@ No current function to output diagnostic.
 			<!--test page with header-->
 				<!--below buttons call the functions listed within them when pressed-->
 				<div class="sticky">
-					<button class="button button2" onclick="start();draw();setTimeout(letter,1000);">Start</button><!--setTimeout calls letter but delays by 1 sec-->
+					<button class="button button2" onclick="start();draw();delay();">Start</button><!--setTimeout calls letter but delays by 1 sec-->
 					<button class="button button2" onclick="stop();">Stop</button>
-					<!--<button class="button button3" onclick="reset();">Reset</button>-->
+					<!--<button class="button button3" onclick="reset();">Reset</button>setTimeout(letter,1000);-->
 				</div>
 				<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
 				<!--<div class="resize-container">
