@@ -65,8 +65,11 @@ No current function to output diagnostic.
 		var i = 0; //counting variable to keep track of user's # of times recorded
 		var width = 0; //initialized width
 		
+		var rand = 0;
+		
 		function letterdelay(){
-			setTimeout(letter, 1000 + Math.random() * (30 - 5) * 1000);
+			rand = Math.random()*1000;
+			setTimeout(letter, 1000 + rand);
 		}
 		//document.addEventListener("load", letterdelay, false);
 		
@@ -105,9 +108,9 @@ No current function to output diagnostic.
 		var timeDiff;//variable to record difference in start and stop time
 		
 		function stop() {
-			var g = 1000; //delay time in ms for letter
+			//var g = 1000; //delay time in ms for letter
 			endTime = new Date();//records new time
-			timeDiff = endTime - startTime - g; //change in start and end time in ms
+			timeDiff = endTime - startTime - rand; //change in start and end time in ms
 				// strip the ms
 			timeDiff /= 1000;
 				// get seconds 
