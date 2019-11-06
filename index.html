@@ -130,6 +130,15 @@ No current function to output diagnostic.
 			mycanvas.width=w; //resets canvas width to 650
 			mycanvas.height=h; //resets canvas height to 350
 		}
+		 // Copy canvas as image data
+ 		var imgData = mycontext.getImageData(0,0, mycanvas.width, mycanvas.height);
+ 
+  		// Resize original canvas
+  		mycanvas.width = window.innerWidth;
+  		mycanvas.height = window.innerHeight;
+ 
+  		// Copy back to resized canvas
+  		mycontext.putImageData(imgData, 0, 0);
 		
 		function init() {
         		mycanvas = document.getElementById("canvas");
