@@ -130,6 +130,22 @@ No current function to output diagnostic.
 			mycanvas.width=w; //resets canvas width to 650
 			mycanvas.height=h; //resets canvas height to 350
 		}
+		
+		function init() {
+        		mycanvas = document.getElementById("canvas");
+        		if (mycanvas.getContext) {
+          			mycontext = mycanvas.getContext("2d");
+ 
+          		window.addEventListener('resize', resizeCanvas, false);
+          		window.addEventListener('orientationchange', resizeCanvas, false);
+          		resizeCanvas();
+        		}
+     		}
+ 
+      		function resizeCanvas() {
+        		mycanvas.width = window.innerWidth;
+        		mycanvas.height = window.innerHeight;
+      		}
 					
 	</script>
 	
