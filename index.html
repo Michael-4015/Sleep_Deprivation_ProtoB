@@ -179,7 +179,7 @@ No current function to output diagnostic.
 		.button2 {width: 50%;}
 		.button3 {width: 100%;}
 		
-		.container {
+		/*.container {
   			display: flex;
   			align-items: center;
   			overflow-y: auto;
@@ -193,8 +193,8 @@ No current function to output diagnostic.
   			top: 29px;
 			/*bottom: 15px;
   			padding: 10px;
-  			/*top: 10rem;*/
-		}
+  			/*top: 10rem;
+		}*/
 		/*(div[description]{
 			max-width: 50%;
 			position: -webkit-sticky;
@@ -301,15 +301,28 @@ No current function to output diagnostic.
 			<!--<scroller>-->
 				<!--<div class="sticky">
 				<!--<div item>-->
-			<div class="uk-card uk-card-default uk-card-body" style="z-index: 980;" uk-sticky="bottom: #offset">
-				<div description><button class="button button2" onclick="start();draw();letterdelay()">Start</button></div><!--setTimeout calls letter but delays by 1 sec-->
-				<div description><button class="button button2" onclick="stop();">Stop</button></div>
+			<div class="uk-child-width-1-2@s" uk-grid>
+    				<div>
+        				<div>
+            					<div class="uk-card uk-card-default uk-card-body" style="z-index: 980;" uk-sticky="bottom: #container-2">
+							<div description>
+								<button class="button button2" onclick="start();draw();letterdelay()">Start</button></div><!--setTimeout calls letter but delays by 1 sec-->
+								<div description><button class="button button2" onclick="stop();">Stop</button>
+							</div>
+						</div>
+        				</div>
+    				</div>
 			</div>
+
+			<h3 id="container-2">Make a mistake? No worries. Press this button to start over.</h3>
+			<button onclick="restart();">Start over</button>
+				
+			
 					
 					<!--<button class="button button3" onclick="reset();">Reset</button>setTimeout(letter,1000);-->
 					<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
-					<p>Make a mistake? No worries. Press this button to start over.</p>
-					<button onclick="restart();">Start over</button>
+					
+					
 				<!--</div>
 				<!--</div>-->
 				
@@ -349,7 +362,7 @@ No current function to output diagnostic.
 		</div><!--ends page content-->
 		
 		<footer class="w3-center w3-black w3-padding-16">
-			<b>DIY Diagnostics CHANGE</b>
+			<b>DIY Diagnostics</b>
 			<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  			<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 		</footer>
