@@ -305,22 +305,22 @@ No current function to output diagnostic.
     				<div>
         				<div>
             					<div class="uk-card uk-card-default uk-card-body" style="z-index: 980;" uk-sticky="bottom: #container-2">
-							<div description>
-								<button class="button button2" onclick="start();draw();letterdelay()">Start</button></div><!--setTimeout calls letter but delays by 1 sec-->
-								<div description><button class="button button2" onclick="stop();">Stop</button>
-							</div>
+							<div description><button class="button button2" onclick="start();draw();letterdelay()">Start</button></div><!--setTimeout calls letter but delays by 1 sec-->
+							<div description><button class="button button2" onclick="stop();">Stop</button></div>
 						</div>
         				</div>
     				</div>
 			</div>
-
-			<h3 id="container-2">Make a mistake? No worries. Press this button to start over.</h3>
+			
+			<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
+			
+			<p id="container-2">Make a mistake? No worries. Press this button to start over.</p>
 			<button onclick="restart();">Start over</button>
 				
 			
 					
 					<!--<button class="button button3" onclick="reset();">Reset</button>setTimeout(letter,1000);-->
-					<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
+					
 					
 					
 				<!--</div>
