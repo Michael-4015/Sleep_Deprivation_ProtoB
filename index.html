@@ -193,8 +193,7 @@ No current function to output diagnostic.
   			/*top: 10rem;
 		}*/
 		div[description]{
-			max-width: 40px;
-			height: 200px;
+			max-width: 50%;
 			position: -webkit-sticky;
 			position: sticky;
 			top: 0; /* <-- become sticky once touching left edge */
@@ -203,15 +202,15 @@ No current function to output diagnostic.
 		scroller{
   			display: flex;
   			align-items: center;
-  			overflow-x: auto;
-  			overflow-y: hidden;
-  			background: #000;
+  			overflow-Y: auto;
+  			overflow-X: hidden;
+  			background: #fff;
 		}
 
 		div[wrapper]{
 			flex: 0 0 40px;
-  			max-width: 40px;
-  			height: 200px;
+  			max-width: 50%;
+  			/*height: 200px;*/
   			position: -webkit-sticky;
   			position: sticky;
   			top: 0;
@@ -226,8 +225,8 @@ No current function to output diagnostic.
 		div[description] span{
   			display: inline-block;
   			/*background: rgba(0,0,0,.5);*/
-  			width: 200px;
-  			height: 40px;
+  			width: 50%;
+  			/*height: 40px;*/
   			transform: rotate(-90deg) translateX(-200px);
   			transform-origin: top 0;
   			padding-top: 11px;
