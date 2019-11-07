@@ -176,7 +176,7 @@ No current function to output diagnostic.
 		.button2 {width: 50%;}
 		.button3 {width: 100%;}
 		
-		.container {
+		/*.container {
   			display: flex;
   			align-items: center;
   			overflow-y: auto;
@@ -188,20 +188,62 @@ No current function to output diagnostic.
   			position: -webkit-sticky;
  			position: sticky;
   			top: 29px;
-			/*bottom: 15px;*/
+			/*bottom: 15px;
   			padding: 10px;
-  			/*top: 10rem;*/
+  			/*top: 10rem;
+		}*/
+		div[description]{
+			max-width: 40px;
+			height: 200px;
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0; /* <-- become sticky once touching left edge */
 		}
-		
-		div.wrapper{
-  			flex: 0 0 40px;
+
+		scroller{
+  			display: flex;
+  			align-items: center;
+  			overflow-x: auto;
+  			overflow-y: hidden;
+  			background: #000;
+		}
+
+		div[wrapper]{
+			flex: 0 0 40px;
   			max-width: 40px;
-  			height: 300px;
+  			height: 200px;
   			position: -webkit-sticky;
   			position: sticky;
-			top: 0px;
+  			top: 0;
   			white-space: nowrap;
   			color: #fff;
+		}
+
+		div[item]{
+  			display: flex;
+		}
+
+		div[description] span{
+  			display: inline-block;
+  			background: rgba(0,0,0,.5);
+  			width: 200px;
+  			height: 40px;
+  			transform: rotate(-90deg) translateX(-200px);
+  			transform-origin: left top 0;
+  			padding-top: 11px;
+  			text-align: center;
+  			text-transform: uppercase;
+  			color: #fff;
+  			font-size: 14px;
+		}
+
+		img{
+  			max-height: 200px;
+		}
+
+		body *{
+  			box-sizing: border-box;
+  			font-family: Arial;
 		}
 			
 	</style>
@@ -258,11 +300,14 @@ No current function to output diagnostic.
 			</div>
 			<!--test page with header-->
 				<!--below buttons call the functions listed within them when pressed-->
-				<div class="sticky">
+			<scroller>
+				<!--<div class="sticky">-->
+				<div item>
 					<button class="button button2" onclick="start();draw();letterdelay()">Start</button><!--setTimeout calls letter but delays by 1 sec-->
 					<button class="button button2" onclick="stop();">Stop</button>
 					<!--<button class="button button3" onclick="reset();">Reset</button>setTimeout(letter,1000);-->
 				</div>
+				<!--</div>-->
 				<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
 				<!--<div class="resize-container">
 					<div class="resize-drag">
@@ -270,15 +315,21 @@ No current function to output diagnostic.
 					</div>
 				</div>-->
 				<!--creates canvas-->
-				<div class = "wrapper"{
+				
+				<div item>
 					<p>Make a mistake? No worries. Press this button to start over.</p>
-						<button onclick="restart();">Start over</button>
+				</div>
+				<div item>
+					<button onclick="restart();">Start over</button>
+				</div>
+				<div item>
+					<p><strong>Saccade Time (seconds)</strong></p>
+					<p id="dif"></p><!--prints time difference-->
+					<p><strong>Trials completed</strong> 
+					<p id="repeats"></p><!--prints the number of saccades recorded-->
 				</div>
 				
-				<p><strong>Saccade Time (seconds)</strong></p>
-				<p id="dif"></p><!--prints time difference-->
-				<p><strong>Trials completed</strong> 
-				<p id="repeats"></p><!--prints the number of saccades recorded-->
+			</scroller>
 
 			<div class="w3-container w3-padding-32" id="results">
 				<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Results</h3>
