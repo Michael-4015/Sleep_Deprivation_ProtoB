@@ -108,7 +108,7 @@ No current function to output diagnostic.
 				// get seconds 
 			document.getElementById("dif").innerHTML = timeDiff; //prints the timeDiff
 			user_saccade.push(timeDiff);//adds timeDiff to the array
-			document.getElementById("fullresults").innerHTML = user_saccade; //prints list of time
+			document.getElementById("fullresults").innerHTML = user_saccade.join('<br>'); //prints list of time
 			
 		}
 		
@@ -135,7 +135,7 @@ No current function to output diagnostic.
 			mycanvas.height=h; //resets canvas height to 350
 		}
 		 // Copy canvas as image data
- 		var imgData = mycontext.getImageData(0,0, mycanvas.width, mycanvas.height);
+ 		var imgData = mycontext.getImageData(0,0, mycanvas.width, 100);
  
   		// Resize original canvas
   		mycanvas.width = window.innerWidth;
