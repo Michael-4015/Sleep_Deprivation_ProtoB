@@ -185,16 +185,16 @@ No current function to output diagnostic.
   			overflow-y: auto;
 			overflow-x: hidden;
   			background: #000;
-		}
+		}*/
 		
 		div.sticky {
   			position: -webkit-sticky;
  			position: sticky;
-  			top: 29px;
-			/*bottom: 15px;
+  			/*top: 29px;*/
+			bottom: #container-2;
   			padding: 10px;
-  			/*top: 10rem;
-		}*/
+  			/*top: 10rem;*/
+		}
 		/*(div[description]{
 			max-width: 50%;
 			position: -webkit-sticky;
@@ -303,7 +303,7 @@ No current function to output diagnostic.
 				<!--<div item>-->
 			<div class="uk-child-width-1-2@s" uk-grid>
     				<div>
-            				<div class="uk-card uk-card-default uk-card-body" style="z-index: 980;" uk-sticky="bottom: #container-2">
+            				<div class="sticky">
 						<div description><button class="button button2" onclick="start();draw();letterdelay()">Start</button></div><!--setTimeout calls letter but delays by 1 sec-->
 						<div description><button class="button button2" onclick="stop();">Stop</button></div>
 					</div>
