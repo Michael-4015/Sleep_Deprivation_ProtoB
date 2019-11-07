@@ -120,6 +120,7 @@ No current function to output diagnostic.
 			var sum = user_saccade.reduce((previous, current) => current += previous);//sums list of times
 			var avg = sum/user_saccade.length;//divides sum by the # of times in array to get average
 			document.getElementById("avg").innerHTML = avg; //prints average
+			//if MEANSLEEPDEPRIVEDSPEED
 		}
 		
 		function restart(){
@@ -175,14 +176,13 @@ No current function to output diagnostic.
 		.button2 {width: 50%;}
 		.button3 {width: 100%;}
 		
-		/*.container {
+		.container {
   			display: flex;
-  			justify-content: space-around;
-  			align-items: flex-start;
-  			border: 2px dashed rgba(114, 186, 94, 0.35);
-  			height: 400px;
-  			background: rgba(114, 186, 94, 0.05);
-		}*/
+  			align-items: center;
+  			overflow-y: auto;
+			overflow-x: hidden;
+  			background: #000;
+		}
 		
 		div.sticky {
   			position: -webkit-sticky;
@@ -191,6 +191,17 @@ No current function to output diagnostic.
 			/*bottom: 15px;*/
   			padding: 10px;
   			/*top: 10rem;*/
+		}
+		
+		div.wrapper{
+  			flex: 0 0 40px;
+  			max-width: 40px;
+  			height: 300px;
+  			position: -webkit-sticky;
+  			position: sticky;
+			top: 0px;
+  			white-space: nowrap;
+  			color: #fff;
 		}
 			
 	</style>
@@ -259,9 +270,10 @@ No current function to output diagnostic.
 					</div>
 				</div>-->
 				<!--creates canvas-->
-				
-				<p>Make a mistake? No worries. Press this button to start over.</p>
-					<button onclick="restart();">Start over</button>
+				<div class = "wrapper"{
+					<p>Make a mistake? No worries. Press this button to start over.</p>
+						<button onclick="restart();">Start over</button>
+				</div>
 				
 				<p><strong>Saccade Time (seconds)</strong></p>
 				<p id="dif"></p><!--prints time difference-->
