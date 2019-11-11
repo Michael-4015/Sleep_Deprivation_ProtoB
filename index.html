@@ -154,7 +154,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
         		mycanvas.height = 100;
       		}
 		
-		/*function diagnose{
+		function diagnose(){
 			var sleepy = avg - 0.8162156732;
 			var awake = avg - 0.5608123848;
 			var report_sleepy = "Your saccadic velocity indicates that you are sleep deprived";
@@ -165,7 +165,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			else{
 				document.getElementById("diagnose").innerHTML = report_awake;
 			}
-		}*/
+		}
 					
 	</script>
 	
@@ -310,16 +310,16 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 				<p><strong>Here is a list of all your individual saccade times in seconds</strong></p>
 				<p id="fullresults"></p>
 				<!--prints description and of list of individual time differences-->
-				<button onclick="average();">Get Average</button>
+				<button onclick="average();diagnose();">Get Average</button>
 				<!--calls function to calculate average-->
 				<p id="avg"></p>
 				<!--prints average-->
-				<!--<p id = "diagnose"></p>-->
+				<p id ="diagnose"></p>
 				
 		</div><!--ends page content-->
 		
 		<footer class="w3-center w3-black w3-padding-16">
-			<b>DIY Diagnostics EDIT1</b>
+			<b>DIY Diagnostics</b>
 			<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  			<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 		</footer>
