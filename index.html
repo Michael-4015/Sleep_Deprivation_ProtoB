@@ -161,7 +161,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			var awake = avg - givenawake;
 			var report_sleepy = "Your saccadic velocity indicates that you are sleep deprived";
 			var report_awake = "Your saccadic velocity does not indicates that you are sleep deprived";
-			if Math.abs(sleepy) > Math.abs(awake){
+			if (Math.abs(sleepy) > Math.abs(awake)){
 				document.getElementById("diagnose").innerHTML = report_sleepy;
 			}
 			else{
