@@ -105,12 +105,6 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		
 		function stop() {
 			z++;//stop button count adds 1
-			if (a<z){
-				user_saccade.splice(-1,1);//removes time from array
-				i--;//number of trials is decreased by 1
-				a = 0; //resets start button count to 0
-				z= 0;//resets stop button count to0
-			}
 			endTime = new Date();//records new time
 			timeDiff = endTime - startTime - rand - 1000; //change in start and end time in ms, also removes time delay
 				// strip the ms
@@ -124,6 +118,12 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 				if (i<0){//will run if trial count is negative
 					i++;
 				}
+			}
+			if (a<z){
+				user_saccade.splice(-1,1);//removes time from array
+				i--;//number of trials is decreased by 1
+				a = 0; //resets start button count to 0
+				z= 0;//resets stop button count to0
 			}
 			document.getElementById("fullresults").innerHTML = user_saccade.join('<br>'); //prints list of time
 			
