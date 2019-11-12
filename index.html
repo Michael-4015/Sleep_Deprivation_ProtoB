@@ -64,6 +64,8 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		}
 		
 		var i = 0; //counting variable to keep track of user's # of times recorded
+		var a = 0; //counting variable to keep track of user's press of start button
+		var z = 0; //counting varibale to keep track of user's press of stop button
 		var width = 0; //initialized width
 		
 		var rand = 0; //rand variable declared and defined with 0
@@ -74,6 +76,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		}
 		
 		function letter(){
+			a++; //add one to start button count
 			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
 			//random letter
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
@@ -101,7 +104,13 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		var timeDiff;//variable to record difference in start and stop time
 		
 		function stop() {
-			//var g = 1000; //delay time in ms for letter
+			z++;//stop button count adds 1
+			if (a<z){
+				user_saccade.splice(-1,1);//removes time from array
+				i--;//number of trials is decreased by 1
+				a = 0; //resets start button count to 0
+				z= 0;//resets stop button count to0
+			}
 			endTime = new Date();//records new time
 			timeDiff = endTime - startTime - rand - 1000; //change in start and end time in ms, also removes time delay
 				// strip the ms
