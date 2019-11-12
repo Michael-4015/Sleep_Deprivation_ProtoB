@@ -73,6 +73,10 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			setTimeout(letter, 1000 + rand); //letter function called with the delay of 1 second plus the random time in rand
 		}
 		
+		function trial20(){
+			alert("You have reached 20 trials! Go get your results."); //alerts user that they completed the minimum number of trials
+		}
+		
 		function letter(){
 			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
 			//random letter
@@ -90,15 +94,11 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			mycontext.fillText(randomletter,width,medium_h); //declares and prints the text and gives placement
 			i++;//adds to counting variable by one
 			document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
-			if (i==20){//will fun if number of trial (i) is 20
+			if (i==20){//will run if number of trial (i) is 20
 				function trialdelay(){
-					setTimeout(alert,4000)//delay for alert that enough trials have been completed
+					setTimeout(trial20,4000)//delay for alert that enough trials have been completed
 				}	
 			}
-		}
-		
-		function alert(){
-			alert("You have reached 20 trials! Go get your results."); //alerts user that they completed the minimum number of trials
 		}
 		
 		var timeDiff;//variable to record difference in start and stop time
@@ -182,6 +182,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 	</script>
 	
 	<style>
+		/*below is the style for the start and stop button*/
 		.button {
 			background-color: #99ccff; /* blue */
 			border: black;
@@ -205,25 +206,24 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		}
 		.container-2 {width: 100%}*/
 		
-		.sticky {
+		/*.sticky {
   			position: -webkit-sticky;
  			position: sticky;
   			top: 29px;
-			/*bottom: container-2;*/
+			/*bottom: container-2;
   			padding: 10px;
-  			/*top: 10rem;*/
-		}	
+  			/*top: 10rem;
+		}*/	
 	</style>
 	
 	<body>
 		<!-- Navbar (sit on top) -->
 		<div class="w3-top">
 			<div class="w3-bar w3-white w3-ppadding w3-wide w3-card">
-				<!--<a href="#home" class="w3-bar-item w3-button"><b>Sleep Deprivation Diagnostic</b> - DIY</a>-->
 				<b>Sleep Deprivation</b>  Diagnostic
 		<!-- Float links to the right. Hide them on small screens -->
     			<div class="w3-right w3-hide-small">
-				<a href="#home" class="w3-bar-item w3-button">Background</a>
+				<a href="#home" class="w3-bar-item w3-button">Background</a> 
 				<a href="#instructions" class="w3-bar-item w3-button">Instructions</a>
 				<a href="#test" class="w3-bar-item w3-button">Test</a>
 				<a href="#results" class="w3-bar-item w3-button">Results</a>
