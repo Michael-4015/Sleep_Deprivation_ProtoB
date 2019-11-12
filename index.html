@@ -77,23 +77,21 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
 			//random letter
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
-			var mycontext = mycanvas.getContext("2d");//
-			mycontext.canvas.width = w;
-			mycontext.canvas.height = h;//sets up the context of the function with 2dv
-			if (i % 2 == 0){
+			var mycontext = mycanvas.getContext("2d");//context of canvas defined with "2d"
+			if (i % 2 == 0){ //will run if number of trials (i) is even
 				width = 1;//will print letter on left of canvas
 			}
-			else{
+			else{//will run if number of trials (i) is odd
 				width = w-45;//will print letter on right of canvas
 			}
-			var medium_h = h/2;
+			var medium_h = h/2;//variable with the center height for the letter printing location
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 			mycontext.fillStyle = "black"; //color for letter
 			mycontext.fillText(randomletter,width,medium_h); //declares and prints the text and gives placement
-			i++;//adds to counting variable, adds one
+			i++;//adds to counting variable by one
 			document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
-			if (i==20){
-				alert("You have reached 20 trials! Go get your results.");
+			if (i==20){//will fun if number of trial (i) is 20
+				alert("You have reached 20 trials! Go get your results."); //alerts user that they completed the minimum number of trials
 			}
 		}
 		
@@ -102,7 +100,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		function stop() {
 			//var g = 1000; //delay time in ms for letter
 			endTime = new Date();//records new time
-			timeDiff = endTime - startTime - rand - 1000; //change in start and end time in ms
+			timeDiff = endTime - startTime - rand - 1000; //change in start and end time in ms, also removes time delay
 				// strip the ms
 			timeDiff /= 1000;
 				// get seconds 
@@ -111,12 +109,12 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			document.getElementById("fullresults").innerHTML = user_saccade.join('<br>'); //prints list of time
 			
 		}
-		var avg = 0;
+		var avg = 0; //average variable created and defined with zero
+		
 		function average(){
 			var sum = user_saccade.reduce((previous, current) => current += previous);//sums list of times
 			avg = sum/user_saccade.length;//divides sum by the # of times in array to get average
 			document.getElementById("avg").innerHTML = avg; //prints average
-			//if MEANSLEEPDEPRIVEDSPEED
 		}
 		
 		function restart(){
@@ -128,16 +126,16 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			mycanvas.height=h; //resets canvas height to 350
 		}
 		 // Copy canvas as image data
- 		var imgData = mycontext.getImageData(0,0, mycanvas.width, 100);
+ 		//var imgData = mycontext.getImageData(0,0, mycanvas.width, 100);
  
   		// Resize original canvas
-  		mycanvas.width = window.innerWidth;
-  		mycanvas.height = 100;
+  		//mycanvas.width = window.innerWidth;
+  		//mycanvas.height = 100;
  
   		// Copy back to resized canvas
-  		mycontext.putImageData(imgData, 0, 0);
+  		//mycontext.putImageData(imgData, 0, 0);
 		
-		function init() {
+		/*function init() {
         		mycanvas = document.getElementById("canvas");
         		if (mycanvas.getContext) {
           			mycontext = mycanvas.getContext("2d");
@@ -146,25 +144,32 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
           		window.addEventListener('orientationchange', resizeCanvas, false);
           		resizeCanvas();
         		}
-     		}
+     		}*/
  
-      		function resizeCanvas() {
+      		/*function resizeCanvas() {
         		mycanvas.width = window.innerWidth;
         		mycanvas.height = 100;
-      		}
+      		}*/
 		
 		function diagnose() {
-			var givensleepy = 0.8162156732;
-			var sleepy = avg - givensleepy;
-			var givenawake = 0.5608123848;
-			var awake = avg - givenawake;
-			var report_sleepy = "Your saccadic velocity indicates that you are sleep deprived";
-			var report_awake = "Your saccadic velocity does not indicates that you are sleep deprived";
-			if (Math.abs(sleepy) > Math.abs(awake)){
-				document.getElementById("diagnose").innerHTML = report_sleepy;
+			var givensleepy = 0.8162156732; //experimentally determined average sleep deprived saccadic velocity
+			var sleepy = avg - givensleepy; //user average difference from the sleep deprived saccadic velocity
+			var givenawake = 0.5608123848; //experimentally determined average of not sleep deprived saccadic velocity
+			var awake = avg - givenawake;//user average difference from the not sleep deprived saccadic velocity
+			var report_sleepy = "Your saccadic velocity indicates that you are sleep deprived"; //report presented if the user is diagnosed with sleep-deprivation
+			var report_awake = "Your saccadic velocity does not indicates that you are sleep deprived"; //report presented if the user is not diagnosted with sleep-deprivation
+			
+			if (i >= 20){//will run if the number of trials equals or is greater than 20
+				if (Math.abs(sleepy) > Math.abs(awake)){ //will run if the user's average is closer to the sleep deprived saccadic velocity
+					document.getElementById("diagnose").innerHTML = report_sleepy;//prints sleep deprived diagnosis
+				}
+				else{//will run if the user's average is closer to the not sleep deprived saccadic velocity
+					document.getElementById("diagnose").innerHTML = report_awake;//prints not sleep deprived diagnosis
+				}
 			}
-			else{
-				document.getElementById("diagnose").innerHTML = report_awake;
+			else {//will run if the number of trials is less than 20
+				alert("You have not completed enough trials yet to receive a diagnosis. Keep going until you complete 20 trials!");
+				//alerts user that they have not completed the minimum number of trials
 			}
 		}
 					
@@ -184,7 +189,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			cursor: pointer;
 		}
 		.button1 {width: 250px;}
-		.button2 {width: 50%;}
+		.button2 {width: 40%;}
 		.button3 {width: 100%;}
 		
 		/*.container {
