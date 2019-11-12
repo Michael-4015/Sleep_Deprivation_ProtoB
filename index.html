@@ -91,8 +91,14 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			i++;//adds to counting variable by one
 			document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
 			if (i==20){//will fun if number of trial (i) is 20
-				alert("You have reached 20 trials! Go get your results."); //alerts user that they completed the minimum number of trials
+				function trialdelay(){
+					setTimeout(alert,4000)//delay for alert that enough trials have been completed
+				}	
 			}
+		}
+		
+		function alert(){
+			alert("You have reached 20 trials! Go get your results."); //alerts user that they completed the minimum number of trials
 		}
 		
 		var timeDiff;//variable to record difference in start and stop time
