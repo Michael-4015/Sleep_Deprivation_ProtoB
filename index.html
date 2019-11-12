@@ -64,8 +64,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		}
 		
 		var i = 0; //counting variable to keep track of user's # of times recorded
-		var a = 0; //counting variable to keep track of user's press of start button
-		var z = 0; //counting varibale to keep track of user's press of stop button
+
 		var width = 0; //initialized width
 		
 		var rand = 0; //rand variable declared and defined with 0
@@ -76,6 +75,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		}
 		
 		function letter(){
+			var a = 0; //counting variable to keep track of user's press of start button
 			a++; //add one to start button count
 			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
 			//random letter
@@ -104,6 +104,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		var timeDiff;//variable to record difference in start and stop time
 		
 		function stop() {
+			var z = 0; //counting varibale to keep track of user's press of stop button
 			z++;//stop button count adds 1 
 			if (a=z){
 				endTime = new Date();//records new time
