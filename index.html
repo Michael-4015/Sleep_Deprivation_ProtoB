@@ -109,6 +109,10 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 				// get seconds 
 			document.getElementById("dif").innerHTML = timeDiff; //prints the timeDiff
 			user_saccade.push(timeDiff);//adds timeDiff to the array
+			if (timeDiff<0){//will run if saccade time is negative
+				user_saccade.splice(-1,1);//removes time from array
+				i--;//number of trials is decreased by 1
+			}
 			document.getElementById("fullresults").innerHTML = user_saccade.join('<br>'); //prints list of time
 			
 		}
@@ -193,11 +197,11 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			cursor: pointer;
 		}
 		.button2 {
-			width: 40%;
+			width: 45%;
 			float: left;
 		}
 		.button3 {
-			width: 40%%;
+			width: 45%;
 			float: right;
 		}
 		
