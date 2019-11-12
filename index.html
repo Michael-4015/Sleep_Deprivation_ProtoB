@@ -73,10 +73,6 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			setTimeout(letter, 1000 + rand); //letter function called with the delay of 1 second plus the random time in rand
 		}
 		
-		function trial20(){
-			alert("You have reached 20 trials! Go get your results."); //alerts user that they completed the minimum number of trials
-		}
-		
 		function letter(){
 			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
 			//random letter
@@ -95,9 +91,10 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			i++;//adds to counting variable by one
 			document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
 			if (i==20){//will run if number of trial (i) is 20
-				function trialdelay(){
-					setTimeout(trial20,4000)//delay for alert that enough trials have been completed
-				}	
+				setTimeout(function trial20() { 
+					alert("You have reached 20 trials! Go get your results."); 
+				}, 2000);
+				//delays by 2 seconds and alerts user that they completed the minimum number of trials 
 			}
 		}
 		
@@ -190,7 +187,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			padding: 15px 32px;
 			text-align: center;
 			text-decoration: none;
-			display: inline-block;
+			display: inline;
 			font-size: 16px;
 			margin: 4px 2px;
 			cursor: pointer;
