@@ -78,7 +78,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			a++; //add one to start button count
 		}
 		
-		var z = 1; //counting varibale to keep track of user's press of stop button
+		var z = 1; //counting variable to keep track of user's press of stop button
 		
 		function stopcount(){
 			z++;//stop button count adds 1 
@@ -102,7 +102,6 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 			mycontext.fillStyle = "black"; //color for letter
 			mycontext.fillText(randomletter,width,medium_h); //declares and prints the text and gives placement
-			//i++;//adds to counting variable by one
 			if (i==20){//will run if number of trial (i) is 20
 				setTimeout(function trial20() { 
 				alert("You have reached 20 trials! Go get your results."); 
@@ -114,9 +113,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		var timeDiff;//variable to record difference in start and stop time
 		
 		function stop() {
-			//alert (a +", "+ z);
-			if (a==z){
-				//alert("if equal statment is being called");
+			if (a==z){//will run if start pushes = stop pushes
 				endTime = new Date();//records new time
 				timeDiff = endTime - startTime - rand - 1000; //change in start and end time in ms, also removes time delay
 						// strip the ms
@@ -128,16 +125,11 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 				if (timeDiff<0){//will run if saccade time is negative
 					user_saccade.splice(-1,1);//removes time from array
 					i--;//number of trials is decreased by 1
-					//if (i<0){
-					//	i=0;
-					//}
 				}
-				i++;
+				i++;//adds one to trial
 				
 			}
 			else{
-			//alert("if unequal statment is being called");
-				//i--;//number of trials is decreased by 1
 				a = 0; //resets start button count to 0
 				z= 0;//resets stop button count to 0
 			}
@@ -154,38 +146,13 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		}
 		
 		function restart(){
-			user_saccade=[];
-			i = 0;
+			user_saccade=[];//reset user's list of response times
+			i = 0;//resets trials to 0
 			var mycanvas = document.getElementById("canvas"); //finds the canvas with the Id 'a'
 			var mycontext = mycanvas.getContext("2d"); //sets up the context of the function with 2d
 			mycanvas.width=w; //resets canvas width to 650
 			mycanvas.height=h; //resets canvas height to 350
 		}
-		 // Copy canvas as image data
- 		//var imgData = mycontext.getImageData(0,0, mycanvas.width, 100);
- 
-  		// Resize original canvas
-  		//mycanvas.width = window.innerWidth;
-  		//mycanvas.height = 100;
- 
-  		// Copy back to resized canvas
-  		//mycontext.putImageData(imgData, 0, 0);
-		
-		/*function init() {
-        		mycanvas = document.getElementById("canvas");
-        		if (mycanvas.getContext) {
-          			mycontext = mycanvas.getContext("2d");
- 
-          		window.addEventListener('resize', resizeCanvas, false);
-          		window.addEventListener('orientationchange', resizeCanvas, false);
-          		resizeCanvas();
-        		}
-     		}*/
- 
-      		/*function resizeCanvas() {
-        		mycanvas.width = window.innerWidth;
-        		mycanvas.height = 100;
-      		}*/
 		
 		function diagnose() {
 			var givensleepy = 0.8162156732; //experimentally determined average sleep deprived saccadic velocity
@@ -215,8 +182,6 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		/*below is the style for the start and stop button*/
 		.button {
 			background-color: #99ccff; /* blue */
-			/*border: black;
-			color: black;*/
 			padding: 15px 32px;
 			text-align: center;
 			text-decoration: none;
@@ -233,25 +198,12 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			width: 49%;
 			float: right;
 		}
+		/*below is the style for the canvas*/
 		.canvas{
 			margin: 50px 1px;
 			border:1px solid #000000;
 		}
-		/*.container {
-  			display: flex;
-  			justify-content: space-around;
-  			align-items: flex-start;
-		}
-		.container-2 {width: 100%}*/
 		
-		/*.sticky {
-  			position: -webkit-sticky;
- 			position: sticky;
-  			top: 29px;
-			/*bottom: container-2;
-  			padding: 10px;
-  			/*top: 10rem;
-		}*/	
 	</style>
 	
 	<body>
@@ -262,10 +214,10 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 				<b>Sleep Deprivation</b>  Diagnostic
 		<!-- Float links to pages on the right. Hides them on small screens -->
     			<div class="w3-right w3-hide-small">
-				<a href="#home" class="w3-bar-item w3-button">Background</a> 
-				<a href="#instructions" class="w3-bar-item w3-button">Instructions</a>
-				<a href="#test" class="w3-bar-item w3-button">Test</a>
-				<a href="#results" class="w3-bar-item w3-button">Results</a>
+				<a href="#home" class="w3-bar-item w3-button">Background</a> <!--home page, named background-->
+				<a href="#instructions" class="w3-bar-item w3-button">Instructions</a> <!--instruction page, named instructions-->
+				<a href="#test" class="w3-bar-item w3-button">Test</a> <!--test page, named Test-->
+				<a href="#results" class="w3-bar-item w3-button">Results</a> <!--results page, named results-->
 			</div>
 			</div>
 		</div>
@@ -313,40 +265,6 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 					<p id="dif"></p><!--prints time difference-->
 				<p><strong>Trials completed</strong> 
 					<p id="repeats"></p><!--prints the number of trials recorded-->
-			<!--<scroller>-->
-				<!--<div class="sticky">
-				<!--<div item>-->
-			<!--<div class="uk-child-width-1-2@s" uk-grid>
-    				<div>-->
-            			<!--	<div class="sticky">-->
-						
-				<!--	</div>-->
-    				<!--</div>
-			</div>-->
-    				
-			
-			<!--<p id="container-2">Make a mistake? No worries. Press this button to start over.</p>
-			<button onclick="restart();">Start over</button>-->
-				
-			
-					
-					<!--<button class="button button3" onclick="reset();">Reset</button>setTimeout(letter,1000);-->
-					
-					
-					
-				<!--</div>
-				<!--</div>-->
-				
-				<!--<div item>
-					<div description><span>----</span></div>
-				</div>-->
-			<!--</scroller>-->
-				<!--<div class="resize-container">
-					<div class="resize-drag">
-						<canvas id= "canvas" style= "border:1px solid #000000;"></canvas>
-					</div>
-				</div>-->
-				<!--creates canvas-->
 		
 			<!--results page with header-->
 			<div class="w3-container w3-padding-32" id="results">
