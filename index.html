@@ -102,13 +102,8 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 			mycontext.fillStyle = "black"; //color for letter
 			mycontext.fillText(randomletter,width,medium_h); //declares and prints the text and gives placement
-			i++;//adds to counting variable by one
-			document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
-			if (i==20){//will run if number of trial (i) is 20
-				setTimeout(function trial20() { 
-					alert("You have reached 20 trials! Go get your results."); 
-				}, 1000);
-				//delays by 2 seconds and alerts user that they completed the minimum number of trials 
+			
+			 
 			}
 		}
 		
@@ -133,6 +128,15 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 						i=0;
 					}
 				}
+				
+				i++;//adds to counting variable by one
+				document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
+				if (i==20){//will run if number of trial (i) is 20
+					setTimeout(function trial20() { 
+					alert("You have reached 20 trials! Go get your results."); 
+				}, 1000);
+				//delays by 2 seconds and alerts user that they completed the minimum number of trials
+				
 				
 			}
 			else{
