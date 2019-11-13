@@ -102,9 +102,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 			mycontext.fillStyle = "black"; //color for letter
 			mycontext.fillText(randomletter,width,medium_h); //declares and prints the text and gives placement
-			if (a==z){
-				i++;//adds to counting variable by one
-			}
+			//i++;//adds to counting variable by one
 			document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
 			if (i==20){//will run if number of trial (i) is 20
 				setTimeout(function trial20() { 
@@ -130,18 +128,19 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 				
 				if (timeDiff<0){//will run if saccade time is negative
 					user_saccade.splice(-1,1);//removes time from array
-					i--;//number of trials is decreased by 1
-					if (i<0){
-						i=0;
-					}
+					//i--;//number of trials is decreased by 1
+					//if (i<0){
+					//	i=0;
+					//}
 				}
 			}
 			else{
 			//alert("if unequal statment is being called");
-				i--;//number of trials is decreased by 1
+				//i--;//number of trials is decreased by 1
 				a = 0; //resets start button count to 0
 				z= 0;//resets stop button count to 0
 			}
+			i = user_saccade.length;
 			document.getElementById("fullresults").innerHTML = user_saccade.join('<br>'); //prints list of times	
 		}
 			
