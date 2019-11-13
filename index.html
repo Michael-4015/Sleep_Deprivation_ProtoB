@@ -115,8 +115,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		var timeDiff;//variable to record difference in start and stop time
 		
 		function stop() {
-			//alert (a +", "+ z);
-			
+			alert (a +", "+ z);
 			if (a==z){
 				//alert("if equal statment is being called");
 				endTime = new Date();//records new time
@@ -134,16 +133,14 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 						i=0;
 					}
 				}
-
-				else{
-				//	alert("if unequal statment is being called");
-					i--;//number of trials is decreased by 1
-					a = 0; //resets start button count to 0
-					z= 0;//resets stop button count to 0
-				}
-				document.getElementById("fullresults").innerHTML = user_saccade.join('<br>'); //prints list of time
-			
 			}
+			else{
+			//alert("if unequal statment is being called");
+				i--;//number of trials is decreased by 1
+				a = 0; //resets start button count to 0
+				z= 0;//resets stop button count to 0
+			}
+			document.getElementById("fullresults").innerHTML = user_saccade.join('<br>'); //prints list of times	
 		}
 			
 		var avg = 0; //average variable created and defined with zero
