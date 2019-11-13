@@ -115,9 +115,9 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		var timeDiff;//variable to record difference in start and stop time
 		
 		function stop() {
-			alert (a +", "+ z);
+			//alert (a +", "+ z);
 			if (a==z){
-				alert("if equal statment is being called");
+				//alert("if equal statment is being called");
 				endTime = new Date();//records new time
 				timeDiff = endTime - startTime - rand - 1000; //change in start and end time in ms, also removes time delay
 					// strip the ms
@@ -133,7 +133,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 				
 			}
 			else{
-				alert("if unequal statment is being called");
+				//alert("if unequal statment is being called");
 				i--;//number of trials is decreased by 1
 				a = 0; //resets start button count to 0
 				z= 0;//resets stop button count to 0
@@ -211,8 +211,8 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		/*below is the style for the start and stop button*/
 		.button {
 			background-color: #99ccff; /* blue */
-			border: black;
-			color: black;
+			/*border: black;
+			color: black;*/
 			padding: 15px 32px;
 			text-align: center;
 			text-decoration: none;
@@ -230,7 +230,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			float: right;
 		}
 		.canvas{
-			margin: 50px 25px 50px 1px;
+			margin: 50px 25px;
 			border:1px solid #000000;
 		}
 		/*.container {
