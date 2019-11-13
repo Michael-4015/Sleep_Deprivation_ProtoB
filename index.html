@@ -103,7 +103,6 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			mycontext.fillStyle = "black"; //color for letter
 			mycontext.fillText(randomletter,width,medium_h); //declares and prints the text and gives placement
 			//i++;//adds to counting variable by one
-			document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
 			if (i==20){//will run if number of trial (i) is 20
 				setTimeout(function trial20() { 
 				alert("You have reached 20 trials! Go get your results."); 
@@ -134,6 +133,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 					//}
 				}
 				i++;
+				
 			}
 			else{
 			//alert("if unequal statment is being called");
@@ -141,7 +141,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 				a = 0; //resets start button count to 0
 				z= 0;//resets stop button count to 0
 			}
-			
+			document.getElementById("repeats").innerHTML = i; //prints the number of trials recorded by user
 			document.getElementById("fullresults").innerHTML = user_saccade.join('<br>'); //prints list of times	
 		}
 			
