@@ -44,6 +44,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			//alert("Start function is being called");
 			startTime = new Date(); //calls start time
 		}
+		
 		var w = window.innerWidth;//width variable defined by the device width
 		var h = 100;//height variable defined by a set 100
 		
@@ -62,10 +63,6 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			mycontext.fillStyle = "red"; //defines fills with red 
 			mycontext.fill(); //fills in circle
 		}
-		
-		var i = 0; //counting variable to keep track of user's # of times recorded
-
-		var width = 0; //initialized width
 		
 		var rand = 0; //rand variable declared and defined with 0
 		
@@ -86,7 +83,10 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		function stopcount(){
 			z++;//stop button count adds 1 
 		}
-			
+		
+		var i = 0; //counting variable to keep track of user's # of times recorded
+		var width = 0; //initialized width
+		
 		function letter(){
 			var randomletter = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0,1).split('').map(c => Math.random() < 0.5 ? c.toUpperCase() : c).join('');
 			//random letter
@@ -102,9 +102,6 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			mycontext.font = "bold 24px sans-serif"; //determines the font of the text
 			mycontext.fillStyle = "black"; //color for letter
 			mycontext.fillText(randomletter,width,medium_h); //declares and prints the text and gives placement
-			
-			 
-			}
 		}
 		
 		var timeDiff;//variable to record difference in start and stop time
@@ -115,9 +112,9 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 				//alert("if equal statment is being called");
 				endTime = new Date();//records new time
 				timeDiff = endTime - startTime - rand - 1000; //change in start and end time in ms, also removes time delay
-					// strip the ms
+						// strip the ms
 				timeDiff /= 1000;
-					// get seconds
+						// get seconds
 				document.getElementById("dif").innerHTML = timeDiff; //prints the timeDiff
 				user_saccade.push(timeDiff);//adds timeDiff to the array
 				
@@ -134,20 +131,21 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 				if (i==20){//will run if number of trial (i) is 20
 					setTimeout(function trial20() { 
 					alert("You have reached 20 trials! Go get your results."); 
-				}, 1000);
+					}, 1000);
 				//delays by 2 seconds and alerts user that they completed the minimum number of trials
-				
-				
-			}
-			else{
-				//alert("if unequal statment is being called");
-				i--;//number of trials is decreased by 1
-				a = 0; //resets start button count to 0
-				z= 0;//resets stop button count to 0
-			}
-			document.getElementById("fullresults").innerHTML = user_saccade.join('<br>'); //prints list of time
+				}
+
+				else{
+					//alert("if unequal statment is being called");
+					i--;//number of trials is decreased by 1
+					a = 0; //resets start button count to 0
+					z= 0;//resets stop button count to 0
+				}
+				document.getElementById("fullresults").innerHTML = user_saccade.join('<br>'); //prints list of time
 			
+			}
 		}
+			
 		var avg = 0; //average variable created and defined with zero
 		
 		function average(){
