@@ -117,6 +117,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		function stop() {
 			alert (a +", "+ z);
 			if (a=z){
+				alert("if equal statment is being called");
 				endTime = new Date();//records new time
 				timeDiff = endTime - startTime - rand - 1000; //change in start and end time in ms, also removes time delay
 					// strip the ms
@@ -132,6 +133,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 				
 			}
 			else{
+				alert("if unequal statment is being called");
 				i--;//number of trials is decreased by 1
 				a = 0; //resets start button count to 0
 				z= 0;//resets stop button count to 0
