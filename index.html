@@ -42,8 +42,9 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		
 	<script>
 		var docMod = document.lastModified; // loads last modified time stamp into docMod variable
-			alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
-			console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
+		document.getElementById("update").innerHTML = "This file last modified " + docMod;//print last update
+			//alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
+			//console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
 		
 		var startTime, endTime; //variable to record time start and end
 		var user_saccade=[]; //array variable to record list of times
@@ -292,13 +293,14 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		</div><!--ends page content-->
 		
 		<footer class="w3-center w3-black w3-padding-16">
-			<b>DIY Diagnostics EDIT</b> <!--footer text-->
+			<b>DIY Diagnostics</b> <!--footer text-->
 			<p><small>The following code has been developed by students and/or researchers of the Freshman Research 
 				Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration 
 				purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 
 				does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for 
 				anything related to this code.</small></p>
  			<p><small>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</small></p>
+			<p id="update"></p>
 			<!--disclaimers above-->
 		</footer>
   	 </body>
