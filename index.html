@@ -42,9 +42,8 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		
 	<script>
 		var docMod = document.lastModified; // loads last modified time stamp into docMod variable
-		document.getElementById("update").innerHTML = "This file last modified " + docMod;//print last update
-			//alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
-			//console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp.
+		var remind = "This file last modified ";
+		document.getElementById("update").innerHTML = remind + docMod;//print last update
 		
 		var startTime, endTime; //variable to record time start and end
 		var user_saccade=[]; //array variable to record list of times
