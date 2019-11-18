@@ -24,13 +24,13 @@ No current function to output diagnostic.
 User must refresh the pape if on a mobile phone with it in a horizontal orientation to get the canvas to be the correct width
 -->
 	<head>
-		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png">
+		<!--<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
 		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="theme-color" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">-->
 		
 		<title>Sleep Deprivation</title> <!--overall title seen on tab-->
 		<meta charset="UTF-8">
@@ -42,9 +42,6 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		
 	<script>
 		var docMod = document.lastModified; // loads last modified time stamp into docMod variable
-		var remind = "This file last modified ";
-		
-		document.getElementById("update").innerHTML = remind; //prints text intro for below
 		document.getElementById("when").innerHTML = docMod;//print last update
 		
 		var startTime, endTime; //variable to record time start and end
@@ -301,8 +298,8 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 				does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for 
 				anything related to this code.</small></p>
  			<p><small>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</small></p>
-			<p id="update"></p>
-			<p id="when"><b></b></p>
+			<p>This file was last updated </p>
+			<p id="when"></p>
 			<!--disclaimers above-->
 		</footer>
   	 </body>
