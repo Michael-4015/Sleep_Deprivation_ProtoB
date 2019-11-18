@@ -44,7 +44,8 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 		var docMod = document.lastModified; // loads last modified time stamp into docMod variable
 		var remind = "This file last modified ";
 		
-		//document.getElementById("update").innerHTML = remind + docMod;//print last update
+		document.getElementById("update").innerHTML = remind; //prints text intro for below
+		document.getElementById("when").innerHTML = docMod;//print last update
 		
 		var startTime, endTime; //variable to record time start and end
 		var user_saccade=[]; //array variable to record list of times
@@ -168,8 +169,8 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 			var sleepy = avg - givensleepy; //user average difference from the sleep deprived saccadic velocity
 			var givenawake = 0.5608123848; //experimentally determined average of not sleep deprived saccadic velocity
 			var awake = avg - givenawake;//user average difference from the not sleep deprived saccadic velocity
-			var report_sleepy = "Your saccadic velocity indicates that you are sleep deprived"; //report presented if the user is diagnosed with sleep-deprivation
-			var report_awake = "Your saccadic velocity does not indicates that you are sleep deprived"; //report presented if the user is not diagnosted with sleep-deprivation
+			var report_sleepy = "Your response time indicates that you are sleep deprived"; //report presented if the user is diagnosed with sleep-deprivation
+			var report_awake = "Your response time does not indicates that you are sleep deprived"; //report presented if the user is not diagnosted with sleep-deprivation
 			
 			if (i >= 20){//will run if the number of trials equals or is greater than 20
 				if (Math.abs(sleepy) > Math.abs(awake)){ //will run if the user's average is closer to the sleep deprived saccadic velocity
@@ -301,6 +302,7 @@ User must refresh the pape if on a mobile phone with it in a horizontal orientat
 				anything related to this code.</small></p>
  			<p><small>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</small></p>
 			<p id="update"></p>
+			<p id="when"><b></b></p>
 			<!--disclaimers above-->
 		</footer>
   	 </body>
