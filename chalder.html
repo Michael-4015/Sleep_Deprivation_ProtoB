@@ -6,27 +6,22 @@
 <p>Enter your name, # of hours slept, and any sleep disorders</p>
 
 <form>
-  <label for="name">Full Name:</label><br>
-  <input type="text" id="name" name="name">
-  <input type="submit" value="Submit"><br>
-  <label for="hours">Hours of sleep</label>
-  <select id="hours" name="hours">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
+  <label for="sleep">How many hours of sleep have you gotten in the past 24 hours?</label><br>
+  <input type="text" id="sleep" name="sleep"><br>
+  <label for="sleep2">On average, how many hours of sleep do you get every night?</label><br>
+  <input type = "text" id = "disorder" name = "disorder"><br>
+  <label for = "refreshed">Do you currently feel refreshed and awake?</label><br>
+  <input type = "radio" id = "refreshed" name = "feeling" value = "Yes"><br>
+  <label for="caff">How much caffeine have you had in the past 8 hours? A regular cup of coffee has about 95 mg.</label><br>
+  <input type="text" id="caff" name="caff"><br>
+  <label for="medication">Are you currently taking any medications or drugs which could impact the results of this sleep survey? </label><br>
+  <select id="medication" name="med">
+    <option value="1">yes, it could improve results</option>
+    <option value="2">yes, it could worsen results</option>
+    <option value="3">N/A or it will not impact results</option>
   </select>
   <input type="submit">
   <br>
-  <label for="disorder">Disorder</label><br>
-  <input type="text" id="disorder" name="disorder">
-  <input type="submit" value="Submit">
 </form>
 
 </body>
