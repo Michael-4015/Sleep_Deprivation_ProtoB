@@ -51,6 +51,8 @@
     <option value="Yes, worsen">yes, it could worsen results</option>
     <option value="N/A, or won't impact results">N/A or it will not impact results</option>
   </select><br> 
+	 <label for="test">send data?</label><br>
+  <input type = "text" id="test" name="test"><br>
  
   <button type = "submit" id = "submit">Submit</button>
 <button type = "button" id = "beginTest" onclick= "myFunction()" disabled>Begin Test</button>
@@ -78,6 +80,8 @@
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwTyhITsooZVhWcQbtJ5lwWLw6CW1uwuNouV5Pw4SkZQKPdXGHj/exec'
   const form = document.forms['chalder']
+  var w = 5;
+  document.getElementById("test").value = 2;
   
   form.addEventListener('submit', e => {
     e.preventDefault()
@@ -142,8 +146,13 @@
 	makeBox();
      }
   }
-  document.getElementById("results").value = "hello";
   makeBox();
+  window.onload = function() {
+	  
+   document.getElementById("results").value = "hello";
+   
+  }
+	
 	  
 </script>
 
