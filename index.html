@@ -33,7 +33,7 @@
 <body>
   
 <form name="chalder">
-  <input name="name" type="text" placeholder="Full Name1"><br>
+  <input name="name" type="text" placeholder="Full Name2"><br>
   <label for="sleep">How many hours of sleep have you gotten in the past 24 hours?</label><br>
   <input type="text" id="sleep" name="sleep"><br>
   <label for="sleep2">On average, how many hours of sleep do you get every night?</label><br>
@@ -54,7 +54,7 @@
  <label for="test">send data?</label><br>
   <input type = "text" id="test" name="test"><br>
   <button type = "submit" id = "submit">Submit</button>
-<button type = "button" id = "beginTest" onclick='window.location="#two"' disabled>Begin Test</button>
+<button type = "button" id = "beginTest" onclick= "myFunction()" disabled>Begin Test</button>
  
 </form>
 
@@ -88,6 +88,9 @@
   document.getElementById("submit").onclick = function() {
     document.getElementById("beginTest").disabled = false; 
   }
+ function myFunction() {
+  location.assign("#two");
+}	
   
   
   function setBox() {
@@ -121,8 +124,9 @@
   }
 			
   box.onclick=function() {
-     if (numTimes == 19) {
+     if (numTimes == 3) {
 	 clickCircle();
+	     
      } else {
         clickCircle();
 	makeBox();
