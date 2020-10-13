@@ -58,9 +58,7 @@
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwTyhITsooZVhWcQbtJ5lwWLw6CW1uwuNouV5Pw4SkZQKPdXGHj/exec'
   const form = document.forms['chalder']
   
-  document.getElementById("submit").onclick = function() {
-    return document.getElementById("beginTest").disabled = false; 
-  }
+  
   
   document.getElementById("beginTest").onclick = function() {
     
@@ -72,5 +70,9 @@
       .then(response => console.log('Success!', response))
       .catch(error => console.error('Error!', error.message))
   })
+	
+  document.getElementById("submit").onclick = function() {
+    document.getElementById("beginTest").disabled = false; 
+  }
 </script>
 
