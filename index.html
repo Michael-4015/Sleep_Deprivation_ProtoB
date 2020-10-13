@@ -32,8 +32,23 @@
 
 <body>
   
-<form name="chalder">
+
+	 
+ 
+  
+<button type = "button" id = "beginTest" onclick= "myFunction()">Begin Test</button>
+ 
+
+
+
+<div class="page" id="two">
+	<div id = "box"> </div>
+</div>
+<div class="page" id="three">
+	<form name="chalder">
   <input name="name" type="text" placeholder="Full Name4"><br>
+  <label for="test">Your average time in seconds</label>
+  <input type = "text" id="test" name="test" readonly><br>
   <label for="sleep">How many hours of sleep have you gotten in the past 24 hours?</label><br>
   <input type="text" id="sleep" name="sleep"><br>
   <label for="sleep2">On average, how many hours of sleep do you get every night?</label><br>
@@ -51,23 +66,10 @@
     <option value="Yes, worsen">yes, it could worsen results</option>
     <option value="N/A, or won't impact results">N/A or it will not impact results</option>
   </select><br> 
-	 
- 
-  <button type = "submit" id = "ssss">Submit</button>
-<button type = "button" id = "beginTest" onclick= "myFunction()" disabled>Begin Test</button>
- 
-</form>
-
-
-<div class="page" id="two">
-	<div id = "box"> </div>
-</div>
-<div class="page" id="three">
+	        <button type = "submit" id = "submit">Submit</button>
 	
 		
-		<form name = "res">
-		 <label for="test">Your average time in seconds</label><br>
-                 <input type = "text" id="test" name="test" readonly><br>
+		 
 	</form>
 	
 	
@@ -94,9 +96,9 @@
   var avgTime = 0;	
   var box = document.getElementById("box");
   
-  document.getElementById("submit").onclick = function() {
-    document.getElementById("beginTest").disabled = false; 
-  }
+  //document.getElementById("submit").onclick = function() {
+   // document.getElementById("beginTest").disabled = false; 
+ // }
  function myFunction() {
     numTimes = 0;
     times = new Array();
