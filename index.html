@@ -1,4 +1,6 @@
 
+<div class = "page" id = "one">
+  
 <form name="chalder">
   <input name="name" type="text" placeholder="Full Name"><br>
   <label for="sleep">How many hours of sleep have you gotten in the past 24 hours?</label><br>
@@ -19,8 +21,9 @@
     <option value="3">N/A or it will not impact results</option>
   </select><br> 
   <button type = "submit" name = "submit">Submit</button>
-  <button type ="button" name = "beginTest" href = "two" disabled>Begin Test</button>
+  <button type = "button" name = "beginTest" href = "two" disabled>Begin Test</button>
 </form>
+</div>
 
 <div class="page" id="two">
   Hello
@@ -31,7 +34,7 @@
   const form = document.forms['chalder']
   
   document.getElementById("submit").onclick = function() {
-    document.getElementById("beginTest").disabled = false; 
+    return document.getElementById("beginTest").disabled = false; 
   }
   
   document.getElementById("beginTest").onclick = function() {
