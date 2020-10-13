@@ -33,7 +33,7 @@
 <body>
   
 <form name="chalder">
-  <input name="name" type="text" placeholder="Full Name4"><br>
+  <input name="name" type="text" placeholder="Full Name1"><br>
   <label for="sleep">How many hours of sleep have you gotten in the past 24 hours?</label><br>
   <input type="text" id="sleep" name="sleep"><br>
   <label for="sleep2">On average, how many hours of sleep do you get every night?</label><br>
@@ -79,8 +79,8 @@
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwTyhITsooZVhWcQbtJ5lwWLw6CW1uwuNouV5Pw4SkZQKPdXGHj/exec'
   const form = document.forms['chalder']
-  var w = 5;
-  document.getElementById("test").value = 2;
+  
+  
   
   form.addEventListener('submit', e => {
     e.preventDefault()
@@ -140,17 +140,14 @@
 	 clickCircle();
 	 location.assign("#three");
 	 alert(avgTime / numTests);
+	 document.getElementById("test").value = 4;
      } else {
         clickCircle();
 	makeBox();
      }
   }
   makeBox();
-  window.onload = function() {
-	  
-   document.getElementById("results").value = "hello";
-   
-  }
+  
 	
 	  
 </script>
