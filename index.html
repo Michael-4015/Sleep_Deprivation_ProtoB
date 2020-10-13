@@ -43,12 +43,12 @@
     <option value="N/A, or won't impact results">N/A or it will not impact results</option>
   </select><br> 
  <label for="test">send data?</label><br>
-  <input type="text" id="test" name="test"><br>
+  <input type = "text" id="test" name="test"><br>
   <button type = "submit" id = "submit">Submit</button>
  
   <a href="#two"> Yes </a> 
 		</form>
-<button type = "button" id = "beginTest" onclick='window.location="#navigateHere"' disabled>Begin Test</button>
+<button type = "button" id = "beginTest" onclick='window.location="#two"' disabled>Begin Test</button>
 
 <div class="page" id="two">
   Hello156
@@ -65,9 +65,7 @@ document.getElementById("test").value = w;
   
   
   
-  document.getElementById("beginTest").onclick = function() {
-    
-  }
+ 
 
   form.addEventListener('submit', e => {
     e.preventDefault()
