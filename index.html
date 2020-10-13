@@ -19,6 +19,15 @@
     left: 0vw;
     z-index: 1;
 }
+#box {
+				height: 75px;
+  width: 75px;
+  background-color: #FFA500;
+  border-radius: 50%;
+  display: inline-block;blue;
+				display: none;
+				position: relative; 
+		}
 </style>
 
 <body>
@@ -45,13 +54,13 @@
  <label for="test">send data?</label><br>
   <input type = "text" id="test" name="test"><br>
   <button type = "submit" id = "submit">Submit</button>
- 
-  <a href="#two"> Yes </a> 
-		</form>
 <button type = "button" id = "beginTest" onclick='window.location="#two"' disabled>Begin Test</button>
+ 
+</form>
+
 
 <div class="page" id="two">
-  Hello156
+	<div id = "box"> </div>
 </div>
   
  </body>
@@ -60,13 +69,7 @@
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwTyhITsooZVhWcQbtJ5lwWLw6CW1uwuNouV5Pw4SkZQKPdXGHj/exec'
   const form = document.forms['chalder']
-  var w = 5;
-document.getElementById("test").value = w;
   
-  
-  
- 
-
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
@@ -77,5 +80,63 @@ document.getElementById("test").value = w;
   document.getElementById("submit").onclick = function() {
     document.getElementById("beginTest").disabled = false; 
   }
+  var numTimes = 0;
+var times = new Array();
+var box = document.getElementById("box");
+function checkNumTimes() {
+  if (numTimes == 5) {
+    console.log('towmater')
+  }
+}
+
+function setBox() {
+  var yCoord = Math.random() * 400;
+	var xCoord = Math.random() * 400;
+					
+						
+					box.style.top = yCoord + "px";
+					box.style.left = xCoord + "px"; 
+				
+					box.style.display="block";
+					createdTime=Date.now();
+}
+		
+		
+			var clickedTime; var createdTime; var reactionTime; 
+		
+			function makeBox() {
+					var time=Math.random();
+					time=time*3000;
+				
+				setTimeout(setBox, time); 
+			
+			}
+function clickCircle() {
+  numTimes++;
+        checkNumTimes();
+			
+				clickedTime=Date.now();
+				
+				reactionTime=(clickedTime-createdTime)/1000;
+        times.push(reactionTime);
+				if (times.length == 5) {
+          alert('hello');
+          for (var i = 0; i < 5; i++) {
+            alert(times[i]);
+          }
+        }
+        
+				
+				box.style.display="none";
+				
+				makeBox();
+  
+}
+			
+			box.onclick=function() {
+        clickCircle();
+			}
+makeBox();
+	  
 </script>
 
