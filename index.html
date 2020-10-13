@@ -33,7 +33,7 @@
 <body>
   
 <form name="chalder">
-  <input name="name" type="text" placeholder="Full Name"><br>
+  <input name="name" type="text" placeholder="Full Name1"><br>
   <label for="sleep">How many hours of sleep have you gotten in the past 24 hours?</label><br>
   <input type="text" id="sleep" name="sleep"><br>
   <label for="sleep2">On average, how many hours of sleep do you get every night?</label><br>
@@ -91,8 +91,8 @@
   
   
   function setBox() {
-     var yCoord = (Math.random() * (screen.height - box.height));
-     var xCoord = (Math.random() * (screen.width - box.width));					
+     var yCoord = (Math.random() * (screen.height - 75));
+     var xCoord = (Math.random() * (screen.width - 75));					
      box.style.top = yCoord + "px";
      box.style.left = xCoord + "px";			
      box.style.display="block";
@@ -114,7 +114,8 @@
      numTimes++;
      clickedTime=Date.now();			
      reactionTime=(clickedTime-createdTime)/1000;
-     times.push(reactionTime);		
+     times.push(reactionTime);
+     avgTime = avgTime + reactionTime;   
      box.style.display="none";			
      
   }
