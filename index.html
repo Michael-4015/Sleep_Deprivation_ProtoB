@@ -51,8 +51,7 @@
     <option value="Yes, worsen">yes, it could worsen results</option>
     <option value="N/A, or won't impact results">N/A or it will not impact results</option>
   </select><br> 
- <label for="test">send data?</label><br>
-  <input type = "text" id="test" name="test"><br>
+ 
   <button type = "submit" id = "submit">Submit</button>
 <button type = "button" id = "beginTest" onclick= "myFunction()" disabled>Begin Test</button>
  
@@ -65,8 +64,11 @@
 <div class="page" id="three">
 	<div id = "results"> </div>
 	 <p id="printReactionTime"> 
-		 Your average time was: 
-		<input name="results" type="text" placeholder="results" id = "results" readonly><br>
+		 Your average time was:
+		<form name = "res">
+		 <label for="results">Your avg time </label>
+               <input type = "text" id="results" name="results"><br>
+	</form> 
 	</p<>
 </div>	
   
@@ -134,7 +136,7 @@
      if (numTimes == (numTests - 1)) {
 	 clickCircle();
 	 location.assign("#three");    
-	 document.getElementById("results").value = "" + (avgTime / numTests) + " seconds.";
+	 document.getElementById("results").value = "Time " + (avgTime / numTests) + " seconds.";
      } else {
         clickCircle();
 	makeBox();
