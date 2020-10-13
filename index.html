@@ -23,10 +23,6 @@
 
 <body>
   
-<div class = "page" id = "one">
-	<div id = "content">
-		hi
-  
 <form name="chalder">
   <input name="name" type="text" placeholder="Full Name"><br>
   <label for="sleep">How many hours of sleep have you gotten in the past 24 hours?</label><br>
@@ -47,11 +43,9 @@
     <option value="3">N/A or it will not impact results</option>
   </select><br> 
   <button type = "submit" id = "submit">Submit</button>
-  <button type = "button" id = "beginTest" href = "#two" disabled>Begin Test</button>
+  <button type = "button" id = "beginTest" onclick="window.location.href='#two' disabled>Begin Test</button>
   <a href="#two"> Yes </a> 
-</form>
-	</div>
-</div>
+		</form>
 
 <div class="page" id="two">
   Hello156
