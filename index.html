@@ -17,13 +17,26 @@
     <option value="1">yes, it could improve results</option>
     <option value="2">yes, it could worsen results</option>
     <option value="3">N/A or it will not impact results</option>
-  </select>
-  <button type="submit">Submit</button>
+  </select><br> 
+  <button type = "submit" name = "submit">Submit</button>
+  <button type ="button" name = "beginTest" href = "two" disabled>Begin Test</button>
 </form>
+
+<div class="page" id="two">
+  Hello
+</div>
 
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwTyhITsooZVhWcQbtJ5lwWLw6CW1uwuNouV5Pw4SkZQKPdXGHj/exec'
   const form = document.forms['chalder']
+  
+  document.getElementById("submit").onclick = function() {
+    document.getElementById("beginTest").disabled = false; 
+  }
+  
+  document.getElementById("beginTest").onclick = function() {
+    
+  }
 
   form.addEventListener('submit', e => {
     e.preventDefault()
