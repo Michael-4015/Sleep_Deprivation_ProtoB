@@ -66,6 +66,95 @@
     <option value="Yes, worsen">yes, it could worsen results</option>
     <option value="N/A, or won't impact results">N/A or it will not impact results</option>
   </select><br> 
+ <label for="tiredLevel">Please rank your current feelings of tiredness and fatigue
+from 1-5, where 5 is extremely fatigued and 1 is wide
+awake. </label><br>
+  <select id="tiredLevel" name="tiredLevel">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select><br>
+<p id = "part1"> Answer the following on a scale of 1 - 4, with 1 being less than usual and 4 being much worse than usual		
+<label for="tiredProb">Do you have problems with tiredness? </label><br>
+  <select id="tiredProb" name="tiredProb">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select><br> 
+		<label for="restMore">Do you feel you are needing to rest more? </label><br>
+  <select id="restMore" name="restMore">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select><br> 
+		<label for="sleepyDrowsy">Do you feel sleepy or drowsy?</label><br>
+  <select id="sleepyDrowsy" name="sleepyDrowsy">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select><br> 
+		<label for="startThings">Do you have problems starting things?</label><br>
+  <select id="startThings" name="startThings">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select><br> 
+		<label for="lackEnergy">Do you lack energy?</label><br>
+  <select id="lackEnergy" name="lackEnergy">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select><br> 
+		<label for="strength">Do you have less strength in your muscles?</label><br>
+  <select id="strength" name="strength">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select><br> 
+		<label for="weak">Do you feel weak?</label><br>
+  <select id="weak" name="weak">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select><br> 
+		<label for="concentrate">Do you have difficulties concentrating?</label><br>
+  <select id="concentrate" name="concentrate">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select><br> 
+		<label for="tongueSlip">Do you make slips of the tongue when speaking?</label><br>
+  <select id="tongueSlip" name="tongueSlip">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select><br> 
+		<label for="rightWord">Do you find it more difficult to find the right word?</label><br>
+  <select id="rightWord" name="rightWord">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select><br> 
+		<label for="memory">How is your memory? (1 = better than usual)</label><br>
+  <select id="memory" name="memory">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select><br> 
+		</p>
 	        <button type = "submit" id = "submit">Submit</button>
 	
 		
@@ -104,6 +193,7 @@
     times = new Array();
     avgTime = 0; 
     location.assign("#two");
+    makeBox(); 
  }	
   
   
@@ -149,7 +239,7 @@
 	makeBox();
      }
   }
-  makeBox();
+
   
 	
 	  
