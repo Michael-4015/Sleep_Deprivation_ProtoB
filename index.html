@@ -62,6 +62,10 @@
 <div class="page" id="two">
 	<div id = "box"> </div>
 </div>
+<div class="page" id="three">
+	<div id = "results"> </div>
+	 <p id="printReactionTime"></p<>
+</div>	
   
  </body>
 
@@ -76,67 +80,60 @@
       .then(response => console.log('Success!', response))
       .catch(error => console.error('Error!', error.message))
   })
-	
+  var numTimes = 0;
+  var times = new Array();
+  var avgTime = 0;	
+  var box = document.getElementById("box");
+  
   document.getElementById("submit").onclick = function() {
     document.getElementById("beginTest").disabled = false; 
   }
-  var numTimes = 0;
-var times = new Array();
-var box = document.getElementById("box");
-function checkNumTimes() {
-  if (numTimes == 5) {
-    console.log('towmater')
-  }
-}
-
-function setBox() {
-  var yCoord = Math.random() * 400;
-	var xCoord = Math.random() * 400;
-					
-						
-					box.style.top = yCoord + "px";
-					box.style.left = xCoord + "px"; 
-				
-					box.style.display="block";
-					createdTime=Date.now();
-}
-		
-		
-			var clickedTime; var createdTime; var reactionTime; 
-		
-			function makeBox() {
-					var time=Math.random();
-					time=time*3000;
-				
-				setTimeout(setBox, time); 
-			
-			}
-function clickCircle() {
-  numTimes++;
-        checkNumTimes();
-			
-				clickedTime=Date.now();
-				
-				reactionTime=(clickedTime-createdTime)/1000;
-        times.push(reactionTime);
-				if (times.length == 5) {
-          alert('hello');
-          for (var i = 0; i < 5; i++) {
-            alert(times[i]);
-          }
-        }
-        
-				
-				box.style.display="none";
-				
-				makeBox();
   
-}
+  document.getElementById("beginTest").onclick = function() {
+    numTimes = 0;
+    avgTime = 0;
+    times = new Array();
+  }
+	  
+  function setBox() {
+     var yCoord = (Math.random() * (screen.height - box.height));
+     var xCoord = (Math.random() * (screen.width - box.width));					
+     box.style.top = yCoord + "px";
+     box.style.left = xCoord + "px";			
+     box.style.display="block";
+     createdTime=Date.now();
+  } 
+		
+		
+  var clickedTime; 
+  var createdTime;
+  var reactionTime; 
+		
+  function makeBox() {
+     var time=Math.random();
+     time=time*3000;		
+     setTimeout(setBox, time); 		
+  }
+	
+  function clickCircle() {
+     numTimes++;
+     checkNumTimes();		
+     clickedTime=Date.now();			
+     reactionTime=(clickedTime-createdTime)/1000;
+     times.push(reactionTime);		
+     box.style.display="none";			
+     
+  }
 			
-			box.onclick=function() {
+  box.onclick=function() {
+     if (numTimes == 19) {
+	 clickCircle();
+     } else {
         clickCircle();
-			}
-makeBox();
+	makeBox();
+     }
+  }
+  makeBox();
 	  
 </script>
 
