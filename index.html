@@ -33,7 +33,7 @@
 <body>
   
 <form name="chalder">
-  <input name="name" type="text" placeholder="Full Name2"><br>
+  <input name="name" type="text" placeholder="Full Name4"><br>
   <label for="sleep">How many hours of sleep have you gotten in the past 24 hours?</label><br>
   <input type="text" id="sleep" name="sleep"><br>
   <label for="sleep2">On average, how many hours of sleep do you get every night?</label><br>
@@ -64,7 +64,10 @@
 </div>
 <div class="page" id="three">
 	<div id = "results"> </div>
-	 <p id="printReactionTime"></p<>
+	 <p id="printReactionTime"> 
+		 Your average time was: 
+		<input name="results" type="text" placeholder="results" id = "results" readonly><br>
+	</p<>
 </div>	
   
  </body>
@@ -80,6 +83,7 @@
       .then(response => console.log('Success!', response))
       .catch(error => console.error('Error!', error.message))
   })
+  var numTests = 4; 	
   var numTimes = 0;
   var times = new Array();
   var avgTime = 0;	
@@ -89,13 +93,16 @@
     document.getElementById("beginTest").disabled = false; 
   }
  function myFunction() {
-  location.assign("#two");
-}	
+    numTimes = 0;
+    times = new Array();
+    avgTime = 0; 
+    location.assign("#two");
+ }	
   
   
   function setBox() {
-     var yCoord = (Math.random() * (screen.height - 75));
-     var xCoord = (Math.random() * (screen.width - 75));					
+     var yCoord = (Math.random() * (screen.height - 150));
+     var xCoord = (Math.random() * (screen.width - 150));					
      box.style.top = yCoord + "px";
      box.style.left = xCoord + "px";			
      box.style.display="block";
@@ -124,9 +131,10 @@
   }
 			
   box.onclick=function() {
-     if (numTimes == 3) {
+     if (numTimes == (numTests - 1)) {
 	 clickCircle();
-	     
+	 location.assign("#three");    
+	 document.getElementById("results").value = "" + (avgTime / numTests) + " seconds.";
      } else {
         clickCircle();
 	makeBox();
