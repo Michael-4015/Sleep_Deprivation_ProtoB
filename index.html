@@ -1,70 +1,70 @@
 <!DOCTYPE html> 
 <html> 
-<head> 
-	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+	<head> 
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
 	</head>
 	
 	<style>	
-body {
-     background-color: rgb(99, 153, 225);
-	color : white;
-     margin: 0em;
-}
+		body {
+     			background-color: rgb(99, 153, 225);
+			color : white;
+     			margin: 0em;
+		}
 
-.page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100vw;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: rgb(99, 153, 225);
-}
+		.page {
+    			width: 100vw;
+    			height: 100vh;
+    			position: fixed;
+    			top: 0;
+    			left: -100vw;
+    			overflow-y: auto;
+    			z-index: 0;
+    			background-color: rgb(99, 153, 225);
+		}
     
 
-  .page:target {
-    left: 0vw;
-    z-index: 1;
-}
-.intro {
-	height: 100%;
-  	width: 50%;
-  	position: fixed;
-  	z-index: 1;
-  	top: 0;
-  	overflow-x: hidden;
-  	padding-top: 20px;
-	font-family: 'Nunito', sans-serif;
-}
-.left {
-  left: 0;
-  background-color: rgb(99, 153, 225);
-	color: white;
-	font-size: 40px;
+  		.page:target {
+    			left: 0vw;
+    			z-index: 1;
+		}
+		.intro {
+			height: 100%;
+  			width: 50%;
+  			position: fixed;
+  			z-index: 1;
+  			top: 0;
+  			overflow-x: hidden;
+  			padding-top: 20px;
+			font-family: 'Nunito', sans-serif;
+		}
+		.left {
+			left: 0;
+  			background-color: rgb(99, 153, 225);
+			color: white;
+			font-size: 40px;
 
-}
+		}
 
-.right {
-  right: 0;
-color: black; 
-  background-color: white;
-}
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-transform: translate(-50%, -50%);
-  text-align: center;
-}
-#box {
-height: 75px;
-  width: 75px;
-  background-color: #FFA500;
-  border-radius: 50%;
-  display: inline-block;blue;
-				display: none;
-				position: relative; 
+		.right {
+  			right: 0;
+			color: black; 
+  			background-color: white;
+		}
+		.centered {
+  			position: absolute;
+  			top: 50%;
+  			left: 50%;
+			transform: translate(-50%, -50%);
+  			text-align: center;
+			}
+		#box {
+			height: 75px;
+  			width: 75px;
+  			background-color: #FFA500;
+  			border-radius: 50%;
+  			display: inline-block;blue;
+			display: none;
+			position: relative; 
 		}
 </style>
 
@@ -103,6 +103,7 @@ height: 75px;
 </div>
 <div class="page" id="three">
 	<form name="chalder">
+		<div class = "survey one">
   <input name="name" type="text" placeholder="Full Name Here"><br>
   <label for="test">Your average time in seconds</label>
   <input type = "text" id="test" name="test" readonly><br>
@@ -123,6 +124,8 @@ height: 75px;
     <option value="Yes, worsen">yes, it could worsen results</option>
     <option value="N/A, or won't impact results">N/A or it will not impact results</option>
   </select><br> 
+		</div>
+<div class = "survey two"
  <label for="tiredLevel">Please rank your current feelings of tiredness and fatigue
 from 1-5, where 5 is extremely fatigued and 1 is wide
 awake. </label><br>
@@ -165,6 +168,8 @@ awake. </label><br>
   <label for = "sleepyDrowsy">2</label>
   <input type = "radio" id = "sleepyDrowsy" name = "sleepyDrowsy" value = "3">
   <label for = "sleepyDrowsy">3-Much more than usual</label><br>
+</div>
+<div class = "survey three">
 		<label for="startThings">Do you have problems starting things?</label><br>
   <input type = "radio" id = "startThings" name = "startThings" value = "0">
   <label for = "startThings">0-Less Than Usual </label>
@@ -201,6 +206,8 @@ awake. </label><br>
   <label for = "weak">2</label>
   <input type = "radio" id = "weak" name = "weak" value = "3">
   <label for = "weak">3-Much more than usual</label><br>
+</div>
+<div class = "survey four">
 		<label for="concentrate">Do you have difficulties concentrating?</label><br>
   <input type = "radio" id = "concentrate" name = "concentrate" value = "0">
   <label for = "concentrate">0-Less Than Usual </label>
@@ -239,6 +246,7 @@ awake. </label><br>
   <label for = "memory">3-Much worse than usual</label><br>
 		</p>
 	        <button type = "submit" id = "submit">Submit</button>
+</div>
 	
 		
 		 
