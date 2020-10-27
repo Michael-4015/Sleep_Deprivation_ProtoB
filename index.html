@@ -180,10 +180,12 @@ awake. </label><br>
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Yay', response.text()))
+      .then(response => response.text())
+        .then((response) => {
+            console.log('woop', response)
+        })
       .catch(error => console.error('Error!', error.message))
   })
-
   var numTests = 3; 	
   var numTimes = 0;
   var times = new Array();
