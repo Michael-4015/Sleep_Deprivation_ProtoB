@@ -191,7 +191,7 @@ awake. </label><br>
   var box = document.getElementById("box");
   
   document.getElementById("submit").onclick = function() {
-    location.assign("#three");
+    location.assign("#four");
  }
  function myFunction() {
     numTimes = 0;
@@ -235,7 +235,7 @@ awake. </label><br>
   box.onclick=function() {
      if (numTimes == (numTests - 1)) {
 	 clickCircle();
-	 location.assign("#four");
+	 location.assign("#three");
 	 avgTime = avgTime / numTests;
 	 alert(avgTime);
 	 document.getElementById("test").value = avgTime;
