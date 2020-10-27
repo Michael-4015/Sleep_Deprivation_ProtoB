@@ -163,6 +163,10 @@ awake. </label><br>
 	
 	
 </div>	
+<div class="page" id="four">
+	results
+</div>
+	
   
  </body>
 
@@ -179,15 +183,16 @@ awake. </label><br>
       .then(response => console.log('Success!', response))
       .catch(error => console.error('Error!', error.message))
   })
+
   var numTests = 3; 	
   var numTimes = 0;
   var times = new Array();
   var avgTime = 0;	
   var box = document.getElementById("box");
   
-  //document.getElementById("submit").onclick = function() {
-   // document.getElementById("beginTest").disabled = false; 
- // }
+  document.getElementById("submit").onclick = function() {
+    location.assign("#three");
+ }
  function myFunction() {
     numTimes = 0;
     times = new Array();
@@ -230,7 +235,7 @@ awake. </label><br>
   box.onclick=function() {
      if (numTimes == (numTests - 1)) {
 	 clickCircle();
-	 location.assign("#three");
+	 location.assign("#four");
 	 avgTime = avgTime / numTests;
 	 alert(avgTime);
 	 document.getElementById("test").value = avgTime;
