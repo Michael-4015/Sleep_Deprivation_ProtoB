@@ -27,10 +27,26 @@ body {
     left: 0vw;
     z-index: 1;
 }
-.content {
+.intro {
+	height: 100%;
+  	width: 50%;
+  	position: fixed;
+  	z-index: 1;
+  	top: 0;
+  	overflow-x: hidden;
+  	padding-top: 20px;
 	font-family: 'Nunito', sans-serif;
-	background: linear-gradient(to right, rgb(99, 153, 225) 50%, white 50%);
-		}
+}
+.left {
+  left: 0;
+  background-color: rgb(99, 153, 225);
+}
+
+.right {
+  right: 0;
+color: black; 
+  background-color: white;
+}
 #box {
 				height: 75px;
   width: 75px;
@@ -43,11 +59,14 @@ body {
 </style>
 
 <body>
-<div class = "content" id = "intro">
+<div class = "intro left">
   
 
 	 
  
+	
+</div>
+<div class = "intro right">
 	This app was produced by the Fatigue Team in the DIY Diagnostics Lab at UT Austin.</br>
 	When you press begin test, an orange circle will appear randomly on the screen at random times.</br>
 	Click on the circle to record your reaction time. </br>
