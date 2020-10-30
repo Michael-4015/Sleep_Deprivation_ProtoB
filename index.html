@@ -90,7 +90,7 @@
 </div>
 <div class = "intro right">
 	<div class = "centered">
-	<a href="#disclaimer">Start</a>
+		<button type = "button" id = "moveOn"> Continue</button>
 
 </div>
 </div>
@@ -299,6 +299,9 @@ awake. </label><br>
   var times = new Array();
   var avgTime = 0;	
   var box = document.getElementById("box");
+  document.getElementById("moveOn").onclick = function() {
+	  location.assign("#disclaimer");
+  }
   
   document.getElementById("submit").onclick = function() {
     location.assign("#four");
