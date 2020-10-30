@@ -59,7 +59,7 @@
 			transform: translate(-50%, -50%);
   			text-align: center;
 			}
-		.centered logo {
+		.centered img {
 			height : 100%;
 			width : 100%;
 		}
@@ -99,7 +99,7 @@
 	This application is strictly for entertainment purposes and should not be considered a product or a medical diagnostic tool. 
 	Any user of this application does so at their own risk. 
 	Members of FRI, DIY Diagnostics, and the University of Texas at Austin are not liable for anything relating to this application or its code. 
-	<a href="#instructions">Continue</a>
+	<button type = "button" id = "moveOn1"> Continue</button>
 
 </div> 
 <div class = "page" id = "instructions">
@@ -302,6 +302,10 @@ awake. </label><br>
   document.getElementById("moveOn").onclick = function() {
 	  location.assign("#disclaimer");
   }
+  document.getElementById("moveOn1").onclick = function() {
+	  location.assign("#instructions");
+  }
+	
   
   document.getElementById("submit").onclick = function() {
     location.assign("#four");
