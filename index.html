@@ -377,35 +377,45 @@ awake. </label><br>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="name">Your Name</label>
-  	<input name="name" type="text" id = "name" placeholder="Name">
+      <input type="text" class="form-control" id="name" name = "name" placeholder="Name">
     </div>
     <div class="form-group col-md-6">
-      <label for="test">Your average time in seconds</label>
-  	<input type = "text" id="test" name="test" readonly>
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
     </div>
   </div>
-<div class = "form-row">		
-  <div class="form-group col-md-4">
-    <label for="sleep">How many hours of sleep have you gotten in the past 24 hours?</label>
-  <input type="text" id="sleep" name="sleep">
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
   </div>
-  <div class="form-group col-md-4">
-    <label for="sleep2">On average, how many hours of sleep do you get every night?</label>
-  	<input type = "text" id = "sleep2" name = "avgSleep">
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
   </div>
-  <div class="form-group col-md-4">
-    <label for = "refreshed">Do you currently feel refreshed and awake?</label>
- 	<input type = "radio" id = "refreshed" name = "feeling" value = "Yes">
-  	<label for = "refreshed">Yes</label>
-  	<input type = "radio" id = "refreshed" name = "feeling" value = "No">
-  	<label for = "refreshed">No</label>
-</div>
-</div>
-  <div class="form-group col-md-6">
-   
-      <label for="caff">How much caffeine(mg) have you had in the past 8 hours? A regular cup of coffee has about 95 mg.</label>
-  			<input type="text" id="caff" name="caff">
-  
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
   </div>
   <button type="submit" class="btn btn-primary">Sign in</button>
 </form>
