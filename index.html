@@ -126,9 +126,10 @@
 	The following code has been developed by students and researchers of the Freshman Research Initiative DIY Diagnostics Stream at the University of Texas at Austin. 
 	This application is strictly for entertainment purposes and should not be considered a product or a medical diagnostic tool. 
 	Any user of this application does so at their own risk. 
-	Members of FRI, DIY Diagnostics, and the University of Texas at Austin are not liable for anything relating to this application or its code.</br> 
-		<input type="checkbox" id="myCheck" onclick="myFunction()">
-		<button type = "button" id = "moveOn1"> Continue</button>
+	Members of FRI, DIY Diagnostics, and the University of Texas at Austin are not liable for anything relating to this application or its code.</br></br>
+		<input type="checkbox" id="myCheck" onclick="agreed()">
+		 I have read the disclaimer 
+		<button type = "button" id = "moveOn1" disabled> Continue</button>
 	</p>
 	
 
@@ -328,12 +329,22 @@ awake. </label><br>
       .then(response => console.log('yay', response))
       .catch(error => console.error('Error!', error.message))
   })
+	function agreed() {
+		var checkBox = document.getElementById("myCheck");
+		var button = document.getElementById("moveOn1");
+		if (checkBox.checked == true) {
+			button.disabled = false; 
+		} else {
+			button.disabled = true;
+		}
+	}
 
   var numTests = 3; 	
   var numTimes = 0;
   var times = new Array();
   var avgTime = 0;	
   var box = document.getElementById("box");
+	
   document.getElementById("moveOn").onclick = function() {
 	  location.assign("#disclaimer");
   }
