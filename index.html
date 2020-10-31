@@ -401,12 +401,14 @@ awake. </label><br>
 	 <label for="sleep2">On average, how many hours of sleep do you get every night?</label>
   	<input type = "text" class = "form-control" id = "sleep2" name = "avgSleep">
   </div>
-<div class="form-check form-check-inline">
-	<label for = "refreshed">Do you currently feel refreshed and awake?</label></br> 
- 	 <input type = "radio" class="form-check-input" id = "refreshed" name = "feeling" value = "Yes">
-  	<label class="form-check-input" for = "refreshed">Yes</label>
-  	<input type = "radio" class="form-check-input" id = "refreshed" name = "feeling" value = "No">
-  	<label class="form-check-input" for = "refreshed">No</label>
+<div class="form-group col-md-2">
+	<label for = "refreshed">Do you currently feel refreshed and awake?</label>
+ 	 <select id="refreshed" class = "form-control" name="refreshed">
+		 	<option selected>Choose...</option>
+    			<option value="Yes">Yes</option>
+    			<option value="No">N0</option>
+		 
+    	</select>
  
 </div>
 </div>
@@ -417,6 +419,7 @@ awake. </label><br>
 <div class = "form-group">
   <label for="medication">Are you currently taking any medications or drugs which could impact the results of this sleep survey? </label>
   			<select id="medication" class = "form-control" name="med">
+			<option selected>Choose...</option>
     			<option value="Yes, improve">yes, it could improve results</option>
     			<option value="Yes, worsen">yes, it could worsen results</option>
     			<option value="N/A, or won't impact results">N/A or it will not impact results</option>
