@@ -122,22 +122,28 @@
 			position: relative; 
 		}
 		
+		.surveyPage {
+			position: relative;
+			text-align: center; 
+		}
+		
 		.last {
 			border-radius: 25px;
   			padding: 20px; 
   			width: 85vw;
 			height: 25vw; 
 			position: absolute;
-  			top: 50%;
-  			left: 50%;
 			background-color: white;
 			color: black;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			margin: 0 auto;
 			display: inline-block;
 			transform: translate(-50%, -50%);
 			font-family: 'Nunito', sans-serif;
 			overflow: scroll;
+			margin-left:auto;
+    			margin-right:auto;
+   			left: 0; /*NEW*/
+    			right: 0; /*NEW*/
 		}
 		.likert {
 			clear: both;
@@ -152,6 +158,10 @@
 			display: inline-block;
 			font-family: 'Nunito', sans-serif;
 			overflow: scroll;
+			margin-left:auto;
+    			margin-right:auto;
+   			left: 0; /*NEW*/
+    			right: 0; /*NEW*/
 			
 		}
 			
@@ -399,6 +409,7 @@ awake. </label><br>
 	Survey
 	</h1>
 	<form>
+	<div class = "surveyPage">
 	<div class = "last">
 	
   	<div class="form-row">
@@ -455,6 +466,7 @@ awake. </label><br>
 		</h1>
 		
 	</div>
+		</div>
 </form>
 	
 </div>
