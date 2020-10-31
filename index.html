@@ -125,7 +125,7 @@
 			border-radius: 25px;
   			padding: 20px; 
   			width: 85%;
-			height: 85%; 
+			height: 50%; 
 			position: absolute;
   			top: 50%;
   			left: 50%;
@@ -371,13 +371,9 @@ awake. </label><br>
  			 
   			
   		
- 			 <label for = "refreshed">Do you currently feel refreshed and awake?</label><br>
- 			 <input type = "radio" id = "refreshed" name = "feeling" value = "Yes">
-  			<label for = "refreshed">Yes</label>
-  			<input type = "radio" id = "refreshed" name = "feeling" value = "No">
-  			<label for = "refreshed">No</label><br>
+ 			 
   			
-  			<br> 
+  		
   			
 <div class="page" id="four">
 	<div class = "last">
@@ -402,10 +398,18 @@ awake. </label><br>
 	 <label for="sleep2">On average, how many hours of sleep do you get every night?</label>
   	<input type = "text" class = "form-control" id = "sleep2" name = "avgSleep">
   </div>
+<div class="form-check form-check-inline">
+	<label for = "refreshed">Do you currently feel refreshed and awake?</label>
+ 	 <input type = "radio" class="form-check-input" id = "refreshed" name = "feeling" value = "Yes">
+  	<label class="form-check-input" for = "refreshed">Yes</label>
+  	<input type = "radio" class="form-check-input" id = "refreshed" name = "feeling" value = "No">
+  	<label class="form-check-input" for = "refreshed">No</label>
+ 
+</div>
 </div>
   <div class="form-group">
     <label for="caff">How much caffeine(mg) have you had in the past 8 hours? A regular cup of coffee has about 95 mg.</label>
-  			<input type="text" class = "form-control" id="caff" name="caff"><br>
+  			<input type="text" class = "form-control" id="caff" name="caff">
   </div>
 <div class = "form-group">
   <label for="medication">Are you currently taking any medications or drugs which could impact the results of this sleep survey? </label>
@@ -415,38 +419,11 @@ awake. </label><br>
     			<option value="N/A, or won't impact results">N/A or it will not impact results</option>
   			</select>
 </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
+ 
   </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
 </form>
 	</div>
-	</p id = "results">
-		Your time was .75 seconds. This was higher than the national average. This combined with your survey score indicates you may be experiencing fatigue.
-	</p>
-
+	
 </div>
 	
   
