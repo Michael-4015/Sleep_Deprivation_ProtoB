@@ -163,6 +163,13 @@
     			right: 0; /*NEW*/
 			
 		}
+		.scale {
+    			display: block;
+   			margin: 0 auto;
+		}
+		.likert label {
+    			display: inline-block;
+		}
 			
 			
 		#chalder1 {
@@ -458,10 +465,16 @@ awake. </label><br>
 
 
 	</div>
+		
 	<div class = "likert">
 		<h1>
 		Please rank your current feelings of tiredness and fatigue
 		</h1>
+		<label><input type="radio" class = "scale" name="tiredLevel" value = "1" />1-Wide Awake</label>
+    		<label><input type="radio" class = "scale" name="tiredLevel" value = "2"/>2</label>
+    		<label><input type="radio" class = "scale" name="tiredLevel" value = "3"/>3-Neutral</label>
+    		<label><input type="radio" class = "scale" name="tiredLevel" value = "4"/>4</label>
+    		<label><input type="radio" class = "scale" name="tiredLevel" value = "5"/>5-Extremely Fatigued</label>
 		
 	</div>
 		<div class = "likert">
