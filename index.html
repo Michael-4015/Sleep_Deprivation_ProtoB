@@ -530,8 +530,9 @@
 	
 	
 </div>	
+</div>
 
-<div class = "page results">
+<div class = "page" id = "results">
 	<h1>
 		Results here
 	</h1>
@@ -634,6 +635,9 @@
      }
   }
 let btn = document.getElementById("submit");
+btn.onclick = function() {
+	location.assign("#results");
+}
 
 btn.addEventListener("click", active);
 
