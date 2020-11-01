@@ -85,7 +85,7 @@
 			width : 300%;
 			margin-top: 0;
 			margin-bottom: 0;
-			margin-left: -70%
+			margin-left: -70vw; 
 
 		}
 		.divider{
@@ -204,7 +204,9 @@
   			border-radius:10px;
 		}
 		.sub {
+			clear:both; 
   			font-family: 'Ubuntu', sans-serif;
+			display: inline-block;
   
   			width: 170px;
 			height: 40px;
@@ -586,9 +588,7 @@
   }
 	
   
-  document.getElementById("submit").onclick = function() {
-    location.assign("#four");
- }
+  
  function myFunction() {
     numTimes = 0;
     times = new Array();
@@ -646,6 +646,7 @@ btn.addEventListener("click", active);
 
 function active() {
   btn.classList.toggle("is_active");
+ location.assign("#four");
 }
 
   
