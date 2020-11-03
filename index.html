@@ -9,6 +9,11 @@
 
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<meta charset="utf-8">
+   		 <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    		<!-- <title>Star Rating Form | CodingNepal</title> -->
+    		<link rel="stylesheet" href="style.css">
+    		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	</head>
 	
 	<style>	
@@ -529,24 +534,35 @@
 </div>
 
 <div class = "page" id = "results">
-	<h1>
-		Results
-	</h1>
-	<div class = "card">
-		<p>
-		Score
-		</p>
-		<footer>
-		Chalder Score
-		</footer>
-	</div>
-		
-	</div>
-	
-	<footer>
-		Feedback
-		
-	</footer> 
+	<div class="container">
+      <div class="post">
+        <div class="text">
+Thanks for rating us!</div>
+<div class="edit">
+EDIT</div>
+</div>
+<div class="star-widget">
+        <input type="radio" name="rate" id="rate-5">
+        <label for="rate-5" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-4">
+        <label for="rate-4" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-3">
+        <label for="rate-3" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-2">
+        <label for="rate-2" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-1">
+        <label for="rate-1" class="fas fa-star"></label>
+        <form action="#">
+          <header></header>
+          <div class="textarea">
+            <textare cols="30" placeholder="Describe your experience.."></textare> 
+<!-- Due to more textarea tags I got a problem So I've changed the textarea tag to textare. Please correct it. -->
+          
+          <br />
+          
+<div class="btn">
+<button type="submit" id = "feedback">Post</button>
+</div>
   			
  			
   			
@@ -648,6 +664,19 @@ let btn = document.getElementById("submit");
 btn.onclick = function() {
 	location.assign("#results");
 }
+	const btn1 = document.getElementById("feedback");
+          const post = document.querySelector(".post");
+          const widget = document.querySelector(".star-widget");
+          const editBtn = document.querySelector(".edit");
+          btn1.onclick = ()=>{
+            widget.style.display = "none";
+            post.style.display = "block";
+            editBtn.onclick = ()=>{
+              widget.style.display = "block";
+              post.style.display = "none";
+            }
+            return false;
+      }
 
 
 
