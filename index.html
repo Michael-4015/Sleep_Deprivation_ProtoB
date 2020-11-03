@@ -321,6 +321,17 @@
 		#beginTest {
 			margin-left: 45%;
 		}
+		
+		#thanks {
+			display: flex;
+			align-items: center;
+			text-align: center;
+			background-color: rgb(99, 153, 225);
+			color: white;
+			font-size: 40px;
+			font-family: 'Nunito', sans-serif;
+		}
+			
 </style>
 
 <body>
@@ -339,9 +350,8 @@
 </div>
 <div class = "intro right">
 	<div class = "centered">
-		<p>
-		Developed by ...
-		</p>
+
+		
 		<button type = "button" id = "moveOn"> Continue</button>
 
 </div>
@@ -558,7 +568,7 @@
 		
 	</div>
 	<div>
-      	<button class="sub" type = "submit" id = "submit">
+      	<button class="sub"  id = "submit">
     		<span>Submit</span>
     	</div>
 	</form>
@@ -573,13 +583,18 @@
 	</h1>
 	<textarea class = "review" name = "review" placeholder="Leave a comment.."></textarea>
 	<div>
-	<button class="sub" type = "submit" id = "submit">
+	<button class="sub" type = "submit" id = "submit2">
     		<span>Submit</span>
 	</div>
 	
   			
  
 </div>
+<div class = "page" id = "thanks">
+	<p>
+		Thank You!
+	</p>
+	</div>
  </body>
 
 
@@ -674,6 +689,11 @@
 let btn = document.getElementById("submit");
 btn.onclick = function() {
 	location.assign("#results");
+}
+
+let btn2 = document.getElementById("submit2");
+btn2.onclick = function() {
+	location.assign("#thanks");
 }
 	
 
