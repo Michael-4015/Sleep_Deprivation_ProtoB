@@ -212,6 +212,20 @@
   			padding:10px;
   			border-radius:10px;
 		}
+		.feedback {
+			background-color: rgb(230,230,230);
+			text-align: center; 
+		}
+	
+		
+		.review {
+			padding:10px;
+	  		border-radius:10px;
+			box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+			width: 65%;
+			height: 40%;
+			margin: 0 auto;
+		}
 		.sub {
 			clear:both; 
   			font-family: 'Ubuntu', sans-serif;
@@ -533,41 +547,12 @@
 </div>	
 </div>
 
-<div class = "page" id = "results">
-	<div class="container">
-      <div class="post">
-        <div class="text">
-Thanks for rating us!</div>
-<div class="edit">
-EDIT</div>
-</div>
-<div class="star-widget">
-        <input type="radio" name="rate" id="rate-5">
-        <label for="rate-5" class="fas fa-star"></label>
-        <input type="radio" name="rate" id="rate-4">
-        <label for="rate-4" class="fas fa-star"></label>
-        <input type="radio" name="rate" id="rate-3">
-        <label for="rate-3" class="fas fa-star"></label>
-        <input type="radio" name="rate" id="rate-2">
-        <label for="rate-2" class="fas fa-star"></label>
-        <input type="radio" name="rate" id="rate-1">
-        <label for="rate-1" class="fas fa-star"></label>
-        <form action="#">
-          <header></header>
-          <div class="textarea">
-            <textare cols="30" placeholder="Describe your experience.."></textare> 
-<!-- Due to more textarea tags I got a problem So I've changed the textarea tag to textare. Please correct it. -->
-          
-          <br />
-          
-<div class="btn">
-<button type="submit" id = "feedback">Post</button>
-</div>
+<div class = "page feedback" id = "results">
+	<input type = "text" class = "review" name = "review">
+	
+	
   			
- 			
-  			
- 			 
-
+ 
 </div>
  </body>
 
