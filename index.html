@@ -213,16 +213,19 @@
   			border-radius:10px;
 		}
 			.feedback {
+			
 			background-color: rgb(239,239,239);
-  			display: flex;
-   			align-items: center;
+  			position:relative;
+			text-align: center; 
 			
 		}
+		
+		.feedback h1 {
+		}
+			
 	
 		
 		.review {
-			
-
 			color: rgb(125,123,144);
 	  		border-radius:20px;
 			border: 0;
@@ -234,6 +237,7 @@
 			font-weight: bold;
 			font-size: 16px;
 			margin: 0 auto;
+			margin-top: 30%;
 		}
 		.sub {
 			clear:both; 
@@ -244,9 +248,9 @@
 			font-size: 18px;
 			font-weight: bold;
 			letter-spacing: 1px;
-			border: 3px solid rgb(139,0,139);
+			border: 3px rgb(99, 153, 225);
 			background: #fff;
-			color: rgb(139,0,139);
+			color: rgb(99, 153, 225);
 			border-radius: 40px;
 			cursor: pointer;
 			overflow: hidden;
@@ -255,7 +259,7 @@
 		}
 
 		.sub:hover{
-		  	background: rgb(139,0,139);
+		  	background: rgb(99, 153, 225);
 		  	color: #fff;
 		}
 
@@ -660,20 +664,7 @@ let btn = document.getElementById("submit");
 btn.onclick = function() {
 	location.assign("#results");
 }
-	const btn1 = document.getElementById("feedback");
-          const post = document.querySelector(".post");
-          const widget = document.querySelector(".star-widget");
-          const editBtn = document.querySelector(".edit");
-          btn1.onclick = ()=>{
-            widget.style.display = "none";
-            post.style.display = "block";
-            editBtn.onclick = ()=>{
-              widget.style.display = "block";
-              post.style.display = "none";
-            }
-            return false;
-      }
-
+	
 
 
   
