@@ -591,11 +591,13 @@
 	<h1>
 		Feedback
 	</h1>
-	<textarea class = "review" name = "review" placeholder="Leave a comment.."></textarea>
+	<form name = "feedback">
+	<textarea class = "review" name = "review" placeholder="Leave a comment..."></textarea>
 	<div>
 	<button class="sub" type = "submit" id = "submit2">
     		<span>Submit</span>
 	</div>
+	</form>
 	
   			
  
@@ -709,6 +711,16 @@ let btn2 = document.getElementById("submit2");
 btn2.onclick = function() {
 	location.assign("#thanks");
 }
+
+const reviewSheet = 'https://script.google.com/macros/s/AKfycbxNy5orFR8qWIpLOnw0LEtMk6jnJgOM77QBPE5B10idWz7uTDbg/exec';
+const review = document.forms['feedback'];
+	
+review.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(reviewSheet, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('yay', response))
+      .catch(error => console.error('Error!', error.message))
+  })
 	
 
 
