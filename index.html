@@ -363,9 +363,14 @@
 </div>
 <div class = "intro right">
 	<div class = "centered">
-
 		
-		<button type = "button" id = "moveOn"> Continue</button>
+		<p> 
+			If you are taking the test as part of our study, please chooses the option that describes the test you are now taking. If 
+			you are not taking the test as part of our study, select Take Well Rested. 
+		</p>
+		
+		<button type = "button" id = "moveOn"> Take Well Rested Test</button>
+		<button type = "button" id = "moveOnTired"> Take Fatigued Test</button>
 
 </div>
 </div>
@@ -382,6 +387,7 @@
 		<input type="checkbox" id="myCheck" onclick="agreed()">
 		 I have read the disclaimer 
 		<button type = "button" id = "moveOn1" disabled> Continue</button>
+	
 	</p>
 	
 
@@ -615,8 +621,22 @@
 
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwTyhITsooZVhWcQbtJ5lwWLw6CW1uwuNouV5Pw4SkZQKPdXGHj/exec'
+  var scriptURL = 'https://script.google.com/macros/s/AKfycbwTyhITsooZVhWcQbtJ5lwWLw6CW1uwuNouV5Pw4SkZQKPdXGHj/exec'
   const form = document.forms['chalder']
+  
+  document.getElementById("moveOn").onclick = function() {
+	  scriptURL = 'https://script.google.com/macros/s/AKfycbwTyhITsooZVhWcQbtJ5lwWLw6CW1uwuNouV5Pw4SkZQKPdXGHj/exec';
+	  location.assign("#disclaimer");
+  }
+document.getElementById("moveOnTired").onclick = function() {
+	  scriptURL = 'https://script.google.com/macros/s/AKfycbyeayo8NqtebfrjEeaR_GeGUHBWfKbSGydaO7L9fWzxpcgxIFec/exec';
+	  location.assign("#disclaimer");
+  }
+
+  document.getElementById("moveOn1").onclick = function() {
+	  location.assign("#instructions");
+  }
+	
   
   
   
@@ -638,19 +658,13 @@
 		}
 	}
 
-  var numTests = 3; 	
+  var numTests = 20; 	
   var numTimes = 0;
   var times = new Array();
   var avgTime = 0;	
   var box = document.getElementById("box");
 	
-  document.getElementById("moveOn").onclick = function() {
-	  location.assign("#disclaimer");
-  }
-  document.getElementById("moveOn1").onclick = function() {
-	  location.assign("#instructions");
-  }
-	
+  
   
   
  function myFunction() {
