@@ -580,6 +580,7 @@
     		<label><input type="radio" class = "scale" name="memory" value = "3"/>Much Worse Than Usual</label>
 		
 	</div>
+	  <label><input type="text" class = "total" name="totalScore" id ="totalScore" value = "" style = "display:none" readonly/></label>
 	<div>
       	<button class="sub"  id = "submit">
     		<span>Submit</span>
@@ -619,12 +620,14 @@
   
   
   
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('yay', response))
-      .catch(error => console.error('Error!', error.message))
-  })
+  function submitForm() {
+	  form.addEventListener('submit', e => {
+    		e.preventDefault()
+    		fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      		.then(response => console.log('yay', response))
+      		.catch(error => console.error('Error!', error.message))
+  	})
+  }
 	function agreed() {
 		var checkBox = document.getElementById("myCheck");
 		var button = document.getElementById("moveOn1");
@@ -702,12 +705,25 @@
   }
 let btn = document.getElementById("submit");
 var elements = document.getElementById("chalder");
+var total = 0;
 btn.onclick = function() {
 	var result = elements.checkValidity();
+	total = 0;
+	addUp();
+	document.getElementById("totalScore").value = total;
   	if (result) {
+                submitForm();
     		location.assign("#results");
   	} 
 	
+}
+function addUp() {
+  var inputs = document.getElementById("chalder").elements;
+  for (var i = 0; i < inputs.length; i++) {
+     if (inputs[i].checked) {
+        total += parseInt(inputs[i].value);
+     }
+  }
 }
 
 let btn2 = document.getElementById("submit2");
