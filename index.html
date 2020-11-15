@@ -464,20 +464,47 @@
     			<option value="N/A, or won't impact results">N/A or it will not impact results</option>
   			</select>
 	</div>
+	<div class = "form-row">
+  		<div class = "form-group col-md-4">
+	  			<label for="hoursSince">How many hours has it been since you last slept?</label>
+  				<input type="text" class = "form-control" id="hoursSince" name="hoursSince" required>
+  			</div>
+			<div class="form-group col-md-4">
+				<label for = "tiredLevel">Please rank your current feelings of tiredness and fatigue on a scale of 1 - 10</label>
+ 	 				<select id="tiredLevel" class = "form-control" name="tiredLevel" required>
+		 				<option value = "">Choose...</option>
+    						<option value="1">1-Wide Awake</option>
+    						<option value="2">2</option>
+						<option value="3">3</option>
+    						<option value="4">4</option>
+						<option value="5">5-Neutral</option>
+    						<option value="6">6</option>
+						<option value="7">7</option>
+    						<option value="8">8</option>
+						<option value="9">9</option>
+    						<option value="10">10-Extremely Fatigued</option>
+    					</select>
+ 
+			</div>
+	</div>
 
 
 	</div>
 		
-	<div class = "likert">
+	<!--<div class = "likert">
 		<h1>
-		1. Please rank your current feelings of tiredness and fatigue
+		1. Please rank your current feelings of tiredness and fatigue on a scale of 1 - 10
 		</h1>
 		<label><input type="radio" class = "scale" name="tiredLevel" value = "1" required/>1-Wide Awake</label>
     		<label><input type="radio" class = "scale" name="tiredLevel" value = "2"/>2</label>
-    		<label><input type="radio" class = "scale" name="tiredLevel" value = "3"/>3-Neutral</label>
+    		<label><input type="radio" class = "scale" name="tiredLevel" value = "3"/>3</label>
     		<label><input type="radio" class = "scale" name="tiredLevel" value = "4"/>4</label>
-    		<label><input type="radio" class = "scale" name="tiredLevel" value = "5"/>5-Extremely Fatigued</label>
-		
+    		<label><input type="radio" class = "scale" name="tiredLevel" value = "5"/>5-neutral</label>
+		<label><input type="radio" class = "scale" name="tiredLevel" value = "6"/>6</label>
+    		<label><input type="radio" class = "scale" name="tiredLevel" value = "7"/>7</label>
+    		<label><input type="radio" class = "scale" name="tiredLevel" value = "8"/>8</label>
+    		<label><input type="radio" class = "scale" name="tiredLevel" value = "9"/>9</label>
+    		<label><input type="radio" class = "scale" name="tiredLevel" value = "10"/>10 - Extremely Fatigued</label>
 	</div>
 		<div class = "likert">
 		<h1>
@@ -587,7 +614,7 @@
 		<label><input type="radio" class = "scale" name="memory" value = "0" required />Better Than Usual</label>
     		<label><input type="radio" class = "scale" name="memory" value = "1"/>Normal</label>
     		<label><input type="radio" class = "scale" name="memory" value = "2"/>Worse Than Usual</label>
-    		<label><input type="radio" class = "scale" name="memory" value = "3"/>Much Worse Than Usual</label>
+    		<label><input type="radio" class = "scale" name="memory" value = "3"/>Much Worse Than Usual</label>-->
 		
 	</div>
 	  <label><input type="text" class = "total" name="totalScore" id ="totalScore" value = "" style = "display:none" readonly required/></label>
