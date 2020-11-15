@@ -753,19 +753,8 @@ var elements = document.getElementById("chalder");
 var total = 0;
 btn.onclick = function() {
 	var result = elements.checkValidity();
-  	if (result) {
-                submitForm();
-    		location.assign("#results");
-  	} 
-	
-}
-function addUp() {
-  var inputs = document.getElementById("chalder").elements;
-  for (var i = 7; i < inputs.length; i++) {
-     if (inputs[i].checked) {
-        total += parseInt(inputs[i].value);
-     }
-  }
+        submitForm();
+        location.assign("#results");
 }
 
 let btn2 = document.getElementById("submit2");
