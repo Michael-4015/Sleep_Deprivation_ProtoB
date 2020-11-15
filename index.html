@@ -753,9 +753,6 @@ var elements = document.getElementById("chalder");
 var total = 0;
 btn.onclick = function() {
 	var result = elements.checkValidity();
-	total = 0;
-	addUp();
-	document.getElementById("totalScore").value = total;
   	if (result) {
                 submitForm();
     		location.assign("#results");
